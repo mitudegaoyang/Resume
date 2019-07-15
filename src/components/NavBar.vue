@@ -7,36 +7,36 @@
         <div class="layout-nav">
           <i-menu-item name="home" to="/home">
             <i-icon type="ios-home" size="24"></i-icon>
-            首页
+            自我简介
           </i-menu-item>
-          <i-menu-item name="finance" to="/finance">
+          <i-menu-item name="ability" to="/ability">
             <i-icon type="ios-stats" size="24"></i-icon>
-            我要出借
+            专业技能
           </i-menu-item>
-          <i-menu-item name="riskEducation" to="/riskEducation">
-            <i-icon type="ios-school" size="24"></i-icon>
-            网站课堂
+          <i-menu-item name="experience" to="/experience">
+            <i-icon type="ios-briefcase" size="24"></i-icon>
+            工作经历
           </i-menu-item>
-          <i-submenu name="information">
+          <i-submenu name="project">
             <template slot="title">
-              <i-icon type="ios-information-circle" size="24"></i-icon>
-              信息披露
+              <i-icon type="logo-codepen" size="24"></i-icon>
+              项目集
             </template>
-            <i-menu-item name="organizationInfo" to="/information/baseInfo/organizationInfo">组织信息</i-menu-item>
-            <i-menu-item name="complianceProgress" to="/information/complianceProgress">合规进度</i-menu-item>
-            <i-menu-item name="external" to="/information/notice">对外公告</i-menu-item>
-            <i-menu-item name="auditReport" to="/information/auditReport">审计报告</i-menu-item>
-            <i-menu-item name="operationsReport" to="/information/baseInfo/operationsReport">运营报告</i-menu-item>
-            <i-menu-item name="filingInfo" to="/information/baseInfo/filingInfo">备案信息</i-menu-item>
-            <i-menu-item name="contactUs" to="/information/contactUs">联系我们</i-menu-item>
+            <i-menu-item name="projectA" to="/project/projectA">项目A</i-menu-item>
+            <i-menu-item name="projectB" to="/project/projectB">项目B</i-menu-item>
+            <i-menu-item name="projectC" to="/project/projectC">项目C</i-menu-item>
+            <i-menu-item name="projectD" to="/project/projectD">项目D</i-menu-item>
+            <i-menu-item name="projectE" to="/project/projectE">项目E</i-menu-item>
+            <i-menu-item name="projectF" to="/project/projectF">项目F</i-menu-item>
+            <i-menu-item name="projectG" to="/project/projectG">项目G</i-menu-item>
           </i-submenu>
-          <i-menu-item name="safe" to="/safe">
-            <i-icon type="ios-lock" size="24"></i-icon>
-            安全保障
+          <i-menu-item name="education" to="/education">
+            <i-icon type="ios-school" size="24"></i-icon>
+            教育经历
           </i-menu-item>
-          <i-menu-item name="center" to="/center">
-            <i-icon type="ios-person" size="24"></i-icon>
-            个人中心
+          <i-menu-item name="evaluation" to="/evaluation">
+            <i-icon type="ios-text" size="24"></i-icon>
+            自我评价
           </i-menu-item>
         </div>
       </i-menu>
@@ -82,7 +82,7 @@ export default {
     left: 20px;
   }
   .layout-nav{
-    width: 780px;
+    width: 800px;
     float: right;
   }
   .layout-footer-center{

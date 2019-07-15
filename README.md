@@ -29,4 +29,8 @@ npm run e2e
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 参考资料
+
+* [怎样制作一个个人简历网页？](https://www.zhihu.com/question/59335878/answer/167927572)
+* [有哪些有创意或个性的个人简历类网站/页面值得推荐？](https://www.zhihu.com/question/22876578/answer/163610078)
+* [打造一份网页版简历](https://mrluo.life/article/detail/127/experience-of-building-web-cv)

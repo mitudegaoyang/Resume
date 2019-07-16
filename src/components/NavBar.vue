@@ -62,6 +62,11 @@ export default {
     return {
       showLunarCalendar: true,
       throttleType: false,
+      /**
+       * 节气参数说明
+       * name: 节气名 day: 节气日期 position: 图片定位 title: 英文名(图片名称) coefficient: 计算系数 str: 月份拼接字符串
+       * leap: 加减日期参数 exception: 特殊日期处理 { name: 年份 value: 加减日期}
+       */
       throttleList: [
         {name: '立春', type: true, day: '', position: {x: '-23', y: '-11'}, title: 'BeginningOfSpring', coefficient: 3.87, str: '-2-', leap: -1, exception: []},
         {name: '雨水', type: true, day: '', position: {x: '-146', y: '-12'}, title: 'RainWater', coefficient: 18.73, str: '-2-', leap: -1, exception: [{name: '2026', value: -1}]},
@@ -168,7 +173,7 @@ export default {
     height: 40px;
     border-radius: 5px;
     background-size: cover;
-    background: url("../assets/img/solarTerm/solarTerm.png") no-repeat -23px -13px;
+    background: url("../assets/img/solarTerm/SolarTerm.png") no-repeat -23px -13px;
     background-size: 250px;
   }
   .throttle-logo-img{

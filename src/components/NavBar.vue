@@ -2,7 +2,7 @@
   <div>
     <i-header style="z-index: 1000">
       <i-menu mode="horizontal" :active-name="activeName">
-        <div class="layout-logo">
+        <div class="layout-logo core-logo">
           <img src="../assets/img/logo.png" title="高天阳个人官网" alt="个人官网" style="height: 80px">
         </div>
         <div class="layout-logo" v-if="throttleType">
@@ -162,7 +162,7 @@ export default {
     position: relative;
     left: 20px;
   }
-  .layout-logo:before {
+  .core-logo:before {
     content: "";
     position: absolute;
     left: -70px;

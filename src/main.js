@@ -6,8 +6,24 @@ import router from './router'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
+/**
+ * 修复eslint不认识timeline所导致的编译报错
+ */
+Vue.component('i-time-line-item', iView.TimelineItem)
+
 Vue.use(iView)
+
+Vue.prototype.$loadingBar = iView.LoadingBar
 Vue.config.productionTip = false
+
+router.beforeEach((to, from, next) => {
+  iView.LoadingBar.start()
+  next()
+})
+
+router.afterEach(route => {
+  window.scrollTo(0, 0)
+})
 
 /* eslint-disable no-new */
 new Vue({

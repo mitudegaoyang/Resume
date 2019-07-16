@@ -161,6 +161,7 @@ export default {
     float: left;
     position: relative;
     left: 20px;
+    overflow: hidden;
   }
   .core-logo:before {
     content: "";

@@ -162,6 +162,31 @@ export default {
     position: relative;
     left: 20px;
   }
+  .layout-logo:before {
+    content: "";
+    position: absolute;
+    left: -70px;
+    top: -20px;
+    width: 170px;
+    height: 15px;
+    background-color: rgba(255,255,255,.5);
+    transform: rotate(-45deg);
+    animation: searchLights 5s ease-in 1s infinite;
+  }
+  @keyframes searchLights {
+    0% {
+      left: -70px;
+      top: 0;
+    }
+    20% {
+      left: 80px;
+      top: 80px;
+    }
+    100% {
+      left: 80px;
+      top: 80px;
+    }
+  }
   .layout-nav {
     width: 800px;
     float: right;

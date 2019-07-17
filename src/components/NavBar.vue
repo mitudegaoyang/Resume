@@ -1,5 +1,6 @@
 <template>
   <div>
+    <InnerTop></InnerTop>
     <i-header style="z-index: 1000">
       <i-menu mode="horizontal" :active-name="activeName">
         <div class="layout-logo core-logo">
@@ -55,9 +56,12 @@
 <script>
 import moment from 'moment'
 import _ from 'lodash'
+import InnerTop from './InnerTop.vue' // 引进菜单模板
 export default {
   name: 'NavBar', // 模板名称
-  components: {},
+  components: {
+    InnerTop // 使用顶部菜单组件
+  },
   data () {
     return {
       showLunarCalendar: true,
@@ -222,6 +226,7 @@ export default {
     height: 80px;
     padding: 0;
     position: fixed;
+    top: 30px;
     line-height: 80px;
     z-index: 100;
     background: transparent;

@@ -34,6 +34,11 @@
         </i-layout>
       </i-col>
     </i-row>
+    <i-row>
+      <i-col>
+        <Footer></Footer>
+      </i-col>
+    </i-row>
   </div>
 </template>
 
@@ -41,10 +46,12 @@
 import moment from 'moment'
 import _ from 'lodash'
 import NavBar from '../components/NavBar.vue' // 引进菜单模板
+import Footer from '../components/Footer.vue' // 引进菜单模板
 export default {
   name: 'Experience',
   components: {
-    NavBar // 使用菜单组件
+    NavBar, // 使用菜单组件
+    Footer // 使用菜单组件
   },
   data () {
     return {

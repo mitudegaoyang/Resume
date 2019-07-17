@@ -44,3 +44,5 @@ npm test
 * [打造一份网页版简历](https://mrluo.life/article/detail/127/experience-of-building-web-cv)
 * [二十四节气标识](http://www.uuuud.com/picture/35275.html)
 * [vue关于img src动态赋值问题](https://blog.csdn.net/qq_39313596/article/details/84644500)
+* [博客参考](https://tom-shushu.github.io/MyWeb.github.io/index.html)
+* [LQ博客参考](http://www.linqing07.com/index.html)

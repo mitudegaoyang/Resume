@@ -15,12 +15,12 @@
 
 <script>
 import NavBar from '../components/NavBar.vue' // 引进菜单模板
-import Footer from '../components/Footer.vue' // 引进菜单模板
+import Footer from '../components/Footer.vue' // 引进底部模板
 export default {
   name: 'Home',
   components: {
     NavBar, // 使用菜单组件
-    Footer // 使用菜单组件
+    Footer // 使用底部组件
   },
   data () {
     return {

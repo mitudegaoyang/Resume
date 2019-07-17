@@ -55,7 +55,7 @@ export default {
     },
     refreshClock () {
       var self = this
-      self.time = moment().format('YYYY-MM-DD hh:mm:ss')
+      self.time = moment().format('YYYY-MM-DD HH:mm:ss')
       self.hour = moment().format('H') * 1
       self.helloMsg = (self.hour >= 0 && self.hour < 6)
         ? '午夜好，您不要太辛苦，夜深了也要注意休息呀~' : (self.hour >= 6 && self.hour < 12)

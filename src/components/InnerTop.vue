@@ -67,7 +67,12 @@ export default {
   },
   created () {
     var self = this
-    window.setInterval(self.refreshClock, 1000)
+    self.refreshClock()
+    self.timer = window.setInterval(self.refreshClock, 1000)
+  },
+  beforeDestroy () {
+    var self = this
+    clearInterval(self.timer)
   }
 }
 </script>

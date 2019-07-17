@@ -369,7 +369,7 @@ export default {
         xAxis: {
           name: '能力',
           max: 100,
-          min: 1,
+          min: 0,
           nameGap: 25,
           nameLocation: 'middle',
           nameTextStyle: {

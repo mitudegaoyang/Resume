@@ -35,7 +35,9 @@
                         </i-col>
                       </i-row>
                     </i-col>
-                    <i-col>坐标系图</i-col>
+                    <i-col>
+                      <div id="interestChart"></div>
+                    </i-col>
                     <i-col>技术栈</i-col>
                   </i-row>
                 </i-content>
@@ -68,10 +70,22 @@ export default {
       htmlChart: null,
       cssChart: null,
       data: {
-        html: 92,
-        css: 91,
+        html: 85,
+        css: 88,
         js: 85,
-        ajax: 83
+        ajax: 80,
+        interest: [
+          [85, 65, 85, 'HTML5'],
+          [88, 75, 88, 'CSS3'],
+          [85, 86, 85, 'JS'],
+          [80, 88, 80, 'AJAX'],
+          [75, 70, 75, 'Angular'],
+          [86, 90, 86, 'Vue'],
+          [60, 60, 60, 'ES6'],
+          [30, 20, 30, '持续集成'],
+          [70, 40, 70, 'git'],
+          [40, 45, 40, 'PS']
+        ]
       }
     }
   },
@@ -85,6 +99,7 @@ export default {
       self.cssChart = self.$echarts.init(document.getElementById('cssChart'))
       self.jsChart = self.$echarts.init(document.getElementById('jsChart'))
       self.ajaxChart = self.$echarts.init(document.getElementById('ajaxChart'))
+      self.interestChart = self.$echarts.init(document.getElementById('interestChart'))
       self.initChart()
     },
     /**
@@ -340,10 +355,79 @@ export default {
           }
         ]
       }
+      // 兴趣能力
+      self.interestOption = {
+        xAxis: {
+          name: '能力',
+          max: 100,
+          min: 1,
+          nameGap: 25,
+          nameLocation: 'middle',
+          nameTextStyle: {
+            fontSize: 18
+          },
+          splitLine: {
+            show: false
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#999'
+            }
+          },
+          axisLabel: {
+            formatter: '{value} %'
+          }
+        },
+        yAxis: {
+          type: 'value',
+          name: '兴趣',
+          max: 100,
+          nameTextStyle: {
+            color: '#999',
+            fontSize: 18
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#999'
+            }
+          },
+          splitLine: {
+            show: false
+          },
+          axisLabel: {
+            formatter: '{value} %'
+          }
+        },
+        series: [{
+          data: self.data.interest,
+          type: 'scatter',
+          symbolSize: function (data) {
+            return data[2]
+          },
+          label: {
+            emphasis: {
+              show: true,
+              formatter: function (param) {
+                return param.data[3]
+              },
+              position: 'top'
+            }
+          },
+          itemStyle: {
+            normal: {
+              shadowBlur: 10,
+              shadowColor: 'rgba(104, 111, 245, 0.5)',
+              shadowOffsetY: 5,
+              color: ['#6e6eff']
+            }
+          }
+        }]
+      }
       self.htmlChart.setOption(self.htmlOption)
       self.cssChart.setOption(self.cssOption)
       self.jsChart.setOption(self.jsOption)
       self.ajaxChart.setOption(self.ajaxOption)
+      self.interestChart.setOption(self.interestOption)
     }
   },
   mounted () {
@@ -393,6 +477,10 @@ export default {
     #ajaxChart {
       width: 288px;
       height: 350px;
+    }
+    #interestChart {
+      width: 1152px;
+      height: 500px;
     }
   }
 </style>

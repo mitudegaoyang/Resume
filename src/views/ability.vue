@@ -96,7 +96,7 @@ export default {
       self.htmlOption = {
         title: [
           {
-            text: 'html能力',
+            text: 'HTML',
             textAlign: 'center',
             left: '50%',
             top: '45%',
@@ -158,7 +158,7 @@ export default {
       self.cssOption = {
         title: [
           {
-            text: 'css能力',
+            text: 'CSS',
             textAlign: 'center',
             left: '50%',
             top: '45%',
@@ -220,7 +220,7 @@ export default {
       self.jsOption = {
         title: [
           {
-            text: 'js能力',
+            text: 'JS',
             textAlign: 'center',
             left: '50%',
             top: '45%',
@@ -282,7 +282,7 @@ export default {
       self.ajaxOption = {
         title: [
           {
-            text: 'ajax能力',
+            text: 'AJAX',
             textAlign: 'center',
             left: '50%',
             top: '45%',

@@ -6,6 +6,7 @@
       </div>
       <ul class="fr btnGroup">
         <li>现在是北京时间：{{time}}</li>
+        <li>网站已平稳运行：{{timeList.day}}天{{timeList.hour}}小时{{timeList.minutes}}分钟{{timeList.seconds}}秒</li>
       </ul>
     </div>
   </div>
@@ -17,12 +18,41 @@ export default {
   name: 'InnerTop', // 模板名称
   data () {
     return {
-      time: '',
+      timeList: {
+        relative: '',
+        day: '00',
+        hour: '00',
+        minutes: '00',
+        seconds: '00'
+      },
+      timer: '',
+      time: '0000-00-00 00:00:00',
       hour: '',
-      helloMsg: ''
+      helloMsg: '您好，欢迎您的光临~'
     }
   },
   methods: {
+    /**
+     * 个位补零
+     */
+    prefixInteger (num) {
+      if (num < 10) {
+        num = '0' + num
+      } else {
+        num = num.toString()
+      }
+      return num
+    },
+    /**
+     * 运营时间计算
+     */
+    timeInit () {
+      var self = this
+      self.timeList.day = self.prefixInteger(moment().diff('2019-07-01 15:58:00', 'days'))
+      self.timeList.hour = self.prefixInteger(moment().diff('2019-07-01 15:58:00', 'hours') % 24)
+      self.timeList.minutes = self.prefixInteger(moment().diff('2019-07-01 15:58:00', 'minutes') % 60)
+      self.timeList.seconds = self.prefixInteger(moment().diff('2019-07-01 15:58:00', 'seconds') % 60)
+    },
     refreshClock () {
       var self = this
       self.time = moment().format('YYYY-MM-DD hh:mm:ss')
@@ -32,6 +62,7 @@ export default {
           ? '早上好，今天又是元气满满的一天~' : (self.hour >= 12 && self.hour < 14)
             ? '中午好，午休后，为更好的自己加油~' : (self.hour >= 14 && self.hour < 19)
               ? '下午好，愿您享受宁静的下午时光~' : '晚上好，今天又是美好一天~'
+      self.timeInit()
     }
   },
   created () {

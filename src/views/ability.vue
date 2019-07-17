@@ -20,6 +20,9 @@
                 <i-content class="content-center">
                   <i-row>
                     <i-col>
+                      <div class="data-title">技术能力</div>
+                    </i-col>
+                    <i-col>
                       <i-row>
                         <i-col span="6">
                           <div id="htmlChart"></div>
@@ -36,7 +39,13 @@
                       </i-row>
                     </i-col>
                     <i-col>
+                      <div class="data-title">兴趣能力</div>
+                    </i-col>
+                    <i-col>
                       <div id="interestChart"></div>
+                    </i-col>
+                    <i-col>
+                      <div class="data-title">技术栈</div>
                     </i-col>
                     <i-col>技术栈</i-col>
                   </i-row>
@@ -462,6 +471,21 @@ export default {
   .content-center {
     padding: 24px;
     background: #fff;
+    .data-title {
+      font-weight: normal;
+      font-size: 18px;
+      text-align: center;
+      line-height: 40px;
+      margin: 0 auto 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #eee;
+      span {
+        float: right;
+        font-size: 14px;
+        font-weight: normal;
+        color: #666;
+      }
+    }
     #htmlChart {
       width: 288px;
       height: 350px;

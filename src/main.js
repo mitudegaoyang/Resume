@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import echarts from 'echarts'
+import VueCookies from 'vue-cookies'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
@@ -12,8 +14,10 @@ import 'iview/dist/styles/iview.css'
 Vue.component('i-time-line-item', iView.TimelineItem)
 
 Vue.use(iView)
+Vue.use(VueCookies)
 
 Vue.prototype.$loadingBar = iView.LoadingBar
+Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {

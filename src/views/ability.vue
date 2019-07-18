@@ -114,6 +114,311 @@ export default {
           collaboration: 86,
           development: 80,
           attitude: 87
+        },
+        skills: {
+          'name': '前端工程师',
+          'children': [
+            {
+              'name': 'html',
+              'children': [
+                {'name': '标签与属性', 'value': 100},
+                {'name': '语义化', 'value': 100},
+                {'name': '元素类型(块级、行内等)', 'value': 100},
+                {'name': 'viewport', 'value': 100},
+                {'name': 'web Compinents', 'value': 100}
+              ]
+            },
+            {
+              'name': 'css',
+              'children': [
+                {'name': '选择器', 'value': 100},
+                {'name': '样式权重', 'value': 100},
+                {'name': '常用样式', 'value': 100},
+                {
+                  'name': '布局',
+                  'children': [
+                    {'name': '盒子模型', 'value': 100},
+                    {'name': '水平垂直居中', 'value': 100},
+                    {'name': '相对、绝对、固定定位', 'value': 100},
+                    {'name': 'inline-block', 'value': 100},
+                    {'name': 'float', 'value': 100},
+                    {'name': 'flex', 'value': 100}
+                  ]
+                },
+                {
+                  'name': '适配方案',
+                  'children': [
+                    {
+                      'name': '等比适配',
+                      'children': [
+                        {'name': 'fexlble', 'value': 100},
+                        {'name': 'viewport', 'value': 100}
+                      ]
+                    },
+                    {'name': '流式布局', 'value': 100},
+                    {'name': '媒体查询', 'value': 100}
+                  ]
+                },
+                {'name': '过渡', 'value': 100},
+                {'name': '动画', 'value': 100},
+                {
+                  'name': 'css预处理',
+                  'children': [
+                    {'name': 'less', 'value': 100},
+                    {'name': 'sass', 'value': 100}
+                  ]
+                },
+                {'name': '兼容性问题', 'value': 100}
+              ]
+            },
+            {
+              'name': 'js',
+              'children': [
+                {
+                  'name': '语言',
+                  'children': [
+                    {'name': '变量、函数、对象', 'value': 100},
+                    {'name': 'this', 'value': 100},
+                    {'name': '闭包', 'value': 100},
+                    {'name': 'new', 'value': 100},
+                    {
+                      'name': '面向对象',
+                      'children': [
+                        {'name': '构造函数(call、apply)', 'value': 100},
+                        {'name': '原型链', 'value': 100},
+                        {'name': '混合模式', 'value': 100}
+                      ]
+                    },
+                    {'name': '单线程异步运行机理', 'value': 100}
+                  ]
+                },
+                {
+                  'name': 'api(基于浏览器)',
+                  'children': [
+                    {'name': 'DOM', 'value': 100},
+                    {
+                      'name': '事件',
+                      'children': [
+                        {'name': '移动端', 'value': 100},
+                        {'name': 'PC端', 'value': 100}
+                      ]
+                    },
+                    {
+                      'name': 'AJAX',
+                      'children': [
+                        {'name': '基于XMLHttpRequest', 'value': 100},
+                        {'name': 'Fetch(注意兼容性)', 'value': 100}
+                      ]
+                    },
+                    {'name': 'canvas', 'value': 100},
+                    {'name': 'websocket', 'value': 100},
+                    {
+                      'name': 'webgl',
+                      'children': [
+                        {'name': 'three.js', 'value': 100}
+                      ]
+                    },
+                    {
+                      'name': '本地存储',
+                      'children': [
+                        {'name': 'cookie', 'value': 100},
+                        {'name': 'LocalStorage', 'value': 100}
+                      ]
+                    }
+                  ]
+                },
+                {
+                  'name': '编程模式',
+                  'children': [
+                    {'name': '函数式编程', 'value': 100},
+                    {'name': 'AMD', 'value': 100},
+                    {'name': 'CMD', 'value': 100},
+                    {
+                      'name': '流程控制',
+                      'children': [
+                        {'name': 'Promise', 'value': 100},
+                        {'name': 'Tapable', 'value': 100}
+                      ]
+                    },
+                    {
+                      'name': '应用状态(数据控制)容器',
+                      'children': [
+                        {'name': 'redux', 'value': 100}
+                      ]
+                    },
+                    {
+                      'name': '其他设计模式',
+                      'children': [
+                        {'name': '工厂模式', 'value': 100},
+                        {'name': '单例模式', 'value': 100},
+                        {'name': '模块模式', 'value': 100},
+                        {'name': '代理模式', 'value': 100},
+                        {'name': '职责链模式', 'value': 100},
+                        {'name': '命令模式', 'value': 100},
+                        {'name': '模板方法模式', 'value': 100},
+                        {'name': '策略模式', 'value': 100},
+                        {'name': '订阅模式', 'value': 100},
+                        {'name': '中介者模式', 'value': 100},
+                        {'name': '适配器模式', 'value': 100},
+                        {'name': '...', 'value': 100}
+                      ]
+                    }
+                  ]
+                },
+                {'name': 'ES6', 'value': 100},
+                {
+                  'name': '框架',
+                  'children': [
+                    {
+                      'name': '提升效率(语法糖)',
+                      'children': [
+                        {'name': 'jquery/zepto', 'value': 100},
+                        {'name': 'lodash.js', 'value': 100},
+                        {'name': 'moment.js', 'value': 100},
+                        {'name': 'underscore', 'value': 100}
+                      ]
+                    },
+                    {
+                      'name': '模块加载',
+                      'children': [
+                        {'name': 'requireJs', 'value': 100},
+                        {'name': 'webpack', 'value': 100}
+                      ]
+                    },
+                    {
+                      'name': 'UI框架',
+                      'children': [
+                        {'name': 'bootstrap', 'value': 100},
+                        {'name': 'ElementUI', 'value': 100},
+                        {'name': 'iView', 'value': 100},
+                        {'name': 'ElementUI admin', 'value': 100},
+                        {'name': 'Fuse', 'value': 100},
+                        {'name': 'Vux', 'value': 100}
+                      ]
+                    },
+                    {
+                      'name': 'webgl(3d动画)',
+                      'children': [
+                        {'name': 'tree.js', 'value': 100}
+                      ]
+                    },
+                    {
+                      'name': 'M*M',
+                      'children': [
+                        {'name': 'react', 'value': 100},
+                        {'name': 'redux', 'value': 100}
+                      ]
+                    },
+                    {
+                      'name': '前段工程化',
+                      'children': [
+                        {
+                          'name': '依赖管理',
+                          'children': [
+                            {'name': 'npm', 'value': 100},
+                            {'name': 'yarn', 'value': 100}
+                          ]
+                        },
+                        {
+                          'name': '流程控制',
+                          'children': [
+                            {'name': 'gulp', 'value': 100},
+                            {'name': 'webpack', 'value': 100}
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  'name': 'nodejs',
+                  'children': [
+                    {'name': 'express', 'value': 100},
+                    {'name': '...', 'value': 100}
+                  ]
+                }
+              ]
+            },
+            {
+              'name': '综合',
+              'children': [
+                {'name': '浏览器运行机理', 'value': 100},
+                {
+                  'name': '性能优化',
+                  'children': [
+                    {'name': '静态资源优化', 'value': 100},
+                    {'name': '接口合并、首屏直接出', 'value': 100},
+                    {'name': '渲染速度优化', 'value': 100}
+                  ]
+                },
+                {
+                  'name': '代码调试',
+                  'children': [
+                    {'name': 'chrome: dev tools/inspect', 'value': 100},
+                    {'name': 'safari调试iOS', 'value': 100},
+                    {'name': 'HBuilder', 'value': 100},
+                    {'name': 'charles抓包', 'value': 100}
+                  ]
+                },
+                {
+                  'name': '跨域',
+                  'children': [
+                    {'name': 'JSONP', 'value': 100},
+                    {'name': 'cors', 'value': 100}
+                  ]
+                },
+                {'name': 'http', 'value': 100},
+                {'name': '编程习惯', 'value': 100},
+                {
+                  'name': '混合编程',
+                  'children': [
+                    {'name': 'js与native通信机制', 'value': 100},
+                    {'name': 'h5+', 'value': 100}
+                  ]
+                },
+                {'name': 'react native(入门)', 'value': 100},
+                {
+                  'name': '持续集成',
+                  'children': [
+                    {'name': 'gitLab', 'value': 100},
+                    {'name': 'jenkins', 'value': 100}
+                  ]
+                }
+              ]
+            },
+            {
+              'name': '软件',
+              'children': [
+                {
+                  'name': 'IDE',
+                  'children': [
+                    {'name': 'WebStorm', 'value': 100},
+                    {'name': 'sublime', 'value': 100}
+                  ]
+                },
+                {
+                  'name': '版本控制',
+                  'children': [
+                    {'name': 'git', 'value': 100},
+                    {'name': 'svn', 'value': 100}
+                  ]
+                },
+                {
+                  'name': '切图',
+                  'children': [
+                    {'name': 'PS', 'value': 100}
+                  ]
+                },
+                {
+                  'name': '远程',
+                  'children': [
+                    {'name': 'ssh', 'value': 100},
+                    {'name': 'sftp', 'value': 100}
+                  ]
+                }
+              ]
+            }
+          ]
         }
       }
     }
@@ -498,7 +803,25 @@ export default {
         }]
       }
       // 技术栈
-      self.skillsOption = {}
+      self.skillsOption = {
+        tooltip: {
+          trigger: 'item',
+          triggerOn: 'mousemove'
+        },
+        series: [
+          {
+            type: 'tree',
+            data: [self.data.skills],
+            top: '18%',
+            bottom: '14%',
+            layout: 'radial',
+            symbol: 'emptyCircle',
+            symbolSize: 7,
+            initialTreeDepth: 3,
+            animationDurationUpdate: 750
+          }
+        ]
+      }
       self.htmlChart.setOption(self.htmlOption)
       self.cssChart.setOption(self.cssOption)
       self.jsChart.setOption(self.jsOption)
@@ -581,7 +904,7 @@ export default {
     }
     #skillsChart {
       width: 1152px;
-      height: 500px;
+      height: 800px;
     }
   }
 </style>

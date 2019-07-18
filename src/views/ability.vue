@@ -106,7 +106,15 @@ export default {
           [30, 20, 30, '持续集成'],
           [70, 40, 70, 'git'],
           [40, 45, 40, 'PS']
-        ]
+        ],
+        ability: {
+          communication: 90,
+          administration: 80,
+          understand: 85,
+          collaboration: 86,
+          development: 80,
+          attitude: 87
+        }
       }
     }
   },
@@ -476,7 +484,14 @@ export default {
           },
           data: [
             {
-              value: [90, 80, 85, 86, 80, 87],
+              value: [
+                self.data.ability.communication,
+                self.data.ability.administration,
+                self.data.ability.understand,
+                self.data.ability.collaboration,
+                self.data.ability.development,
+                self.data.ability.attitude
+              ],
               name: '综合能力雷达图'
             }
           ]

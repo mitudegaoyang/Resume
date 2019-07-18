@@ -449,7 +449,7 @@ export default {
           {
             text: 'HTML',
             textAlign: 'center',
-            left: '50%',
+            left: '49%',
             top: '45%',
             textStyle: {
               fontSize: 14,
@@ -459,7 +459,7 @@ export default {
           {
             text: self.data.html,
             textAlign: 'center',
-            left: '50%',
+            left: '49%',
             top: '50%',
             textStyle: {
               fontSize: 16,
@@ -511,7 +511,7 @@ export default {
           {
             text: 'CSS',
             textAlign: 'center',
-            left: '50%',
+            left: '49%',
             top: '45%',
             textStyle: {
               fontSize: 14,
@@ -521,7 +521,7 @@ export default {
           {
             text: self.data.css,
             textAlign: 'center',
-            left: '50%',
+            left: '49%',
             top: '50%',
             textStyle: {
               fontSize: 16,
@@ -573,7 +573,7 @@ export default {
           {
             text: 'JS',
             textAlign: 'center',
-            left: '50%',
+            left: '49%',
             top: '45%',
             textStyle: {
               fontSize: 14,
@@ -583,7 +583,7 @@ export default {
           {
             text: self.data.js,
             textAlign: 'center',
-            left: '50%',
+            left: '49%',
             top: '50%',
             textStyle: {
               fontSize: 16,
@@ -635,7 +635,7 @@ export default {
           {
             text: 'AJAX',
             textAlign: 'center',
-            left: '50%',
+            left: '49%',
             top: '45%',
             textStyle: {
               fontSize: 14,
@@ -645,7 +645,7 @@ export default {
           {
             text: self.data.ajax,
             textAlign: 'center',
-            left: '50%',
+            left: '49%',
             top: '50%',
             textStyle: {
               fontSize: 16,

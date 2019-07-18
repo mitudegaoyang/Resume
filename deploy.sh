@@ -3,4 +3,5 @@
 git checkout master
 rm -rf index.html static
 cp -a ./dist/index.html ./dist/static ./
-# git push
+git push
+git checkout dev

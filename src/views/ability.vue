@@ -47,11 +47,15 @@
                     <i-col>
                       <div class="data-title">综合能力</div>
                     </i-col>
-                    <i-col>综合能力图表</i-col>
+                    <i-col>
+                      <div id="abilityChart"></div>
+                    </i-col>
                     <i-col>
                       <div class="data-title">技术栈</div>
                     </i-col>
-                    <i-col>技术栈</i-col>
+                    <i-col>
+                      <div id="skillsChart"></div>
+                    </i-col>
                   </i-row>
                 </i-content>
               </i-layout>
@@ -82,6 +86,10 @@ export default {
       msg: 'Ability',
       htmlChart: null,
       cssChart: null,
+      jsChart: null,
+      ajaxChart: null,
+      interestChart: null,
+      abilityChart: null,
       data: {
         html: 85,
         css: 88,
@@ -113,6 +121,8 @@ export default {
       self.jsChart = self.$echarts.init(document.getElementById('jsChart'))
       self.ajaxChart = self.$echarts.init(document.getElementById('ajaxChart'))
       self.interestChart = self.$echarts.init(document.getElementById('interestChart'))
+      self.abilityChart = self.$echarts.init(document.getElementById('abilityChart'))
+      self.skillsChart = self.$echarts.init(document.getElementById('skillsChart'))
       self.initChart()
     },
     /**
@@ -436,11 +446,51 @@ export default {
           }
         }]
       }
+      // 综合能力
+      self.abilityOption = {
+        tooltip: {},
+        radar: {
+          // shape: 'circle',
+          name: {
+            textStyle: {
+              color: '#fff',
+              backgroundColor: '#999',
+              borderRadius: 3,
+              padding: [3, 5]
+            }
+          },
+          indicator: [
+            {name: '沟通表达（Communication）', max: 100},
+            {name: '管理能力（Administration）', max: 100},
+            {name: '理解能力（Understand）', max: 100},
+            {name: '协作能力（Collaboration）', max: 100},
+            {name: '开发能力（Development）', max: 100},
+            {name: '工作态度（Attitude）', max: 100}
+          ]
+        },
+        series: [{
+          type: 'radar',
+          color: '#f78070',
+          areaStyle: {
+            normal: {}
+          },
+          data: [
+            {
+              value: [90, 80, 85, 86, 80, 87],
+              name: '综合能力雷达图'
+            }
+          ]
+        }]
+      }
+      // 技术栈
+      self.skillsOption = {}
       self.htmlChart.setOption(self.htmlOption)
       self.cssChart.setOption(self.cssOption)
       self.jsChart.setOption(self.jsOption)
       self.ajaxChart.setOption(self.ajaxOption)
       self.interestChart.setOption(self.interestOption)
+      self.abilityChart.setOption(self.abilityOption)
+      self.skillsChart.setOption(self.skillsOption)
     }
   },
   mounted () {
@@ -507,6 +557,14 @@ export default {
       height: 350px;
     }
     #interestChart {
+      width: 1152px;
+      height: 500px;
+    }
+    #abilityChart {
+      width: 1152px;
+      height: 500px;
+    }
+    #skillsChart {
       width: 1152px;
       height: 500px;
     }

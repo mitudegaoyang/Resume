@@ -19,13 +19,13 @@
               <i-layout>
                 <i-content class="content-center">
                   <i-row>
-                    <i-col>{{data.passage1.content}}</i-col>
-                    <i-col>{{data.passage2.content}}</i-col>
-                    <i-col>{{data.passage3.content}}</i-col>
-                    <i-col>{{data.passage4.content}}{{data.passage5.content}}</i-col>
-                    <i-col>{{data.passage6.content}}</i-col>
-                    <i-col>{{data.passage7.content}}{{data.passage8.content}}</i-col>
-                    <i-col>{{data.passage9.content}}</i-col>
+                    <i-col class="content-text ">{{data.passage1.content}}</i-col>
+                    <i-col class="content-text">{{data.passage2.content}}</i-col>
+                    <i-col class="content-text">{{data.passage3.content}}</i-col>
+                    <i-col class="content-text">{{data.passage4.content}}{{data.passage5.content}}</i-col>
+                    <i-col class="content-text">{{data.passage6.content}}</i-col>
+                    <i-col class="content-text">{{data.passage7.content}}{{data.passage8.content}}</i-col>
+                    <i-col class="content-text">{{data.passage9.content}}</i-col>
                   </i-row>
                 </i-content>
               </i-layout>
@@ -140,11 +140,16 @@ export default {
   }
   .content {
     margin-bottom: 50px;
-    min-height: 530px;
+    min-height: 600px;
     background: #fff;
   }
   .content-center {
     padding: 24px;
     background: #fff;
+    .content-text {
+      font-size: 18px;
+      line-height: 3em;
+      text-indent: 2em
+    }
   }
 </style>

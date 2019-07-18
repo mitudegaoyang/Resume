@@ -47,7 +47,7 @@
                     <i-col>
                       <div class="data-title">综合能力</div>
                     </i-col>
-                    <i-col>综合能力</i-col>
+                    <i-col>综合能力图表</i-col>
                     <i-col>
                       <div class="data-title">技术栈</div>
                     </i-col>

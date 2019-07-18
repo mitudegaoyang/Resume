@@ -2,5 +2,5 @@
 # npm run build
 git checkout master
 ls -a
-# rm -rf static
+rm -rf static
 # git push

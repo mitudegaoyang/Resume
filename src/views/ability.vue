@@ -341,7 +341,7 @@ export default {
             radius: ['30%', '50%'],
             clockWise: false,
             center: ['50%', '50%'],
-            color: ['#fafafa', '#6e6eff'],
+            color: ['#fafafa', '#7298fe'],
             label: {
               normal: {
                 show: false,

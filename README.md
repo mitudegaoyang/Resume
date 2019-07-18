@@ -1,8 +1,6 @@
 # resume
 
-> A Vue.js project
-
-> dev
+网址 https://mitudegaoyang.github.io/Resume/#/
 
 ## Build Setup
 
@@ -27,6 +25,9 @@ npm run e2e
 
 # run all tests
 npm test
+
+# deploy packaged files
+npm run dep
 ```
 
 ## 涵盖知识点

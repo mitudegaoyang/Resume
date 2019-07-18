@@ -2,4 +2,5 @@
 # npm run build
 git branch -a
 git checkout master
+ls -a
 # git push

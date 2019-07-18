@@ -47,3 +47,7 @@ npm run dep
 * [vue关于img src动态赋值问题](https://blog.csdn.net/qq_39313596/article/details/84644500)
 * [博客参考](https://tom-shushu.github.io/MyWeb.github.io/index.html)
 * [LQ博客参考](http://www.linqing07.com/index.html)
+* [键入代码效果](https://www.strml.net/)
+* [动效设计](https://www.zcool.com.cn/article/ZNTQzODI4.html)
+* [动效设计-群星](https://star.afufintech.com/)
+* [动效设计-天空](https://sky.afufintech.com/#/login)

@@ -1,8 +1,31 @@
 <template>
-  <div class="home">
+  <div class="layout">
     <i-row>
       <i-col>
         <NavBar :activeName="'project'"></NavBar>
+      </i-col>
+    </i-row>
+    <i-row>
+      <i-col class="w1200">
+        <i-layout>
+          <i-row>
+            <i-breadcrumb :style="{margin: '16px 0'}">
+              <i-breadcrumb-item to="/">首页</i-breadcrumb-item>
+              <i-breadcrumb-item>项目集</i-breadcrumb-item>
+            </i-breadcrumb>
+          </i-row>
+          <i-row>
+            <i-content class="content">
+              <i-layout>
+                <i-content class="content-center">
+                  <i-row>
+                    <i-col></i-col>
+                  </i-row>
+                </i-content>
+              </i-layout>
+            </i-content>
+          </i-row>
+        </i-layout>
       </i-col>
     </i-row>
     <i-row>
@@ -31,19 +54,25 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style scoped lang="less">
+  .layout {
+    min-width: 800px;
+    background: #f5f7f9;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .w1200 {
+    margin: 0 auto;
+    width: 1200px;
+  }
+  .content {
+    margin-bottom: 50px;
+    min-height: 530px;
+    background: #fff;
+  }
+  .content-center {
+    padding: 24px;
+    background: #fff;
+  }
 </style>

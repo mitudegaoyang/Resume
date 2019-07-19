@@ -25,19 +25,10 @@
             <i-icon type="ios-briefcase" size="24"></i-icon>
             工作经历
           </i-menu-item>
-          <i-submenu name="project">
-            <template slot="title">
-              <i-icon type="logo-codepen" size="24"></i-icon>
-              项目集
-            </template>
-            <i-menu-item name="projectA" to="/project/projectA">项目A</i-menu-item>
-            <i-menu-item name="projectB" to="/project/projectB">项目B</i-menu-item>
-            <i-menu-item name="projectC" to="/project/projectC">项目C</i-menu-item>
-            <i-menu-item name="projectD" to="/project/projectD">项目D</i-menu-item>
-            <i-menu-item name="projectE" to="/project/projectE">项目E</i-menu-item>
-            <i-menu-item name="projectF" to="/project/projectF">项目F</i-menu-item>
-            <i-menu-item name="projectG" to="/project/projectG">项目G</i-menu-item>
-          </i-submenu>
+          <i-menu-item name="project" to="/project">
+            <i-icon type="logo-codepen" size="24"></i-icon>
+            项目集
+          </i-menu-item>
           <i-menu-item name="education" to="/education">
             <i-icon type="ios-school" size="24"></i-icon>
             教育经历

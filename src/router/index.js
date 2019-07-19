@@ -1,11 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Container from '@/components/Container'
+// import Container from '@/components/Container'
 import Home from '@/views/Home'
 import Ability from '@/views/Ability'
 import Project from '@/views/Project/Project'
-import ProjectA from '@/views/Project/ProjectA'
-import ProjectB from '@/views/Project/ProjectB'
 import Experience from '@/views/Experience'
 import Education from '@/views/Education'
 import Evaluation from '@/views/Evaluation'
@@ -35,24 +33,8 @@ export default new Router({
     },
     {
       path: '/project',
-      component: Container,
-      children: [
-        {
-          path: '/',
-          name: 'project',
-          component: Project
-        },
-        {
-          path: 'projectA',
-          name: 'projectA',
-          component: ProjectA
-        },
-        {
-          path: 'projectB',
-          name: 'projectB',
-          component: ProjectB
-        }
-      ]
+      name: 'project',
+      component: Project
     },
     {
       path: '/education',

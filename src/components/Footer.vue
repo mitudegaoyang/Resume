@@ -21,9 +21,9 @@
             <i-col :span="8">
               <i-row><b class="font18">我的外链</b></i-row>
               <i-row class="h15"></i-row>
-              <i-row><a href="">GitHub</a></i-row>
-              <i-row><a href="">GitBook</a></i-row>
-              <i-row><a href="">简书</a></i-row>
+              <i-row><a href="https://github.com/mitudegaoyang">GitHub</a></i-row>
+              <i-row><a href="https://gitee.com/MiTuDGaoYang">Gitee</a></i-row>
+              <i-row><a href="https://mitudegaoyang.gitbooks.io/mybook/content/">GitBook</a></i-row>
             </i-col>
           </i-row>
         </i-col>

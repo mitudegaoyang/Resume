@@ -19,10 +19,10 @@
               <i-layout>
                 <i-content class="content-center">
                   <i-row class="project-list">
-                    <i-col class="project-item" v-for="item in data.projectData" :key="item.index">
+                    <i-col class="project-item" :class="{thumb: item.img}" v-for="item in data.projectData" :key="item.index">
                       <div class="project-box">
                         <div class="project-header">
-                          <div class="project-title">{{item.title}}<span class="project-label">{{item.label}}</span></div>
+                          <div class="project-title">{{item.title}} <span class="project-label">{{item.label}}</span></div>
                           <div class="project-info">
                             <div class="project-tags">
                               <span :class="'project-tags-' + tag.value" v-for="tag in item.tags" :key="tag.index">{{tag.name}}</span>
@@ -31,27 +31,11 @@
                           </div>
                         </div>
                         <div class="project-content" v-html="item.content"></div>
-                      </div>
-                    </i-col>
-                    <i-col class="project-item project-thumb">
-                      <div class="project-box">
-                        <div class="project-header">
-                          <div class="project-title">贝聊旗下微信小程序</div>
-                          <div class="project-info">
-                            <div class="project-tags">
-                              <span class="project-tags-html">HTML 5</span>
-                              <span class="project-tags-css">CSS 3</span>
-                              <span class="project-tags-javascript">JavaScript</span>
-                            </div>
-                            <div class="project-time">2018/1 至 2018/9</div>
-                          </div>
-                        </div>
-                        <div class="project-content">
-                          <p>参与了「幼儿园招生帮手」和「贝聊家长圈」两个小程序的开发，均使用了 WePY 框架。</p>
-                          <p>其中两个较为通用的功能——图片上传与富文本（HTML）渲染，均已封装为组件并开源。</p>
+                        <div class="project-link">
+                          <a :href="item.link.src">{{item.link.title}}</a>
                         </div>
                       </div>
-                      <div class="project-thumb-box"></div>
+                      <div class="project-thumb" v-if="item.img"></div>
                     </i-col>
                   </i-row>
                 </i-content>
@@ -83,41 +67,158 @@ export default {
       data: {
         projectData: [
           {
-            title: '网校平台重构',
-            label: '',
+            title: '鱼猫金服PC版重构',
+            label: '(开发中)',
             tags: [
               {
                 name: 'vue.js',
                 value: 'vue'
               },
               {
-                name: 'node.js',
-                value: 'node'
+                name: 'iView',
+                value: 'iview'
               }
             ],
             time: '2019/2 至今',
-            content: `<p>基于 Nuxt.js 重构网校平台，具备单页应用体验的同时，也能兼顾 SEO。实现细节包括：</p>
-              <p>根据 User-Agent 调用 PC 端或移动端组件，实现设备适配。</p>
-              <p>以插件形式实现兼容前后端相对路径请求的 axios。</p>
-              <p>构建时把静态资源上传到阿里云 OSS，并使用独立域名访问。</p>`
+            img: '',
+            content: `<p>使用iView、vue实现官网PC版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
+              <p>本人在项目中担任前端开发。</p>
+              <p>在开发过程中，还需要注意IE兼容性的影响。</p>
+              <ul>
+                <li>使用iView组件实现各页面布局及特效；</li>
+                <li>使用vue-baidu-map引入百度地图；</li>
+                <li>在vue-router中编写公共方法进行页面置顶及加载效果；</li>
+                <li>编写公共组件，进行登录状态判断及展示；</li>
+                <li>使用iView组件实现各页面布局及特效；</li>
+                <li>使用C3 的animation新特性实现公告滚动效果；</li>
+              </ul>`,
+            link: {
+              title: '在线地址（需使用 PC 访问）',
+              src: 'https://www.yumao.fun/refactoring/pc/index.html#/home'
+            }
           },
           {
-            title: 'JRaiser & Bowljs',
-            label: '(开源项目)',
+            title: '鱼猫金服微信版官网重构',
+            label: '(已上线)',
             tags: [
               {
-                name: 'JavaScript',
-                value: 'javascript'
+                name: 'vue.js',
+                value: 'vue'
               },
               {
-                name: 'node.js',
-                value: 'node'
+                name: 'Vux',
+                value: 'vux'
               }
             ],
-            time: '2012/6 至今',
-            content: `<p>基于 CMD 规范的模块化类库，包含加载器和一些通用性强的基础模块（DOM、AJAX、Cookie、Promise 等）、UI 组件（拖动、分页条、月历等）。此外还有配套的 CLI 工具，可用于构建代码和生成 API 文档。</p>
-              <p>后来又把加载器拆分为 Bowl.js 项目，CLI 工具也拆分为 Bowljs-CLI。</p>
-              <p>本类库先后应用于 56 网、美黛拉 Web 端产品和贝聊 Web 端产品。</p>`
+            time: '2018/9 至今',
+            img: '',
+            content: `<p>使用Vux、Vue实现官网微信版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
+              <p>本人在项目中担任前端开发。</p>
+              <ul>
+                <li>使用Vux组件实现各页面布局及特效；</li>
+                <li>使用fullpage.js实现全屏滚动特效；</li>
+                <li>使用Vue.js Clipboard实现一键复制；</li>
+                <li>使用Scroller组件实现下拉刷新上拉加载更多；</li>
+                <li>使用ifarme嵌入及jQ实现公告详情渲染；</li>
+              </ul>`,
+            link: {
+              title: '在线地址（需使用手机访问）',
+              src: 'https://www.yumaomoney.com/refactoring/wechat/index.html#/home'
+            }
+          },
+          {
+            title: '鱼猫金服业务推广活动页面',
+            label: '(已下线)',
+            tags: [
+              {
+                name: 'vue.js',
+                value: 'vue'
+              },
+              {
+                name: 'CSS 3',
+                value: 'css'
+              },
+              {
+                name: 'JavaScript',
+                value: 'js'
+              }
+            ],
+            time: '2019/5 至 2019/5',
+            img: 'img',
+            content: `<p>使用Vue、C3实现官网节日宣传活动页面的构建。</p>
+              <ul>
+                <li>使用mobile-util.js适配移动端；</li>
+                <li>使用Animate.css添加页面动效；</li>
+                <li>使用原生js实现触发跳动逻辑；</li>
+                <li>使用Axios与后台进行数据交互，渲染用户获奖情况；</li>
+              </ul>`,
+            link: {
+              title: '在线地址（需使用手机访问）',
+              src: 'https://www.yumao.fun/activity/20190520/app/index.html#/'
+            }
+          },
+          {
+            title: '鱼猫金服大转盘活动页面',
+            label: '(已下线)',
+            tags: [
+              {
+                name: 'vue.js',
+                value: 'vue'
+              },
+              {
+                name: 'CSS 3',
+                value: 'css'
+              },
+              {
+                name: 'JavaScript',
+                value: 'js'
+              }
+            ],
+            time: '2019/4 至 2019/4',
+            img: 'img',
+            content: `<p>使用Vue、C3动效实现官网节日宣传活动页面的构建。</p>
+              <p>活动为大转盘。</p>
+              <ul>
+                <li>使用mobile-util.js适配移动端；</li>
+                <li>使用swapper.js实现轮播效果；</li>
+                <li>使用jQ及原生js实现大转盘(老虎机)动效及逻辑；</li>
+                <li>使用Axios与后台进行数据交互，渲染用户获奖情况；</li>
+              </ul>`,
+            link: {
+              title: '在线地址（需使用手机访问）',
+              src: 'https://www.yumao.fun/activity/20190415/app/index.html#/'
+            }
+          },
+          {
+            title: '鱼猫金服新手活动页面重构',
+            label: '(已下线)',
+            tags: [
+              {
+                name: 'vue.js',
+                value: 'vue'
+              },
+              {
+                name: 'CSS 3',
+                value: 'css'
+              },
+              {
+                name: 'JavaScript',
+                value: 'js'
+              }
+            ],
+            time: '2019/1 至 2019/2',
+            img: 'img',
+            content: `<p>使用Vue、C3动效实现官网节日宣传活动页面的构建。</p>
+              <p>活动为大转盘。</p>
+              <ul>
+                <li>使用mobile-util.js适配移动端；</li>
+                <li>使用Animate.css添加页面动效；</li>
+                <li>使用Axios与后台进行数据交互，渲染用户获奖情况；</li>
+              </ul>`,
+            link: {
+              title: '在线地址（需使用手机访问）',
+              src: 'https://www.yumao.fun/activity/20180824/app/index.html#/'
+            }
           }
         ]
       }
@@ -160,7 +261,7 @@ export default {
           float: left;
           width: 100%;
           .project-header {
-            padding-bottom: 3px;
+            padding-bottom: 5px;
             .project-title {
               font-size: 18px;
               font-weight: 600;
@@ -171,11 +272,12 @@ export default {
               }
             }
             .project-info {
+              margin: 5px 0;
               .project-tags {
                 float: left;
                 span {
-                  height: 24px;
-                  line-height: 24px;
+                  height: 20px;
+                  line-height: 20px;
                   padding: 0 6px;
                   margin-right: 5px;
                   border-radius: 3px;
@@ -191,12 +293,24 @@ export default {
                 .project-tags-css {
                   background: #f90;
                 }
-                .project-tags-javascript {
+                .project-tags-js {
                   background: #ffda3f;
                   color: #333;
                 }
                 .project-tags-vue {
                   background: #4fc08d;
+                }
+                .project-tags-angular {
+                  background: #eb5a5c;
+                }
+                .project-tags-element {
+                  background: #409efe;
+                }
+                .project-tags-iview {
+                  background: #2d8cf0;
+                }
+                .project-tags-vux {
+                  background: #35495e;
                 }
                 .project-tags-node {
                   background: #80bd01;
@@ -218,8 +332,12 @@ export default {
             font-size: 14px;
             color: #333;
           }
+          .project-link {
+            font-size: 14px;
+            text-align: right;
+          }
         }
-        .project-thumb-box {
+        .project-thumb {
           float: right;
           width: 350px;
           height: 350px;
@@ -233,7 +351,7 @@ export default {
         padding-top: 0;
         border-top: none;
       }
-      .project-item.project-thumb {
+      .project-item.thumb {
         padding-right: 400px;
       }
       .project-item:after {
@@ -243,6 +361,14 @@ export default {
         visibility: hidden;
         height: 0;
       }
+    }
+  }
+</style>
+<style lang="less">
+  .project-content {
+    li {
+      list-style: disc;
+      margin-left: 1.3em;
     }
   }
 </style>

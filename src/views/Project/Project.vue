@@ -80,7 +80,7 @@ export default {
               }
             ],
             time: '2019/2 至今',
-            img: '',
+            img: 'img',
             content: `<p>使用iView、vue实现官网PC版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
               <p>在开发过程中，还需要注意IE兼容性的影响。</p>
@@ -111,7 +111,7 @@ export default {
               }
             ],
             time: '2018/9 至今',
-            img: '',
+            img: 'img',
             content: `<p>使用Vux、Vue实现官网微信版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
               <ul>
@@ -219,6 +219,291 @@ export default {
               title: '在线地址（需使用手机访问）',
               src: 'https://www.yumao.fun/activity/20180824/app/index.html#/'
             }
+          },
+          {
+            title: '鱼猫金服企业端',
+            label: '(已上线)',
+            tags: [
+              {
+                name: 'vue.js',
+                value: 'vue'
+              },
+              {
+                name: 'Element',
+                value: 'element'
+              },
+              {
+                name: 'CSS 3',
+                value: 'css'
+              },
+              {
+                name: 'JavaScript',
+                value: 'js'
+              },
+              {
+                name: 'JSP',
+                value: 'jsp'
+              }
+            ],
+            time: '2018/7 至 2018/10',
+            img: 'img',
+            content: `<p>使用Element UI、Vue、Jsp实现企业端项目。</p>
+              <ul>
+                <li>使用Element UI组件实现各页面布局及特效；</li>
+                <li>使用particles.js实现粒子特效；</li>
+                <li>使用script标签方式引入Vue、ElementUI，并实现项目各功能点；</li>
+                <li>修改既有功能模块，实现与企业端的融合；</li>
+              </ul>`,
+            link: {
+              title: '在线地址（需使用 PC 访问）',
+              src: 'https://www.yumaomoney.com/businessindex.do'
+            }
+          },
+          {
+            title: '鱼猫金服PC版日常维护',
+            label: '(已上线)',
+            tags: [
+              {
+                name: 'HTML 5',
+                value: 'html'
+              },
+              {
+                name: 'CSS 3',
+                value: 'css'
+              },
+              {
+                name: 'JavaScript',
+                value: 'js'
+              },
+              {
+                name: 'JSP',
+                value: 'jsp'
+              }
+            ],
+            time: '2018/7 至今',
+            img: 'img',
+            content: `<p>使用html5、css3、原生js、Jsp实现既有官网项目的日常维护。</p>
+              <p>在原有的项目基础之上，进行功能模块上的迭代升级，以及bug修复。</p>
+              <p>对项目按功能点进行小规模重构，使得代码可维护性得以提升。</p>`,
+            link: {
+              title: '在线地址（需使用 PC 访问）',
+              src: 'https://www.yumaomoney.com/'
+            }
+          },
+          {
+            title: '银信长远测评系统',
+            label: '',
+            tags: [
+              {
+                name: 'vue.js',
+                value: 'vue'
+              },
+              {
+                name: 'Element',
+                value: 'element'
+              },
+              {
+                name: 'Vux',
+                value: 'vux'
+              }
+            ],
+            time: '2018/6 至 2018/7',
+            img: '',
+            content: `<p>此项目为后台管理人员月度评测系统，主要分为考勤评测、工作完成度评测、工作服务质量评测3大类。</p>
+              <p>主要分为微信企业号及web端管理系统两个组成部分。</p>
+              <p>参与项目时，项目处在需求调研阶段，本人担任项目经理与产品经理共同和客户确认需求，梳理并编写工作说明文档、需求文档。</p>
+              <p>在需求确认完毕后，会对系统架构进行设计、技术选型以及出原型图。</p>`,
+            link: {
+              title: '',
+              src: ''
+            }
+          },
+          {
+            title: '张家口检察院OA管理',
+            label: '(内网已上线)',
+            tags: [
+              {
+                name: 'vue.js',
+                value: 'vue'
+              },
+              {
+                name: 'vue-element-admin',
+                value: 'element-admin'
+              },
+              {
+                name: 'Weex',
+                value: 'weex'
+              }
+            ],
+            time: '2018/2 至 2018/6',
+            img: 'img',
+            content: `<p>使用Element UI Admin、Vue实现张家口检察院OA管理平台。项目共分为即时通讯、办公应用、辅助工具、辅助学习、系统管理几个模块。</p>
+              <p>本人在项目中担任项目经理角色，主要负责对项目进行整体把控，项目初始化及进度推进，项目难点解决方案梳理，公共方法的编写，以及即时通讯的部分子模块、办公应用的部分子模块。</p>
+              <ul>
+                <li>使用ifarme嵌入即时通讯模块并实现自动登录、跳转联动、样式修改等；</li>
+                <li>使用vue2.0-zoom实现图片放大镜效果；</li>
+                <li>使用ribbitmq实现消息提醒队列；</li>
+                <li>抽离页面内容，编写template实现组件式开发；</li>
+              </ul>`,
+            link: {
+              title: '',
+              src: ''
+            }
+          },
+          {
+            title: '文献数字化后台管理',
+            label: '',
+            tags: [
+              {
+                name: 'Angular.js',
+                value: 'angular'
+              },
+              {
+                name: 'Fuse-angular',
+                value: 'fuse'
+              }
+            ],
+            time: '2017/12 至 2018/3',
+            img: 'img',
+            content: `<p>使用Fuse 、AngularJS实现文献数字化OA管理平台。</p>
+              <p>项目共分为项目管理、资源管理、工作管理、系统管理、个人中心几个模块。</p>
+              <p>本人在项目中担任项目经理角色，主要负责对项目进行整体把控，项目初始化及进度推进，项目难点解决方案梳理，公共方法的编写，以及个人中心、登录模块开发。</p>
+              <ul>
+                <li>使用Restangula服务器获取数据；</li>
+                <li>查找并引入文件上传插件ng-upload编写调用demo；</li>
+                <li>编写排序公共方法提供给各模块调用；</li>
+                <li>查找并使用获取本机IP地址方法对登录人进行IP地址判断；</li>
+                <li>查找并引入弹框插件toaster编写调用demo；</li>
+                <li>进行代码审查，对代码进行优化、重构；</li>
+              </ul>`,
+            link: {
+              title: '',
+              src: ''
+            }
+          },
+          {
+            title: '星路起航微信小游戏后台管理',
+            label: '',
+            tags: [
+              {
+                name: 'Angular.js',
+                value: 'angular'
+              },
+              {
+                name: 'Fuse-angular',
+                value: 'fuse'
+              }
+            ],
+            time: '2017/11 至 2017/12',
+            img: 'img',
+            content: `<p>使用Fuse 、AngularJS实现微信小游戏后台管理。</p>
+              <p>项目共分为用户管理、星卡管理(游戏卡片)、礼品管理、推荐选手管理、任务管理、题库管理几个模块。</p>
+              <p>本人在项目中担任项目经理角色，主要负责对项目进行整体把控，以及星卡管理、礼品管理的模块开发。</p>
+              <ul>
+                <li>使用Restangula服务器获取数据；</li>
+                <li>使用$q(Promise)对异步请求数据进行处理；</li>
+                <li>调用Lodash对数据进行快速处理；</li>
+                <li>调用moment.js对时间进行格式化处理；</li>
+                <li>使用angular-route完成页面路由跳转；</li>
+                <li>进行代码审查，对代码进行优化、重构；</li>
+                <li>与客户沟通明确需求点，与测试沟通确认问题并提出解决方案；</li>
+              </ul>`,
+            link: {
+              title: '',
+              src: ''
+            }
+          },
+          {
+            title: '诚轩OA管理系统',
+            label: '',
+            tags: [
+              {
+                name: 'Angular.js',
+                value: 'angular'
+              },
+              {
+                name: 'Fuse-angular',
+                value: 'fuse'
+              }
+            ],
+            time: '2017/7 至 2018/2',
+            img: 'img',
+            content: `<p>使用Fuse 、AngularJS实现微信小游戏后台管理。</p>
+              <p>项目共分为合同管理、客户管理、个人中心、拍品管理、关联信息管理、拍卖会管理、财务结算、统计分析几个模块。</p>
+              <p>本人主要负责客户管理、拍品管理等。</p>
+              <ul>
+                <li>使用Restangula服务器获取数据；</li>
+                <li>使用$q(Promise)对异步请求数据进行处理；</li>
+                <li>调用Lodash对数据进行快速处理；</li>
+                <li>调用moment.js对时间进行格式化处理；</li>
+                <li>使用angular-route完成页面路由跳转；</li>
+                <li>进行代码审查，对代码进行优化、重构；</li>
+              </ul>`,
+            link: {
+              title: '',
+              src: ''
+            }
+          },
+          {
+            title: 'Activity趋势健康',
+            label: '',
+            tags: [
+              {
+                name: 'Angular.js',
+                value: 'angular'
+              },
+              {
+                name: 'HTML 5',
+                value: 'html'
+              },
+              {
+                name: 'CSS 3',
+                value: 'css'
+              },
+              {
+                name: 'JavaScript',
+                value: 'js'
+              }
+            ],
+            time: '2017/5 至 2017/7',
+            img: '',
+            content: `<p>对activity进行定制开发实现满足客户要求的默认操作、录入。</p>
+              <p>使用activity开放Api对部分功能进行定制化增减。</p>`,
+            link: {
+              title: '',
+              src: ''
+            }
+          },
+          {
+            title: 'Skillee在线考试',
+            label: '',
+            tags: [
+              {
+                name: 'vue.js',
+                value: 'vue'
+              },
+              {
+                name: 'HTML 5',
+                value: 'html'
+              },
+              {
+                name: 'CSS 3',
+                value: 'css'
+              },
+              {
+                name: 'JavaScript',
+                value: 'js'
+              }
+            ],
+            time: '2017/4 至 2017/6',
+            img: '',
+            content: `<p>使用h5、flexbox实现页面弹性布局。</p>
+              <p>利用全局变量和事件监听API完成考试倒计时功能。</p>
+              <p>利用Axios与后台进行数据交互，渲染题目、选项。</p>`,
+            link: {
+              title: '',
+              src: ''
+            }
           }
         ]
       }
@@ -311,6 +596,18 @@ export default {
                 }
                 .project-tags-vux {
                   background: #35495e;
+                }
+                .project-tags-element-admin {
+                  background: #4caf50;
+                }
+                .project-tags-weex {
+                  background: #3aabf4;
+                }
+                .project-tags-fuse {
+                  background: #2877c1;
+                }
+                .project-tags-jsp {
+                  background: #2952a4;
                 }
                 .project-tags-node {
                   background: #80bd01;

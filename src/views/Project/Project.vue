@@ -35,7 +35,9 @@
                           <a :href="item.link.src">{{item.link.title}}</a>
                         </div>
                       </div>
-                      <div class="project-thumb" v-if="item.img"></div>
+                      <div class="project-thumb" v-if="item.img">
+                        <img :src="require('../../assets/img/project/' + item.img + '.png')" width="350px" :title="item.img" alt="项目展示">
+                      </div>
                     </i-col>
                   </i-row>
                 </i-content>
@@ -80,7 +82,7 @@ export default {
               }
             ],
             time: '2019/2 至今',
-            img: 'img',
+            img: 'ympcnew',
             content: `<p>使用iView、vue实现官网PC版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
               <p>在开发过程中，还需要注意IE兼容性的影响。</p>
@@ -111,7 +113,7 @@ export default {
               }
             ],
             time: '2018/9 至今',
-            img: 'img',
+            img: 'ymwechat',
             content: `<p>使用Vux、Vue实现官网微信版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
               <ul>
@@ -144,7 +146,7 @@ export default {
               }
             ],
             time: '2019/5 至 2019/5',
-            img: 'img',
+            img: 'ymbenlai',
             content: `<p>使用Vue、C3实现官网节日宣传活动页面的构建。</p>
               <ul>
                 <li>使用mobile-util.js适配移动端；</li>
@@ -175,7 +177,7 @@ export default {
               }
             ],
             time: '2019/4 至 2019/4',
-            img: 'img',
+            img: 'ymturntable',
             content: `<p>使用Vue、C3动效实现官网节日宣传活动页面的构建。</p>
               <p>活动为大转盘。</p>
               <ul>
@@ -207,7 +209,7 @@ export default {
               }
             ],
             time: '2019/1 至 2019/2',
-            img: 'img',
+            img: 'ymroad',
             content: `<p>使用Vue、C3动效实现官网节日宣传活动页面的构建。</p>
               <p>活动为大转盘。</p>
               <ul>
@@ -246,7 +248,7 @@ export default {
               }
             ],
             time: '2018/7 至 2018/10',
-            img: 'img',
+            img: 'ymbusiness',
             content: `<p>使用Element UI、Vue、Jsp实现企业端项目。</p>
               <ul>
                 <li>使用Element UI组件实现各页面布局及特效；</li>
@@ -364,7 +366,7 @@ export default {
               }
             ],
             time: '2017/12 至 2018/3',
-            img: 'img',
+            img: 'document',
             content: `<p>使用Fuse 、AngularJS实现文献数字化OA管理平台。</p>
               <p>项目共分为项目管理、资源管理、工作管理、系统管理、个人中心几个模块。</p>
               <p>本人在项目中担任项目经理角色，主要负责对项目进行整体把控，项目初始化及进度推进，项目难点解决方案梳理，公共方法的编写，以及个人中心、登录模块开发。</p>
@@ -637,8 +639,6 @@ export default {
         .project-thumb {
           float: right;
           width: 350px;
-          height: 350px;
-          background: #eee;
           margin-right: -400px;
           margin-left: 50px;
         }

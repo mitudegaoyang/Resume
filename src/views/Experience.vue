@@ -20,10 +20,14 @@
                 <i-content class="content-center">
                   <i-timeline class="time-content-box">
                     <i-time-line-item :color="(item.index % 2 === 0) ? '#FFAD2C' : '#50ABF8'" v-for="item in data" :key="item.index">
-                      <p class="time-title" :class="{double: (item.index % 2 !== 0)}">{{item.timeShow}}</p>
-                      <p class="time-content" :class="{double: (item.index % 2 !== 0)}">{{item.title}}</p>
-                      <p class="time-content" :class="{double: (item.index % 2 !== 0)}">{{item.content}}</p>
-                      <p class="time-content" :class="{double: (item.index % 2 !== 0)}">{{item.job}}</p>
+                      <p class="time-time" :class="{double: (item.index % 2 !== 0)}">{{item.timeShow}}</p>
+                      <p class="time-content" :class="{double: (item.index % 2 !== 0)}">
+                        <span class="time-title">{{item.title}}</span>
+                        <span class="time-job">{{item.job}}</span>
+                      </p>
+                      <p class="time-content" :class="{double: (item.index % 2 !== 0)}">
+                        <i>{{item.content}}</i>
+                      </p>
                       <p class="time-content" :class="{double: (item.index % 2 !== 0)}" v-for="p in item.describe" :key="p.index">{{p}}</p>
                     </i-time-line-item>
                   </i-timeline>
@@ -167,7 +171,7 @@ export default {
     .time-content-box {
       margin-top: 30px;
       margin-left: 50%;
-      .time-title{
+      .time-time{
         position: relative;
         top: -4px;
         color: #ffffff;
@@ -180,7 +184,7 @@ export default {
         background: #FFAD2C;
         border-radius: 25px;
       }
-      .time-title.double {
+      .time-time.double {
         position: relative;
         left: -175px;
         background: #50ABF8;
@@ -188,6 +192,22 @@ export default {
       .time-content{
         padding-left: 5px;
         padding-top: 5px;
+        .time-title {
+          font-size: 18px;
+        }
+        .time-job {
+          font-size: 14px;
+          color: #888;
+        }
+        .time-job:before {
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 5px;
+          width: 40px;
+          height: 1px;
+          background: #888;
+          content: "";
+        }
       }
       .time-content.double {
         position: relative;

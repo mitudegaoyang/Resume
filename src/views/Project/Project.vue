@@ -19,7 +19,7 @@
               <i-layout>
                 <i-content class="content-center">
                   <i-row style="padding-bottom: 20px">
-                    <i-col :span="12">
+                    <i-col>
                       <div style="border-bottom: 1px solid #e9e9e9;padding-bottom:6px;margin-bottom:6px;">
                         <i-checkbox
                           :indeterminate="data.indeterminate"
@@ -34,6 +34,8 @@
                         <i-checkbox label="angular"></i-checkbox>
                         <i-checkbox label="element"></i-checkbox>
                         <i-checkbox label="iview"></i-checkbox>
+                        <i-checkbox label="vux"></i-checkbox>
+                        <i-checkbox label="element-admin"></i-checkbox>
                         <i-checkbox label="weex"></i-checkbox>
                         <i-checkbox label="fuse"></i-checkbox>
                         <i-checkbox label="jsp"></i-checkbox>
@@ -553,7 +555,7 @@ export default {
       }
       self.data.indeterminate = false
       if (self.data.checkAll) {
-        self.data.checkAllGroup = ['html', 'css', 'js', 'vue', 'angular', 'element', 'iview', 'weex', 'fuse', 'jsp']
+        self.data.checkAllGroup = ['html', 'css', 'js', 'vue', 'angular', 'element', 'iview', 'vux', 'element-admin', 'weex', 'fuse', 'jsp']
       } else {
         self.data.checkAllGroup = []
       }
@@ -561,7 +563,7 @@ export default {
     },
     checkAllGroupChange (data) {
       var self = this
-      if (data.length === 10) {
+      if (data.length === 12) {
         self.data.indeterminate = false
         self.data.checkAll = true
       } else if (data.length > 0) {

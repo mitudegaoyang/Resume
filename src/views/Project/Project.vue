@@ -18,8 +18,30 @@
             <i-content class="content">
               <i-layout>
                 <i-content class="content-center">
+                  <i-row style="padding-bottom: 20px">
+                    <i-col :span="12">
+                      <div style="border-bottom: 1px solid #e9e9e9;padding-bottom:6px;margin-bottom:6px;">
+                        <i-checkbox
+                          :indeterminate="data.indeterminate"
+                          :value="data.checkAll"
+                          @click.prevent.native="handleCheckAll">全选</i-checkbox>
+                      </div>
+                      <i-checkbox-group v-model="data.checkAllGroup" @on-change="checkAllGroupChange">
+                        <i-checkbox label="html"></i-checkbox>
+                        <i-checkbox label="css"></i-checkbox>
+                        <i-checkbox label="js"></i-checkbox>
+                        <i-checkbox label="vue"></i-checkbox>
+                        <i-checkbox label="angular"></i-checkbox>
+                        <i-checkbox label="element"></i-checkbox>
+                        <i-checkbox label="iview"></i-checkbox>
+                        <i-checkbox label="weex"></i-checkbox>
+                        <i-checkbox label="fuse"></i-checkbox>
+                        <i-checkbox label="jsp"></i-checkbox>
+                      </i-checkbox-group>
+                    </i-col>
+                  </i-row>
                   <i-row class="project-list">
-                    <i-col class="project-item" :class="{thumb: item.img}" v-for="item in data.projectData" :key="item.index">
+                    <i-col class="project-item" :class="{thumb: item.img}" v-for="item in data.projectDataBak" :key="item.index">
                       <div class="project-box">
                         <div class="project-header">
                           <div class="project-title">{{item.title}} <span class="project-label">{{item.label}}</span></div>
@@ -40,6 +62,11 @@
                       </div>
                     </i-col>
                   </i-row>
+                  <i-row v-show="data.projectDataBak.length === 0">
+                    <i-col>
+                      <div class="project-not-found">未匹配到相应项目</div>
+                    </i-col>
+                  </i-row>
                 </i-content>
               </i-layout>
             </i-content>
@@ -56,6 +83,7 @@
 </template>
 
 <script>
+import _ from 'lodash'
 import NavBar from '../../components/NavBar.vue' // 引进菜单模板
 import Footer from '../../components/Footer.vue' // 引进底部模板
 export default {
@@ -67,6 +95,9 @@ export default {
   data () {
     return {
       data: {
+        indeterminate: true,
+        checkAll: false,
+        checkAllGroup: [],
         projectData: [
           {
             title: '鱼猫金服PC版重构',
@@ -507,12 +538,66 @@ export default {
               src: ''
             }
           }
-        ]
+        ],
+        projectDataBak: []
       }
+    }
+  },
+  methods: {
+    handleCheckAll () {
+      var self = this
+      if (self.data.indeterminate) {
+        self.data.checkAll = false
+      } else {
+        self.data.checkAll = !self.data.checkAll
+      }
+      self.data.indeterminate = false
+      if (self.data.checkAll) {
+        self.data.checkAllGroup = ['html', 'css', 'js', 'vue', 'angular', 'element', 'iview', 'weex', 'fuse', 'jsp']
+      } else {
+        self.data.checkAllGroup = []
+      }
+    },
+    checkAllGroupChange (data) {
+      var self = this
+      if (data.length === 10) {
+        self.data.indeterminate = false
+        self.data.checkAll = true
+      } else if (data.length > 0) {
+        self.data.indeterminate = true
+        self.data.checkAll = false
+      } else {
+        self.data.indeterminate = false
+        self.data.checkAll = false
+      }
+      self.filter()
+    },
+    /**
+     * 筛选项目
+     */
+    filterData (types) {
+      var self = this
+      self.data.projectDataBak = _.filter(self.data.projectDataBak, function (data) {
+        var type = false
+        _.each(data.tags, function (v) {
+          if (v.value === types) {
+            type = true
+          }
+        })
+        return type
+      })
+    },
+    filter () {
+      var self = this
+      self.data.projectDataBak = self.data.projectData
+      _.each(self.data.checkAllGroup, function (v) {
+        self.filterData(v)
+      })
     }
   },
   created () {
     var self = this
+    self.filter()
     self.$loadingBar.finish()
   }
 }
@@ -658,6 +743,11 @@ export default {
         visibility: hidden;
         height: 0;
       }
+    }
+    .project-not-found {
+      line-height: 100px;
+      height: 100px;
+      text-align: center;
     }
   }
 </style>

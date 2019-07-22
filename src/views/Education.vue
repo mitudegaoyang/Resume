@@ -126,19 +126,19 @@ export default {
           transform: scale(0.6);
         }
         .dot:nth-child(1),.dot:nth-child(5) {
-          animation: Rod 1.5s infinite;
+          animation: Rod 1.5s cubic-bezier(0.42, 0, 0.58, 1) infinite;
           animation-delay: -0.25s;
         }
         .dot:nth-child(2),.dot:nth-child(6) {
-          animation: Rod 1.5s infinite;
+          animation: Rod 1.5s cubic-bezier(0.42, 0, 0.58, 1) infinite;
           animation-delay: -0.55s;
         }
         .dot:nth-child(3),.dot:nth-child(7) {
-          animation: Rod 1.5s infinite;
+          animation: Rod 1.5s cubic-bezier(0.42, 0, 0.58, 1) infinite;
           animation-delay: -0.85s;
         }
         .dot:nth-child(4),.dot:nth-child(8) {
-           animation: Rod 1.5s infinite;
+           animation: Rod 1.5s cubic-bezier(0.42, 0, 0.58, 1) infinite;
            animation-delay: -1.15s;
          }
         .dot:before, .dot:after {

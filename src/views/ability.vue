@@ -107,6 +107,7 @@ export default {
           [70, 40, 70, 'git'],
           [40, 45, 40, 'PS']
         ],
+        interestName: ['HTML5', 'CSS3', 'JS', 'AJAX', 'Angular', 'Vue', 'ES6', '持续集成', 'git', 'PS'],
         ability: {
           communication: 90,
           administration: 80,
@@ -696,7 +697,7 @@ export default {
         xAxis: {
           name: '能力',
           max: 100,
-          min: 0,
+          min: 20,
           nameGap: 25,
           nameLocation: 'middle',
           nameTextStyle: {
@@ -734,6 +735,34 @@ export default {
             formatter: '{value} %'
           }
         },
+        tooltip: {
+          padding: 5,
+          borderColor: '#777',
+          borderWidth: 1,
+          formatter: function (obj) {
+            var value = obj.value
+            return '技术：' + value[3] + '<br>' + '兴趣：' + value[1] + '<br>' + '能力：' + value[0] + '<br>'
+          }
+        },
+        visualMap: [
+          {
+            show: false,
+            dimension: 3,
+            categories: self.data.interestName,
+            calculable: true,
+            precision: 0.1,
+            textGap: 30,
+            textStyle: {
+              color: '#ccc'
+            },
+            inRange: {
+              color: (function () {
+                var colors = ['#FBD75E', '#FCFF99', '#F77F6F', '#E05ACD', '#A064FB', '#E09B5A', '#A6FFD2', '#9CCAFF', '#8BDCE8', '#7298fe']
+                return colors.concat(colors)
+              })()
+            }
+          }
+        ],
         series: [{
           data: self.data.interest,
           type: 'scatter',
@@ -746,13 +775,15 @@ export default {
               formatter: function (param) {
                 return param.data[3]
               },
-              position: 'top'
+              position: 'top',
+              color: ['#666'],
+              fontSize: '18'
             }
           },
           itemStyle: {
             normal: {
               shadowBlur: 10,
-              shadowColor: 'rgba(104, 111, 245, 0.5)',
+              shadowColor: 'rgba(0, 0, 0, 0.1)',
               shadowOffsetY: 5,
               color: ['#6e6eff']
             }

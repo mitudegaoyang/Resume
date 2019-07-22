@@ -557,6 +557,7 @@ export default {
       } else {
         self.data.checkAllGroup = []
       }
+      self.filter()
     },
     checkAllGroupChange (data) {
       var self = this

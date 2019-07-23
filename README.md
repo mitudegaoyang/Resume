@@ -1,6 +1,6 @@
 # resume
 
-网址 https://mitudegaoyang.github.io/Resume/#/
+个人简历 纯静态页面，无后台。地址 https://mitudegaoyang.github.io/Resume/#/
 
 ## Build Setup
 
@@ -33,10 +33,11 @@ npm run dep
 ## 涵盖知识点
 
 * ECharts绘图
-* swiper轮播
 * Animate.css动画
-* Lodash、moment日期处理
+* Lodash、moment使用
 * 节气计算及显示
+* 原生JS实现键入文字
+* CSS3的animation动画
 
 ## 参考资料
 

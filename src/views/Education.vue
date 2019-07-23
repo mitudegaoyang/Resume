@@ -38,6 +38,16 @@
                       <div class="animate-box">
                         <div class="animate-title">篝火展示区</div>
                         <div class="campfire">
+                          <div class="sparks">
+                            <div class="spark"></div>
+                            <div class="spark"></div>
+                            <div class="spark"></div>
+                            <div class="spark"></div>
+                            <div class="spark"></div>
+                            <div class="spark"></div>
+                            <div class="spark"></div>
+                            <div class="spark"></div>
+                          </div>
                           <div class="logs">
                             <div class="log">
                               <div class="streak"></div>
@@ -382,6 +392,60 @@ export default {
       .campfire {
         width: 100%;
         height: 250px;
+        .sparks {
+          position: absolute;
+          width: 100%;
+          .spark {
+            position: absolute;
+            width: 3px;
+            height: 10px;
+            background: #fef1d9;
+            border-radius: 18px;
+            z-index: 50;
+            transform-origin: bottom center;
+            transform: scaleY(0);
+          }
+          .spark:nth-child(1) {
+            top: 150px;
+            left: 275px;
+            animation: Spark 1s 0.4s linear infinite;
+          }
+          .spark:nth-child(2) {
+            top: 165px;
+            left: 250px;
+            animation: Spark 1s 1s linear infinite;
+          }
+          .spark:nth-child(3) {
+            top: 120px;
+            left: 280px;
+            animation: Spark 1s 0.8s linear infinite;
+          }
+          .spark:nth-child(4) {
+            top: 100px;
+            left: 300px;
+            animation: Spark 1s 2s linear infinite;
+          }
+          .spark:nth-child(5) {
+            top: 140px;
+            left: 320px;
+            animation: Spark 1s 0.75s linear infinite;
+          }
+          .spark:nth-child(6) {
+            top: 160px;
+            left: 335px;
+            animation: Spark 1s 0.65s linear infinite;
+          }
+          .spark:nth-child(7) {
+            top: 130px;
+            left: 310px;
+            animation: Spark 1s 1s linear infinite;
+          }
+          .spark:nth-child(8) {
+            top: 130px;
+            left: 260px;
+            animation: Spark 1s 1.4s linear infinite;
+          }
+        }
         .logs {
           position: absolute;
           width: 100%;
@@ -562,31 +626,37 @@ export default {
               border-radius: 20px;
               background: #e20f00;
               z-index: 11;
+              box-shadow: 0 0 40px 18px rgba(226,15,0,0.3);
             }
             .flame:nth-child(1) {
               height: 50px;
               left: 245px;
               bottom: 70px;
+              animation: Fire 2s 0.15s ease-in-out infinite alternate;
             }
             .flame:nth-child(2) {
               height: 50px;
               left: 265px;
               bottom: 95px;
+              animation: Fire 2s 0.35s ease-in-out infinite alternate;
             }
             .flame:nth-child(3) {
               height: 50px;
               left: 285px;
-              bottom: 110px;
+              bottom: 120px;
+              animation: Fire 2s 0s ease-in-out infinite alternate;
             }
             .flame:nth-child(4) {
               height: 50px;
               left: 305px;
-              bottom: 95px;
+              bottom: 100px;
+              animation: Fire 2s 0.3s ease-in-out infinite alternate;
             }
             .flame:nth-child(5) {
               height: 50px;
               left: 325px;
               bottom: 70px;
+              animation: Fire 2s 0.1s ease-in-out infinite alternate;
             }
           }
           .fire-orange {
@@ -596,31 +666,37 @@ export default {
               border-radius: 20px;
               background: #ff9c00;
               z-index: 12;
+              box-shadow: 0 0 40px 18px rgba(255,156,0,0.3);
             }
             .flame:nth-child(1) {
               height: 50px;
               left: 245px;
               bottom: 60px;
+              animation: Fire 2s 0.05s ease-in-out infinite alternate;
             }
             .flame:nth-child(2) {
               height: 50px;
               left: 265px;
-              bottom: 80px;
+              bottom: 85px;
+              animation: Fire 2s 0.1s ease-in-out infinite alternate;
             }
             .flame:nth-child(3) {
               height: 50px;
               left: 285px;
-              bottom: 100px;
+              bottom: 110px;
+              animation: Fire 2s 0.4s ease-in-out infinite alternate;
             }
             .flame:nth-child(4) {
               height: 50px;
               left: 305px;
-              bottom: 85px;
+              bottom: 90px;
+              animation: Fire 2s 0.35s ease-in-out infinite alternate;
             }
             .flame:nth-child(5) {
               height: 50px;
               left: 325px;
               bottom: 60px;
+              animation: Fire 2s 0.1s ease-in-out infinite alternate;
             }
           }
           .fire-yellow {
@@ -630,21 +706,25 @@ export default {
               border-radius: 20px;
               background: #ffeb6e;
               z-index: 13;
+              box-shadow: 0 0 40px 18px rgba(255,235,110,0.3);
             }
             .flame:nth-child(1) {
               height: 50px;
               left: 265px;
               bottom: 70px;
+              animation: Fire 2s 0.6s ease-in-out infinite alternate;
             }
             .flame:nth-child(2) {
               height: 50px;
               left: 285px;
               bottom: 95px;
+              animation: Fire 2s 0.38s ease-in-out infinite alternate;
             }
             .flame:nth-child(3) {
               height: 50px;
               left: 305px;
               bottom: 80px;
+              animation: Fire 2s 0.18s ease-in-out infinite alternate;
             }
           }
           .fire-white {
@@ -654,31 +734,38 @@ export default {
               border-radius: 15px;
               background: #fef1d9;
               z-index: 14;
+              box-shadow: 0 0 40px 18px rgba(254,241,217,0.3);
             }
             .flame:nth-child(1) {
               height: 50px;
               left: 255px;
               bottom: 50px;
+              animation: Fire 2s 0.22s ease-in-out infinite alternate;
             }
             .flame:nth-child(2) {
               height: 50px;
               left: 265px;
               bottom: 60px;
+              animation: Fire 2s 0.42s ease-in-out infinite alternate;
             }
             .flame:nth-child(3) {
+              width: 20px;
               height: 50px;
-              left: 287px;
+              left: 285px;
               bottom: 80px;
+              animation: Fire 2s 0.8s ease-in-out infinite alternate;
             }
             .flame:nth-child(4) {
               height: 50px;
               left: 310px;
               bottom: 60px;
+              animation: Fire 2s 0.64s ease-in-out infinite alternate;
             }
             .flame:nth-child(5) {
               height: 50px;
               left: 320px;
               bottom: 50px;
+              animation: Fire 2s 0.32s ease-in-out infinite alternate;
             }
           }
         }
@@ -752,4 +839,49 @@ export default {
       transform: rotateZ(360deg);
     }
   }
+  @keyframes Fire {
+    0% {
+      transform: scaleY(1);
+    }
+    28% {
+      transform: scaleY(0.7);
+    }
+    38% {
+      transform: scaleY(0.8);
+    }
+    50% {
+      transform: scaleY(0.6);
+    }
+    70% {
+      transform: scaleY(0.95);
+    }
+    82% {
+      transform: scaleY(0.58);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  @keyframes Spark {
+     0%, 35% {
+       transform: scaleY(0) translateY(0);
+       opacity: 0;
+     }
+     50% {
+       transform: scaleY(1) translateY(0);
+       opacity: 1;
+     }
+     70% {
+       transform: scaleY(1) translateY(-10px);
+       opacity: 1;
+     }
+     75% {
+       transform: scaleY(1) translateY(-10px);
+       opacity: 0;
+     }
+     100% {
+       transform: scaleY(0) translateY(0);
+       opacity: 0;
+     }
+   }
 </style>

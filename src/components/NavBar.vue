@@ -29,13 +29,13 @@
             <i-icon type="logo-codepen" size="24"></i-icon>
             项目集
           </i-menu-item>
-          <i-menu-item name="education" to="/education">
-            <i-icon type="ios-school" size="24"></i-icon>
-            教育经历
-          </i-menu-item>
           <i-menu-item name="evaluation" to="/evaluation">
             <i-icon type="ios-text" size="24"></i-icon>
             自我评价
+          </i-menu-item>
+          <i-menu-item name="education" to="/education">
+            <i-icon type="ios-school" size="24"></i-icon>
+            动效课堂
           </i-menu-item>
         </div>
       </i-menu>

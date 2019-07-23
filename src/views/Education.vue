@@ -11,7 +11,7 @@
           <i-row>
             <i-breadcrumb :style="{margin: '16px 0'}">
               <i-breadcrumb-item to="/">首页</i-breadcrumb-item>
-              <i-breadcrumb-item>教育经历</i-breadcrumb-item>
+              <i-breadcrumb-item>动效课堂</i-breadcrumb-item>
             </i-breadcrumb>
           </i-row>
           <i-row>

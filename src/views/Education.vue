@@ -169,6 +169,34 @@
                         <div class="animate-title">闹钟展示区</div>
                       </div>
                     </i-col>
+                    <i-col span="12">
+                      <div class="animate-box">
+                        <div class="animate-title">Loading1</div>
+                        <div class="loading1">
+                          <div class="loading-center-absolute">
+                            <div class="loading-item"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </i-col>
+                    <i-col span="12">
+                      <div class="animate-box">
+                        <div class="animate-title">Loading2</div>
+                        <div class="loading2">
+                          <div class="loading-center-absolute">
+                            <div class="loading-item-little"></div>
+                            <div class="loading-item-little"></div>
+                            <div class="loading-item-little"></div>
+                            <div class="loading-item-little"></div>
+                            <div class="loading-item-little"></div>
+                            <div class="loading-item-little"></div>
+                            <div class="loading-item-little"></div>
+                            <div class="loading-item-little"></div>
+                            <div class="loading-item-big"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </i-col>
                   </i-row>
                 </i-content>
               </i-layout>
@@ -770,6 +798,82 @@ export default {
           }
         }
       }
+      .loading1 {
+        .loading-center-absolute {
+          margin: 0 auto;
+          width: 100px;
+          .loading-item {
+            margin: 100px 35px;
+            width: 30px;
+            height: 30px;
+            background: #f78070;
+            transform-style: preserve-3d;
+            animation: Loading1 1s infinite ease-in-out;
+          }
+        }
+      }
+      .loading2 {
+        .loading-center-absolute {
+          position: relative;
+          margin: 0 auto;
+          width: 100px;
+          .loading-item-big {
+            margin: 100px 35px;
+            width: 30px;
+            height: 30px;
+            background: #f8a05b;
+            transform: rotate( 45deg);
+            animation: Loading2 2s 0.4s infinite ease-in-out;
+          }
+          .loading-item-little {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #f8a05b;
+            transform: rotate( 45deg)
+          }
+          .loading-item-little:nth-child(1) {
+            left: -30px;
+            top: 5px;
+            animation: Loading2-1 2s 0.125s infinite ease-in-out;
+          }
+          .loading-item-little:nth-child(2) {
+            left: 4px;
+            top: -30px;
+            animation: Loading2-2 2s 0.25s infinite ease-in-out;
+          }
+          .loading-item-little:nth-child(3) {
+            left: 40px;
+            top: -65px;
+            animation: Loading2-3 2s 0.375s infinite ease-in-out;
+          }
+          .loading-item-little:nth-child(4) {
+            right: 4px;
+            top: -30px;
+            animation: Loading2-4 2s 0.5s infinite ease-in-out;
+          }
+          .loading-item-little:nth-child(5) {
+            right: -30px;
+            bottom: 5px;
+            animation: Loading2-5 2s 0.625s infinite ease-in-out;
+          }
+          .loading-item-little:nth-child(6) {
+            right: 4px;
+            bottom: -30px;
+            animation: Loading2-6 2s 0.75s infinite ease-in-out;
+          }
+          .loading-item-little:nth-child(7) {
+            left: 40px;
+            bottom: -65px;
+            animation: Loading2-7 2s 0.875s infinite ease-in-out;
+          }
+          .loading-item-little:nth-child(8) {
+            left: 4px;
+            bottom: -30px;
+            animation: Loading2-8 2s 0.8s infinite ease-in-out;
+          }
+        }
+      }
     }
   }
   @keyframes Before {
@@ -884,4 +988,138 @@ export default {
        opacity: 0;
      }
    }
+  @keyframes Loading1 {
+    0% {
+      transform: rotateX(0deg) rotateZ(0deg);
+    }
+    50% {
+      transform: rotateX(-180deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(-180deg) rotateZ(-180deg);
+    }
+  }
+  @keyframes Loading2 {
+    0% {
+      transform: rotate( 45deg) scale(0.7);
+    }
+    50% {
+      transform: rotate( 45deg) scale(1.5);
+    }
+    100% {
+      transform: rotate( 45deg) scale(0.7);
+    }
+  }
+  @keyframes Loading2-1 {
+    0% {
+      left: -30px;
+      top: 5px;
+    }
+    50% {
+      left: 40px;
+      top: 5px;
+    }
+    100% {
+      left: -30px;
+      top: 5px;
+    }
+  }
+  @keyframes Loading2-2 {
+    0% {
+      left: 4px;
+      top: -30px;
+    }
+    50% {
+      left: 40px;
+      top: 5px;
+    }
+    100% {
+      left: 4px;
+      top: -30px;
+    }
+  }
+  @keyframes Loading2-3 {
+    0% {
+      left: 40px;
+      top: -65px;
+    }
+    50% {
+      left: 40px;
+      top: 5px;
+    }
+    100% {
+      left: 40px;
+      top: -65px;
+    }
+  }
+  @keyframes Loading2-4 {
+    0% {
+      right: 4px;
+      top: -30px;
+    }
+    50% {
+      right: 40px;
+      top: 5px;
+    }
+    100% {
+      right: 4px;
+      top: -30px;
+    }
+  }
+  @keyframes Loading2-5 {
+    0% {
+      right: -30px;
+      bottom: 5px;
+    }
+    50% {
+      right: 40px;
+      bottom: 5px;
+    }
+    100% {
+      right: -30px;
+      bottom: 5px;
+    }
+  }
+  @keyframes Loading2-6 {
+    0% {
+      right: 4px;
+      bottom: -30px;
+    }
+    50% {
+      right: 40px;
+      bottom: 5px;
+    }
+    100% {
+      right: 4px;
+      bottom: -30px;
+    }
+  }
+  @keyframes Loading2-7 {
+    0% {
+      left: 40px;
+      bottom: -65px;
+    }
+    50% {
+      left: 40px;
+      bottom: 5px;
+    }
+    100% {
+      left: 40px;
+      bottom: -65px;
+    }
+  }
+  @keyframes Loading2-8 {
+    0% {
+      left: 4px;
+      bottom: -30px;
+    }
+    50% {
+      left: 40px;
+      bottom: 5px;
+    }
+    100% {
+      left: 4px;
+      bottom: -30px;
+    }
+  }
 </style>

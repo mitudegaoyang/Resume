@@ -197,6 +197,31 @@
                         </div>
                       </div>
                     </i-col>
+                    <i-col span="12">
+                      <div class="animate-box">
+                        <div class="animate-title">Loading3</div>
+                        <div class="loading3">
+                          <div class="loading-center-absolute">
+                            <div class="loading-item"></div>
+                            <div class="loading-item"></div>
+                            <div class="loading-item"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </i-col>
+                    <i-col span="12">
+                      <div class="animate-box">
+                        <div class="animate-title">Loading4</div>
+                        <div class="loading4">
+                          <div class="loading-center-absolute">
+                            <div class="loading-item"></div>
+                            <div class="loading-item"></div>
+                            <div class="loading-item"></div>
+                            <div class="loading-item"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </i-col>
                   </i-row>
                 </i-content>
               </i-layout>
@@ -874,6 +899,58 @@ export default {
           }
         }
       }
+      .loading3 {
+        .loading-center-absolute {
+          margin: 0 auto;
+          width: 100px;
+          .loading-item {
+            position: absolute;
+            margin: 100px 35px;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #fbd75e;
+            transform-style: preserve-3d;
+            animation: Loading3-1 1s infinite ease-in-out;
+          }
+          .loading-item:nth-child(2) {
+            margin: 90px 25px;
+            width: 50px;
+            height: 50px;
+            animation: Loading3-2 1s infinite ease-in-out;
+          }
+          .loading-item:nth-child(3) {
+            margin: 80px 15px;
+            width: 70px;
+            height: 70px;
+            animation: Loading3-1 1s infinite ease-in-out;
+          }
+        }
+      }
+      .loading4 {
+        .loading-center-absolute {
+          margin: 0 auto;
+          width: 100px;
+          .loading-item {
+            position: absolute;
+            margin: 100px 35px;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #7298fe;
+          }
+          .loading-item:nth-child(1) {
+            animation: Loading4-1 1s 0.5s infinite ease-in-out;
+          }
+          .loading-item:nth-child(2) {
+            animation: Loading4-2 1s infinite ease-in-out;
+          }
+          .loading-item:nth-child(3) {
+            animation: Loading4-3 1s 0.5s infinite ease-in-out;
+          }
+          .loading-item:nth-child(4) {
+            animation: Loading4-4 1s infinite ease-in-out;
+          }
+        }
+      }
     }
   }
   @keyframes Before {
@@ -990,13 +1067,13 @@ export default {
    }
   @keyframes Loading1 {
     0% {
-      transform: rotateX(0deg) rotateZ(0deg);
+      transform: perspective(100px) rotateX(0deg) rotateZ(0deg);
     }
     50% {
-      transform: rotateX(-180deg) rotateZ(0deg);
+      transform: perspective(100px) rotateX(-180deg) rotateZ(0deg);
     }
     100% {
-      transform: rotateX(-180deg) rotateZ(-180deg);
+      transform: perspective(100px) rotateX(-180deg) rotateZ(-180deg);
     }
   }
   @keyframes Loading2 {
@@ -1120,6 +1197,96 @@ export default {
     100% {
       left: 4px;
       bottom: -30px;
+    }
+  }
+  @keyframes Loading3-1 {
+    0% {
+      transform: perspective(100px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+      transform: perspective(100px) rotateX(-180deg) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(100px) rotateX(-180deg) rotateY(-180deg);
+    }
+  }
+  @keyframes Loading3-2 {
+    0% {
+      transform: perspective(100px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+      transform: perspective(100px) rotateX(180deg) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(100px) rotateX(180deg) rotateY(180deg);
+    }
+  }
+  @keyframes Loading4-1 {
+    0% {
+      left: 195px;
+      top: -25px;
+      transform: scale(2);
+    }
+    50% {
+      left: 238px;
+      top: 17px;
+      transform: scale(1);
+    }
+    100% {
+      left: 195px;
+      top: -25px;
+      transform: scale(2);
+    }
+  }
+  @keyframes Loading4-2 {
+    0% {
+      right: 195px;
+      top: -25px;
+      transform: scale(2);
+    }
+    50% {
+      right: 238px;
+      top: 17px;
+      transform: scale(1);
+    }
+    100% {
+      right: 195px;
+      top: -25px;
+      transform: scale(2);
+    }
+  }
+  @keyframes Loading4-3 {
+    0% {
+      right: 195px;
+      bottom: 10px;
+      transform: scale(2);
+    }
+    50% {
+      right: 238px;
+      bottom: 55px;
+      transform: scale(1);
+    }
+    100% {
+      right: 195px;
+      bottom: 10px;
+      transform: scale(2);
+    }
+  }
+  @keyframes Loading4-4 {
+    0% {
+      left: 195px;
+      bottom: 10px;
+      transform: scale(2);
+    }
+    50% {
+      left: 238px;
+      bottom: 55px;
+      transform: scale(1);
+    }
+    100% {
+      left: 195px;
+      bottom: 10px;
+      transform: scale(2);
     }
   }
 </style>

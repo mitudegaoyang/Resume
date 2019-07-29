@@ -67,6 +67,10 @@ export default {
       self.opacity = 1 - (self.scrollTop / self.offsetTop)
     }
   },
+  created () {
+    var self = this
+    self.$loadingBar.finish()
+  },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll)
   }

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <InnerTop></InnerTop>
-    <i-header style="z-index: 1000">
+    <InnerTop :unfixed="unfixed"></InnerTop>
+    <i-header style="z-index: 1000" :class="{fixed: !unfixed}">
       <i-menu mode="horizontal" :active-name="activeName">
         <div class="layout-logo core-logo">
           <img src="../assets/img/logo.png" title="高天阳个人官网" alt="个人官网" style="height: 80px">
@@ -40,7 +40,7 @@
         </div>
       </i-menu>
     </i-header>
-    <div class="headerBox"></div>
+    <div class="headerBox" :class="{fixedBox: !unfixed}"></div>
   </div>
 </template>
 
@@ -99,6 +99,9 @@ export default {
     'activeName': {
       type: String,
       required: true
+    },
+    'unfixed': {
+      type: Boolean
     }
   },
   methods: {
@@ -216,8 +219,7 @@ export default {
     width: 100%;
     height: 80px;
     padding: 0;
-    position: fixed;
-    top: 30px;
+    position: relative;
     line-height: 80px;
     z-index: 100;
     background: transparent;
@@ -231,6 +233,13 @@ export default {
     line-height: 80px;
   }
   .headerBox {
+    height: 0px;
+  }
+  .headerBox.fixedBox {
     height: 110px;
+  }
+  .fixed {
+    position: fixed;
+    top: 30px;
   }
 </style>

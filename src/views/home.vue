@@ -1,8 +1,13 @@
 <template>
   <div class="layout">
     <i-row>
+      <i-col style="min-height: 100vh; text-align: center; line-height: 100vh">
+        首屏背景
+      </i-col>
+    </i-row>
+    <i-row class="nav">
       <i-col>
-        <NavBar :activeName="'home'"></NavBar>
+        <NavBar :activeName="'home'" :unfixed="unfixed"></NavBar>
       </i-col>
     </i-row>
     <i-row>
@@ -12,7 +17,7 @@
             <i-content class="content">
               <i-layout>
                 <i-content class="content-center">
-                  内容
+                  <i-button @click="unfixed = !unfixed">显示隐藏{{unfixed}}</i-button>
                 </i-content>
               </i-layout>
             </i-content>
@@ -39,8 +44,28 @@ export default {
   },
   data () {
     return {
+      offsetTop: 0,
+      scrollTop: 0,
+      unfixed: true,
       msg: 'Home'
     }
+  },
+  mounted () {
+    var self = this
+    window.addEventListener('scroll', self.initHeight)
+    self.$nextTick(() => {
+      self.offsetTop = document.querySelector('.nav').offsetTop
+    })
+  },
+  methods: {
+    initHeight () {
+      var self = this
+      self.scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      self.unfixed = (self.scrollTop < self.offsetTop)
+    }
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -60,7 +85,7 @@ export default {
   }
   .content {
     margin: 50px auto;
-    min-height: 530px;
+    min-height: 900px;
     background: #fff;
   }
   .content-center {

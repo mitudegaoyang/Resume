@@ -1,5 +1,5 @@
 <template>
-  <div class="inner_top">
+  <div class="inner_top" :class="{unfixed: unfixed}">
     <div class="box">
       <div class="fl">
         <span>{{helloMsg}}</span>
@@ -29,6 +29,11 @@ export default {
       time: '0000-00-00 00:00:00',
       hour: '',
       helloMsg: '您好，欢迎您的光临~'
+    }
+  },
+  props: {
+    'unfixed': {
+      type: Boolean
     }
   },
   methods: {
@@ -115,5 +120,8 @@ export default {
   }
   .inner_top .box .btnGroup li:hover {
     color: #2b85e4;
+  }
+  .unfixed {
+    position: relative;
   }
 </style>

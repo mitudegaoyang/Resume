@@ -1,8 +1,9 @@
 <template>
   <div class="layout">
     <i-row>
-      <i-col style="min-height: 100vh; text-align: center; line-height: 100vh">
-        首屏背景
+      <i-col class="banner" :style="{opacity: opacity}">
+        <p>Hello, I'm Mr.Gao</p>
+        <p class="font-24">一个拥有像素眼的前端工程师</p>
       </i-col>
     </i-row>
     <i-row class="nav">
@@ -44,6 +45,7 @@ export default {
   },
   data () {
     return {
+      opacity: 1,
       offsetTop: 0,
       scrollTop: 0,
       unfixed: true,
@@ -62,6 +64,7 @@ export default {
       var self = this
       self.scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       self.unfixed = (self.scrollTop < self.offsetTop)
+      self.opacity = 1 - (self.scrollTop / self.offsetTop)
     }
   },
   destroyed () {
@@ -78,6 +81,19 @@ export default {
     position: relative;
     border-radius: 4px;
     overflow: hidden;
+    .banner {
+      background: url("../assets/img/banner.jpg") no-repeat center center / cover;
+      // background: url("../assets/img/banner.jpg") no-repeat center center / contain;
+      height: 100vh;
+      line-height: 80px;
+      text-align: center;
+      color: #7e6d3f;
+      font-size: 40px;
+      padding: 20vh 0 600px;
+    }
+  }
+  .font-24 {
+    font-size: 20px;
   }
   .w1200 {
     margin: 0 auto;

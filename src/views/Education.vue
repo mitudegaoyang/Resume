@@ -171,55 +171,62 @@
                     </i-col>
                     <i-col span="12">
                       <div class="animate-box">
-                        <div class="animate-title">Loading1</div>
-                        <div class="loading1">
-                          <div class="loading-center-absolute">
-                            <div class="loading-item"></div>
-                          </div>
-                        </div>
+                        <div class="animate-title">Square Loading1</div>
+                        <Loading :types="1"></Loading>
                       </div>
                     </i-col>
                     <i-col span="12">
                       <div class="animate-box">
-                        <div class="animate-title">Loading2</div>
-                        <div class="loading2">
-                          <div class="loading-center-absolute">
-                            <div class="loading-item-little"></div>
-                            <div class="loading-item-little"></div>
-                            <div class="loading-item-little"></div>
-                            <div class="loading-item-little"></div>
-                            <div class="loading-item-little"></div>
-                            <div class="loading-item-little"></div>
-                            <div class="loading-item-little"></div>
-                            <div class="loading-item-little"></div>
-                            <div class="loading-item-big"></div>
-                          </div>
-                        </div>
+                        <div class="animate-title">Square Loading2</div>
+                        <Loading :types="2"></Loading>
                       </div>
                     </i-col>
                     <i-col span="12">
                       <div class="animate-box">
-                        <div class="animate-title">Loading3</div>
-                        <div class="loading3">
-                          <div class="loading-center-absolute">
-                            <div class="loading-item"></div>
-                            <div class="loading-item"></div>
-                            <div class="loading-item"></div>
-                          </div>
-                        </div>
+                        <div class="animate-title">Square Loading3</div>
+                        <Loading :types="3"></Loading>
                       </div>
                     </i-col>
                     <i-col span="12">
                       <div class="animate-box">
-                        <div class="animate-title">Loading4</div>
-                        <div class="loading4">
-                          <div class="loading-center-absolute">
-                            <div class="loading-item"></div>
-                            <div class="loading-item"></div>
-                            <div class="loading-item"></div>
-                            <div class="loading-item"></div>
-                          </div>
-                        </div>
+                        <div class="animate-title">Square Loading4</div>
+                        <Loading :types="4"></Loading>
+                      </div>
+                    </i-col>
+                    <i-col span="12">
+                      <div class="animate-box">
+                        <div class="animate-title">Square Loading5</div>
+                        <Loading :types="5"></Loading>
+                      </div>
+                    </i-col>
+                    <i-col span="12">
+                      <div class="animate-box">
+                        <div class="animate-title">Square Loading6</div>
+                        <Loading :types="6"></Loading>
+                      </div>
+                    </i-col>
+                    <i-col span="12">
+                      <div class="animate-box">
+                        <div class="animate-title">Square Loading7</div>
+                        <Loading :types="7"></Loading>
+                      </div>
+                    </i-col>
+                    <i-col span="12">
+                      <div class="animate-box">
+                        <div class="animate-title">Square Loading8</div>
+                        <Loading :types="8"></Loading>
+                      </div>
+                    </i-col>
+                    <i-col span="12">
+                      <div class="animate-box">
+                        <div class="animate-title">Square Loading9</div>
+                        <Loading :types="9"></Loading>
+                      </div>
+                    </i-col>
+                    <i-col span="12">
+                      <div class="animate-box">
+                        <div class="animate-title">Square Loading10</div>
+                        <Loading :types="10"></Loading>
                       </div>
                     </i-col>
                   </i-row>
@@ -241,11 +248,13 @@
 <script>
 import NavBar from '../components/NavBar.vue' // 引进菜单模板
 import Footer from '../components/Footer.vue' // 引进底部模板
+import Loading from '../components/Loading.vue' // 引进底部模板
 export default {
   name: 'Education',
   components: {
     NavBar, // 使用菜单组件
-    Footer // 使用底部组件
+    Footer, // 使用底部组件
+    Loading // 使用Loading组件
   },
   data () {
     return {
@@ -823,134 +832,6 @@ export default {
           }
         }
       }
-      .loading1 {
-        .loading-center-absolute {
-          margin: 0 auto;
-          width: 100px;
-          .loading-item {
-            margin: 100px 35px;
-            width: 30px;
-            height: 30px;
-            background: #f78070;
-            transform-style: preserve-3d;
-            animation: Loading1 1s infinite ease-in-out;
-          }
-        }
-      }
-      .loading2 {
-        .loading-center-absolute {
-          position: relative;
-          margin: 0 auto;
-          width: 100px;
-          .loading-item-big {
-            margin: 100px 35px;
-            width: 30px;
-            height: 30px;
-            background: #f8a05b;
-            transform: rotate( 45deg);
-            animation: Loading2 2s 0.4s infinite ease-in-out;
-          }
-          .loading-item-little {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #f8a05b;
-            transform: rotate( 45deg)
-          }
-          .loading-item-little:nth-child(1) {
-            left: -30px;
-            top: 5px;
-            animation: Loading2-1 2s 0.125s infinite ease-in-out;
-          }
-          .loading-item-little:nth-child(2) {
-            left: 4px;
-            top: -30px;
-            animation: Loading2-2 2s 0.25s infinite ease-in-out;
-          }
-          .loading-item-little:nth-child(3) {
-            left: 40px;
-            top: -65px;
-            animation: Loading2-3 2s 0.375s infinite ease-in-out;
-          }
-          .loading-item-little:nth-child(4) {
-            right: 4px;
-            top: -30px;
-            animation: Loading2-4 2s 0.5s infinite ease-in-out;
-          }
-          .loading-item-little:nth-child(5) {
-            right: -30px;
-            bottom: 5px;
-            animation: Loading2-5 2s 0.625s infinite ease-in-out;
-          }
-          .loading-item-little:nth-child(6) {
-            right: 4px;
-            bottom: -30px;
-            animation: Loading2-6 2s 0.75s infinite ease-in-out;
-          }
-          .loading-item-little:nth-child(7) {
-            left: 40px;
-            bottom: -65px;
-            animation: Loading2-7 2s 0.875s infinite ease-in-out;
-          }
-          .loading-item-little:nth-child(8) {
-            left: 4px;
-            bottom: -30px;
-            animation: Loading2-8 2s 0.8s infinite ease-in-out;
-          }
-        }
-      }
-      .loading3 {
-        .loading-center-absolute {
-          margin: 0 auto;
-          width: 100px;
-          .loading-item {
-            position: absolute;
-            margin: 100px 35px;
-            width: 30px;
-            height: 30px;
-            border: 3px solid #fbd75e;
-            transform-style: preserve-3d;
-            animation: Loading3-1 1s infinite ease-in-out;
-          }
-          .loading-item:nth-child(2) {
-            margin: 90px 25px;
-            width: 50px;
-            height: 50px;
-            animation: Loading3-2 1s infinite ease-in-out;
-          }
-          .loading-item:nth-child(3) {
-            margin: 80px 15px;
-            width: 70px;
-            height: 70px;
-            animation: Loading3-1 1s infinite ease-in-out;
-          }
-        }
-      }
-      .loading4 {
-        .loading-center-absolute {
-          margin: 0 auto;
-          width: 100px;
-          .loading-item {
-            position: absolute;
-            margin: 100px 35px;
-            width: 30px;
-            height: 30px;
-            border: 3px solid #7298fe;
-          }
-          .loading-item:nth-child(1) {
-            animation: Loading4-1 1s 0.5s infinite ease-in-out;
-          }
-          .loading-item:nth-child(2) {
-            animation: Loading4-2 1s infinite ease-in-out;
-          }
-          .loading-item:nth-child(3) {
-            animation: Loading4-3 1s 0.5s infinite ease-in-out;
-          }
-          .loading-item:nth-child(4) {
-            animation: Loading4-4 1s infinite ease-in-out;
-          }
-        }
-      }
     }
   }
   @keyframes Before {
@@ -1065,228 +946,4 @@ export default {
        opacity: 0;
      }
    }
-  @keyframes Loading1 {
-    0% {
-      transform: perspective(100px) rotateX(0deg) rotateZ(0deg);
-    }
-    50% {
-      transform: perspective(100px) rotateX(-180deg) rotateZ(0deg);
-    }
-    100% {
-      transform: perspective(100px) rotateX(-180deg) rotateZ(-180deg);
-    }
-  }
-  @keyframes Loading2 {
-    0% {
-      transform: rotate( 45deg) scale(0.7);
-    }
-    50% {
-      transform: rotate( 45deg) scale(1.5);
-    }
-    100% {
-      transform: rotate( 45deg) scale(0.7);
-    }
-  }
-  @keyframes Loading2-1 {
-    0% {
-      left: -30px;
-      top: 5px;
-    }
-    50% {
-      left: 40px;
-      top: 5px;
-    }
-    100% {
-      left: -30px;
-      top: 5px;
-    }
-  }
-  @keyframes Loading2-2 {
-    0% {
-      left: 4px;
-      top: -30px;
-    }
-    50% {
-      left: 40px;
-      top: 5px;
-    }
-    100% {
-      left: 4px;
-      top: -30px;
-    }
-  }
-  @keyframes Loading2-3 {
-    0% {
-      left: 40px;
-      top: -65px;
-    }
-    50% {
-      left: 40px;
-      top: 5px;
-    }
-    100% {
-      left: 40px;
-      top: -65px;
-    }
-  }
-  @keyframes Loading2-4 {
-    0% {
-      right: 4px;
-      top: -30px;
-    }
-    50% {
-      right: 40px;
-      top: 5px;
-    }
-    100% {
-      right: 4px;
-      top: -30px;
-    }
-  }
-  @keyframes Loading2-5 {
-    0% {
-      right: -30px;
-      bottom: 5px;
-    }
-    50% {
-      right: 40px;
-      bottom: 5px;
-    }
-    100% {
-      right: -30px;
-      bottom: 5px;
-    }
-  }
-  @keyframes Loading2-6 {
-    0% {
-      right: 4px;
-      bottom: -30px;
-    }
-    50% {
-      right: 40px;
-      bottom: 5px;
-    }
-    100% {
-      right: 4px;
-      bottom: -30px;
-    }
-  }
-  @keyframes Loading2-7 {
-    0% {
-      left: 40px;
-      bottom: -65px;
-    }
-    50% {
-      left: 40px;
-      bottom: 5px;
-    }
-    100% {
-      left: 40px;
-      bottom: -65px;
-    }
-  }
-  @keyframes Loading2-8 {
-    0% {
-      left: 4px;
-      bottom: -30px;
-    }
-    50% {
-      left: 40px;
-      bottom: 5px;
-    }
-    100% {
-      left: 4px;
-      bottom: -30px;
-    }
-  }
-  @keyframes Loading3-1 {
-    0% {
-      transform: perspective(100px) rotateX(0deg) rotateY(0deg);
-    }
-    50% {
-      transform: perspective(100px) rotateX(-180deg) rotateY(0deg);
-    }
-    100% {
-      transform: perspective(100px) rotateX(-180deg) rotateY(-180deg);
-    }
-  }
-  @keyframes Loading3-2 {
-    0% {
-      transform: perspective(100px) rotateX(0deg) rotateY(0deg);
-    }
-    50% {
-      transform: perspective(100px) rotateX(180deg) rotateY(0deg);
-    }
-    100% {
-      transform: perspective(100px) rotateX(180deg) rotateY(180deg);
-    }
-  }
-  @keyframes Loading4-1 {
-    0% {
-      left: 195px;
-      top: -25px;
-      transform: scale(2);
-    }
-    50% {
-      left: 238px;
-      top: 17px;
-      transform: scale(1);
-    }
-    100% {
-      left: 195px;
-      top: -25px;
-      transform: scale(2);
-    }
-  }
-  @keyframes Loading4-2 {
-    0% {
-      right: 195px;
-      top: -25px;
-      transform: scale(2);
-    }
-    50% {
-      right: 238px;
-      top: 17px;
-      transform: scale(1);
-    }
-    100% {
-      right: 195px;
-      top: -25px;
-      transform: scale(2);
-    }
-  }
-  @keyframes Loading4-3 {
-    0% {
-      right: 195px;
-      bottom: 10px;
-      transform: scale(2);
-    }
-    50% {
-      right: 238px;
-      bottom: 55px;
-      transform: scale(1);
-    }
-    100% {
-      right: 195px;
-      bottom: 10px;
-      transform: scale(2);
-    }
-  }
-  @keyframes Loading4-4 {
-    0% {
-      left: 195px;
-      bottom: 10px;
-      transform: scale(2);
-    }
-    50% {
-      left: 238px;
-      bottom: 55px;
-      transform: scale(1);
-    }
-    100% {
-      left: 195px;
-      bottom: 10px;
-      transform: scale(2);
-    }
-  }
 </style>

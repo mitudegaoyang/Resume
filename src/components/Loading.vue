@@ -64,6 +64,14 @@
         <div class="loading-item"></div>
       </div>
     </div>
+    <div class="square8" v-if="types === 8">
+      <div class="loading-center-absolute">
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -692,6 +700,71 @@ export default {
     }
   }
   /**块状动效8**/
+  .square8 {
+    .loading-center-absolute {
+      margin: 80px auto;
+      width: 60px;
+      height: 60px;
+      transform: rotate(-45deg);
+      animation: square8 1.5s infinite;
+      .loading-item {
+        float: left;
+        width: 30px;
+        height: 30px;
+        background: #7298fe;
+        transform: rotate(45deg)
+      }
+      .loading-item:nth-child(1) {
+        animation: square8-1 1.5s infinite;
+      }
+      .loading-item:nth-child(2) {
+        animation: square8-2 1.5s infinite;
+      }
+      .loading-item:nth-child(3) {
+        animation: square8-3 1.5s infinite;
+      }
+      .loading-item:nth-child(4) {
+        animation: square8-4 1.5s infinite;
+      }
+    }
+  }
+  @keyframes square8 {
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+  @keyframes square8-1 {
+    25% {
+      transform: translate(0,-50px) rotate(-180deg);
+    }
+    100% {
+      transform: translate(0,0) rotate(-180deg);
+    }
+  }
+  @keyframes square8-2 {
+    25% {
+      transform: translate(50px,0) rotate(-180deg);
+    }
+    100% {
+      transform: translate(0,0) rotate(-180deg)
+    }
+  }
+  @keyframes square8-3 {
+    25% {
+      transform: translate(-50px,0) rotate(-180deg)
+    }
+    100% {
+      transform: translate(0,0) rotate(-180deg);
+    }
+  }
+  @keyframes square8-4 {
+    25% {
+      transform: translate(0,50px) rotate(-180deg);
+    }
+    100% {
+      transform: translate(0,0) rotate(-180deg);
+    }
+  }
   /**块状动效9**/
   /**块状动效10**/
   /**点状动效1**/

@@ -46,6 +46,16 @@
         <div class="loading-item"></div>
       </div>
     </div>
+    <div class="square6" v-if="types === 6">
+      <div class="loading-center-absolute">
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -482,6 +492,65 @@ export default {
     }
   }
   /**块状动效6**/
+  .square6 {
+    .loading-center-absolute {
+      .loading-item {
+        position: absolute;
+        margin: 100px 35px;
+        width: 30px;
+        height: 30px;
+        background: #f8a05b;
+      }
+      .loading-item:nth-child(1) {
+        top: -20px;
+        left: 215px;
+        animation: square6-1 0.5s 0s infinite alternate;
+      }
+      .loading-item:nth-child(2) {
+        top: -20px;
+        right: 215px;
+        animation: square6-2 0.5s 0s infinite alternate;
+      }
+      .loading-item:nth-child(3) {
+        left: 215px;
+        animation: square6-1 0.5s 0s infinite alternate;
+      }
+      .loading-item:nth-child(4) {
+        right: 215px;
+        animation: square6-2 0.5s 0s infinite alternate;
+      }
+      .loading-item:nth-child(5) {
+        top: 56px;
+        left: 215px;
+        animation: square6-1 0.5s 0s infinite alternate;
+      }
+      .loading-item:nth-child(6) {
+        top: 56px;
+        right: 215px;
+        animation: square6-2 0.5s 0s infinite alternate;
+      }
+    }
+  }
+  @keyframes square6-1 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      left: 160px;
+      top: 18px;
+      transform: rotate(-90deg);
+    }
+  }
+  @keyframes square6-2 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      right: 160px;
+      top: 18px;
+      transform: rotate(90deg);
+    }
+  }
   /**块状动效7**/
   /**块状动效8**/
   /**块状动效9**/

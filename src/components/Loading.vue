@@ -56,6 +56,14 @@
         <div class="loading-item"></div>
       </div>
     </div>
+    <div class="square7" v-if="types === 7">
+      <div class="loading-center-absolute">
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -552,6 +560,137 @@ export default {
     }
   }
   /**块状动效7**/
+  .square7 {
+    .loading-center-absolute {
+      .loading-item {
+        position: absolute;
+        margin: 100px 35px;
+        width: 30px;
+        height: 30px;
+        background: #fbd75e;
+      }
+      .loading-item:nth-child(1) {
+        animation: square7-1 2s infinite ease-in-out;
+      }
+      .loading-item:nth-child(2) {
+        animation: square7-2 2s infinite ease-in-out;
+      }
+      .loading-item:nth-child(3) {
+        animation: square7-3 2s infinite ease-in-out;
+      }
+      .loading-item:nth-child(4) {
+        animation: square7-4 2s infinite ease-in-out;
+      }
+    }
+  }
+  @keyframes square7-1 {
+    0% {
+      top: -20px;
+      left: 200px;
+      transform: rotate(0deg) scale(1);
+    }
+    25% {
+      top: -20px;
+      left: 276px;
+      transform: rotate(-90deg) scale(0.5);
+    }
+    50% {
+      top: 56px;
+      left: 276px;
+      transform: rotate(-180deg) scale(1);
+    }
+    75% {
+      top: 56px;
+      left: 200px;
+      transform: rotate(-270deg) scale(0.5);
+    }
+    100% {
+      top: -20px;
+      left: 200px;
+      transform: rotate(-360deg) scale(1);
+    }
+  }
+  @keyframes square7-2 {
+    0% {
+      top: -20px;
+      left: 276px;
+      transform: rotate(0deg) scale(1);
+    }
+    25% {
+      top: 56px;
+      left: 276px;
+      transform: rotate(-90deg) scale(0.5);
+    }
+    50% {
+      top: 56px;
+      left: 200px;
+      transform: rotate(-180deg) scale(1);
+    }
+    75% {
+      top: -20px;
+      left: 200px;
+      transform: rotate(-270deg) scale(0.5);
+    }
+    100% {
+      top: -20px;
+      left: 276px;
+      transform: rotate(-360deg) scale(1);
+    }
+  }
+  @keyframes square7-3 {
+    0% {
+      top: 56px;
+      left: 276px;
+      transform: rotate(0deg) scale(1);
+    }
+    25% {
+      top: 56px;
+      left: 200px;
+      transform: rotate(-90deg) scale(0.5);
+    }
+    50% {
+      top: -20px;
+      left: 200px;
+      transform: rotate(-180deg) scale(1);
+    }
+    75% {
+      top: -20px;
+      left: 276px;
+      transform: rotate(-270deg) scale(0.5);
+    }
+    100% {
+      top: 56px;
+      left: 276px;
+      transform: rotate(-360deg) scale(1);
+    }
+  }
+  @keyframes square7-4 {
+    0% {
+      top: 56px;
+      left: 200px;
+      transform: rotate(0deg) scale(1);
+    }
+    25% {
+      top: -20px;
+      left: 200px;
+      transform: rotate(-90deg) scale(0.5);
+    }
+    50% {
+      top: -20px;
+      left: 276px;
+      transform: rotate(-180deg) scale(1);
+    }
+    75% {
+      top: 56px;
+      left: 276px;
+      transform: rotate(-270deg) scale(0.5);
+    }
+    100% {
+      top: 56px;
+      left: 200px;
+      transform: rotate(-360deg) scale(1);
+    }
+  }
   /**块状动效8**/
   /**块状动效9**/
   /**块状动效10**/

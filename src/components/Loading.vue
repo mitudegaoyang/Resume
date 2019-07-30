@@ -33,6 +33,19 @@
         <div class="loading-item"></div>
       </div>
     </div>
+    <div class="square5" v-if="types === 5">
+      <div class="loading-center-absolute">
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -54,11 +67,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+  .loading-center-absolute {
+    margin: 0 auto;
+    width: 100px;
+  }
   /**块状动效1**/
   .square1 {
     .loading-center-absolute {
-      margin: 0 auto;
-      width: 100px;
       .loading-item {
         margin: 100px 35px;
         width: 30px;
@@ -84,8 +99,6 @@ export default {
   .square2 {
     .loading-center-absolute {
       position: relative;
-      margin: 0 auto;
-      width: 100px;
       .loading-item-big {
         margin: 100px 35px;
         width: 30px;
@@ -269,8 +282,6 @@ export default {
   /**块状动效3**/
   .square3 {
     .loading-center-absolute {
-      margin: 0 auto;
-      width: 100px;
       .loading-item {
         position: absolute;
         margin: 100px 35px;
@@ -319,8 +330,6 @@ export default {
   /**块状动效4**/
   .square4 {
     .loading-center-absolute {
-      margin: 0 auto;
-      width: 100px;
       .loading-item {
         position: absolute;
         margin: 100px 35px;
@@ -411,6 +420,67 @@ export default {
     }
   }
   /**块状动效5**/
+  .square5 {
+    .loading-center-absolute {
+      .loading-item {
+        position: absolute;
+        margin: 100px 35px;
+        width: 30px;
+        height: 30px;
+        background: #f78070;
+      }
+      .loading-item:nth-child(1) {
+        top: -20px;
+        left: 200px;
+        animation: square5 0.9s -0.8s infinite ease-in-out;
+      }
+      .loading-item:nth-child(2) {
+        top: -20px;
+        animation: square5 0.9s -0.7s infinite ease-in-out;
+      }
+      .loading-item:nth-child(3) {
+        top: -20px;
+        left: 276px;
+        animation: square5 0.9s -0.6s infinite ease-in-out;
+      }
+      .loading-item:nth-child(4) {
+        left: 200px;
+        animation: square5 0.9s -0.5s infinite ease-in-out;
+      }
+      .loading-item:nth-child(5) {
+        animation: square5 0.9s -0.4s infinite ease-in-out;
+      }
+      .loading-item:nth-child(6) {
+        left: 276px;
+        animation: square5 0.9s -0.3s infinite ease-in-out;
+      }
+      .loading-item:nth-child(7) {
+        top: 56px;
+        left: 200px;
+        animation: square5 0.9s -0.2s infinite ease-in-out;
+      }
+      .loading-item:nth-child(8) {
+        top: 56px;
+        animation: square5 0.9s -0.1s infinite ease-in-out;
+      }
+      .loading-item:nth-child(9) {
+        top: 56px;
+        left: 276px;
+        animation: square5 0.9s 0s infinite ease-in-out;
+      }
+    }
+  }
+  @keyframes square5 {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.7);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   /**块状动效6**/
   /**块状动效7**/
   /**块状动效8**/

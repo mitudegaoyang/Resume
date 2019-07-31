@@ -11,7 +11,7 @@
         <NavBar :activeName="'home'" :unfixed="unfixed"></NavBar>
       </i-col>
     </i-row>
-    <i-row>
+    <i-row class="bg">
       <i-col class="w1200">
         <i-layout>
           <i-row>
@@ -87,7 +87,6 @@ export default {
     overflow: hidden;
     .banner {
       background: url("../assets/img/banner.jpg") no-repeat center center / cover;
-      // background: url("../assets/img/banner.jpg") no-repeat center center / contain;
       height: 100vh;
       line-height: 80px;
       text-align: center;
@@ -99,16 +98,20 @@ export default {
   .font-24 {
     font-size: 20px;
   }
+  .bg {
+    height: 3450px;
+    background: url("../assets/img/bg.png") no-repeat center center / cover;
+  }
   .w1200 {
     margin: 50px auto;
     width: 1200px;
   }
   .content {
-    min-height: 900px;
-    background: #fff;
+    /*min-height: 900px;*/
+    /*background: #fff;*/
   }
   .content-center {
-    padding: 24px;
-    background: #fff;
+    /*padding: 24px;*/
+    /*background: #fff;*/
   }
 </style>

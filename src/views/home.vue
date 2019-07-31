@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <i-row>
+    <i-row style="background: #f5f7f9">
       <i-col class="banner" :style="{opacity: opacity}">
         <p>Hello, I'm Mr.Gao</p>
         <p class="font-24">一个拥有像素眼的前端工程师</p>
@@ -81,7 +81,7 @@ export default {
 <style scoped lang="less">
   .layout {
     min-width: 800px;
-    background: #f5f7f9;
+    /*background: #f5f7f9;*/
     position: relative;
     border-radius: 4px;
     overflow: hidden;
@@ -100,11 +100,10 @@ export default {
     font-size: 20px;
   }
   .w1200 {
-    margin: 0 auto;
+    margin: 50px auto;
     width: 1200px;
   }
   .content {
-    margin: 50px auto;
     min-height: 900px;
     background: #fff;
   }

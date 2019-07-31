@@ -272,17 +272,15 @@ export default {
 <style scoped lang="less">
   .layout {
     min-width: 800px;
-    background: #f5f7f9;
     position: relative;
     border-radius: 4px;
     overflow: hidden;
   }
   .w1200 {
-    margin: 0 auto;
+    margin: 0 auto 50px;
     width: 1200px;
   }
   .content {
-    margin-bottom: 50px;
     min-height: 530px;
     background: #fff;
   }

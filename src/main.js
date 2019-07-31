@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import echarts from 'echarts'
 import VueCookies from 'vue-cookies'
+import VueParticles from 'vue-particles'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
@@ -15,6 +16,7 @@ Vue.component('i-time-line-item', iView.TimelineItem)
 
 Vue.use(iView)
 Vue.use(VueCookies)
+Vue.use(VueParticles)
 
 Vue.prototype.$loadingBar = iView.LoadingBar
 Vue.prototype.$echarts = echarts

@@ -54,3 +54,4 @@ npm run dep
 * [动效设计-天空](https://sky.afufintech.com/#/login)
 * [DNA螺旋动效](https://wow.techbrood.com/fiddle/33996)
 * [nav吸顶效果](https://blog.csdn.net/zbwroom/article/details/81911909)
+* [vue-particles](https://www.jianshu.com/p/53199b842d25)

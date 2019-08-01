@@ -5,6 +5,10 @@ npm run build
 cp -a favicon.ico README.md dist
 
 cd ./dist
+
+# 如果是发布到自定义域名
+echo 'www.gaotianyang.top' > CNAME
+
 git init
 git add -A
 git commit -m 'deploy'

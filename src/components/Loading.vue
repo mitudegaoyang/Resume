@@ -72,6 +72,30 @@
         <div class="loading-item"></div>
       </div>
     </div>
+    <div class="square9" v-if="types === 9">
+      <div class="loading-center-absolute">
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+      </div>
+    </div>
+    <div class="square10" v-if="types === 10">
+      <div class="loading-center-absolute">
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+        <div class="loading-item"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -766,7 +790,175 @@ export default {
     }
   }
   /**块状动效9**/
+  .square9 {
+    .loading-center-absolute {
+      margin: 80px auto;
+      width: 60px;
+      height: 60px;
+      .loading-item {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: #f78070;
+        transform: rotate(45deg)
+      }
+      .loading-item:nth-child(1) {
+        transform: translate(0, -70px) rotate(45deg);
+        animation: square9-1 0.5s infinite;
+      }
+      .loading-item:nth-child(2) {
+        transform: translate(70px, 0) rotate(45deg);
+        animation: square9-2 0.5s infinite;
+      }
+      .loading-item:nth-child(3) {
+        transform: translate(0, 70px) rotate(45deg);
+        animation: square9-3 0.5s infinite;
+      }
+      .loading-item:nth-child(4) {
+        transform: translate(-70px, 0) rotate(45deg);
+        animation: square9-4 0.5s infinite;
+      }
+      .loading-item:nth-child(5) {
+        animation: square9-5 0.5s infinite;
+      }
+    }
+  }
+  @keyframes square9-1 {
+    0% {
+      transform: translate(0, -70px) rotate(45deg);
+    }
+    100% {
+      transform: translate(70px, 0) rotate(-45deg);
+    }
+  }
+  @keyframes square9-2 {
+    0% {
+      transform: translate(70px, 0) rotate(45deg);
+    }
+    100% {
+      transform: translate(0, 70px) rotate(-45deg);
+    }
+  }
+  @keyframes square9-3 {
+    0% {
+      transform: translate(0, 70px) rotate(45deg);
+    }
+    100% {
+      transform: translate(-70px, 0) rotate(-45deg);
+    }
+  }
+  @keyframes square9-4 {
+    0% {
+      transform: translate(-70px, 0) rotate(45deg);
+    }
+    100% {
+      transform: translate(0, -70px) rotate(-45deg);
+    }
+  }
+  @keyframes square9-5 {
+    0% {
+      transform: rotate(45deg) scale(1.5);
+    }
+    50% {
+      transform: rotate(45deg) scale(1);
+    }
+    100% {
+      transform: rotate(45deg) scale(1.5);
+    }
+  }
   /**块状动效10**/
+  .square10 {
+    .loading-center-absolute {
+      position: relative;
+      margin: 80px auto;
+      width: 60px;
+      height: 60px;
+      .loading-item {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: #f8a05b;
+      }
+      .loading-item:nth-child(1) {
+        top: -60px;
+        left: -80px;
+        animation: square10-1 1s -1s infinite;
+      }
+      .loading-item:nth-child(2) {
+        top: -60px;
+        left: 80px;
+        animation: square10-2 1s -1s infinite;
+      }
+      .loading-item:nth-child(3) {
+        top: -20px;
+        left: -80px;
+        animation: square10-1 1s -0.9s infinite;
+      }
+      .loading-item:nth-child(4) {
+        top: -20px;
+        left: 80px;
+        animation: square10-2 1s -0.9s infinite;
+      }
+      .loading-item:nth-child(5) {
+        top: 20px;
+        left: -80px;
+        animation: square10-1 1s -0.8s infinite;
+      }
+      .loading-item:nth-child(6) {
+        top: 20px;
+        left: 80px;
+        animation: square10-2 1s -0.8s infinite;
+      }
+      .loading-item:nth-child(7) {
+        top: 60px;
+        left: -80px;
+        animation: square10-1 1s -0.7s infinite;
+      }
+      .loading-item:nth-child(8) {
+        top: 60px;
+        left: 80px;
+        animation: square10-2 1s -0.7s infinite;
+      }
+      .loading-item:nth-child(9) {
+        top: 100px;
+        left: -80px;
+        animation: square10-1 1s -0.6s infinite;
+      }
+      .loading-item:nth-child(10) {
+        top: 100px;
+        left: 80px;
+        animation: square10-2 1s -0.6s infinite;
+      }
+    }
+  }
+  @keyframes square10-1 {
+    0% {
+      left: -80px;
+      transform: rotate(0deg);
+    }
+    50% {
+      left: 40px;
+      transform: rotate(45deg);
+    }
+    100% {
+      left: -80px;
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes square10-2 {
+    0% {
+      left: 80px;
+      transform: rotate(0deg);
+    }
+    50% {
+      left: -40px;
+      transform: rotate(-45deg);
+    }
+    100% {
+      left: 80px;
+      transform: rotate(0deg);
+    }
+  }
   /**点状动效1**/
   /**点状动效2**/
   /**点状动效3**/

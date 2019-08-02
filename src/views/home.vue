@@ -3,7 +3,7 @@
     <i-row style="background: #f5f7f9">
       <i-col class="banner" :style="{opacity: opacity}">
         <p>Hello, I'm Mr.Gao</p>
-        <p class="font-24">一个拥有像素眼的前端工程师</p>
+        <p class="font-24">热情 · 执行力 · 健谈</p>
       </i-col>
     </i-row>
     <i-row class="nav">
@@ -140,7 +140,7 @@ export default {
         position: relative;
         padding: 200px 100px;
         top: 0;
-        width: 40vw;
+        width: 44vw;
         height: 40vw;
         background: #79a4ce;
         font-size: 36px;
@@ -153,10 +153,10 @@ export default {
       }
       .imgList {
         position: absolute;
-        width: 1100px;
+        width: 1050px;
         height: 700px;
         top: 200px;
-        right: 100px;
+        left: 42vw;
         .img {
           float: left;
           width: 500px;

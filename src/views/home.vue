@@ -98,7 +98,7 @@ export default {
       self.scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       self.unfixed = (self.scrollTop < self.offsetTop)
       self.opacity = 1 - (self.scrollTop / self.offsetTop)
-      self.contentTop = 200 * (1 - (self.scrollTop / self.mainTop)) + 100 + 'px'
+      self.contentTop = 200 * (1 - (self.scrollTop / self.mainTop)) + 200 + 'px'
     }
   },
   created () {

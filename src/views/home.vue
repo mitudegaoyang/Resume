@@ -11,6 +11,37 @@
         <NavBar :activeName="'home'" :unfixed="unfixed"></NavBar>
       </i-col>
     </i-row>
+    <i-row class="main">
+      <i-col>
+        <i-row>
+          <i-col class="item1">
+            <div class="content" :style="{top: contentTop}">
+              <div class="title">我叫高天阳，坐标北京</div>
+              <div>我并不是计算机专业，但对前端很感兴趣，所以自学前端，今后的职业规划是朝着项目经理发展，目前在学TypeScript/ES6。 </div>
+            </div>
+            <div class="imgList">
+              <div class="imgList-left">
+                <div class="img"></div>
+                <div class="img"></div>
+              </div>
+              <div class="imgList-right">
+                <div class="img"></div>
+                <div class="img"></div>
+              </div>
+            </div>
+          </i-col>
+        </i-row>
+        <i-row>
+          <i-col>模块1</i-col>
+        </i-row>
+        <i-row>
+          <i-col>模块3</i-col>
+        </i-row>
+        <i-row>
+          <i-col>模块4</i-col>
+        </i-row>
+      </i-col>
+    </i-row>
     <i-row class="bg">
       <i-col class="w1200">
         <i-layout>
@@ -18,7 +49,6 @@
             <i-content class="content">
               <i-layout>
                 <i-content class="content-center">
-                  <i-button @click="unfixed = !unfixed">显示隐藏{{unfixed}}</i-button>
                 </i-content>
               </i-layout>
             </i-content>
@@ -47,7 +77,9 @@ export default {
     return {
       opacity: 1,
       offsetTop: 0,
+      mainTop: 0,
       scrollTop: 0,
+      contentTop: 0,
       unfixed: true,
       msg: 'Home'
     }
@@ -57,6 +89,7 @@ export default {
     window.addEventListener('scroll', self.initHeight)
     self.$nextTick(() => {
       self.offsetTop = document.querySelector('.nav').offsetTop
+      self.mainTop = document.querySelector('.main').offsetTop
     })
   },
   methods: {
@@ -65,6 +98,7 @@ export default {
       self.scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       self.unfixed = (self.scrollTop < self.offsetTop)
       self.opacity = 1 - (self.scrollTop / self.offsetTop)
+      self.contentTop = 200 * (1 - (self.scrollTop / self.mainTop)) + 100 + 'px'
     }
   },
   created () {
@@ -98,20 +132,73 @@ export default {
   .font-24 {
     font-size: 20px;
   }
+  .main {
+    .item1 {
+      position: relative;
+      height: 1000px;
+      .content {
+        position: relative;
+        padding: 200px 100px;
+        top: 0;
+        width: 40vw;
+        height: 40vw;
+        background: #79a4ce;
+        font-size: 36px;
+        color: #fff;
+        .title {
+          margin-bottom: 30px;
+          font-size: 50px;
+          font-weight: 600;
+        }
+      }
+      .imgList {
+        position: absolute;
+        width: 1100px;
+        height: 700px;
+        top: 200px;
+        right: 100px;
+        .img {
+          float: left;
+          width: 500px;
+          height: 400px;
+          line-height: 350px;
+          text-align: center;
+          background: #61b1f6;
+        }
+        .imgList-left {
+          width: 500px;
+          float: left;
+          margin-right: 50px;
+          .img:nth-child(1) {
+            margin-bottom: 50px;
+            height: 300px;
+            background: url("../assets/img/img3.jpeg") no-repeat center center / cover;
+          }
+          .img:nth-child(2) {
+            background: url("../assets/img/img4.jpeg") no-repeat center -30px / cover;
+          }
+        }
+        .imgList-right {
+          width: 500px;
+          float: left;
+          .img:nth-child(1) {
+            background: url("../assets/img/img1.jpeg") no-repeat center -40px / cover;
+          }
+          .img:nth-child(2) {
+            margin-top: 50px;
+            height: 300px;
+            background: url("../assets/img/img2.jpeg") no-repeat center center / cover;
+          }
+        }
+      }
+    }
+  }
   .bg {
-    height: 3450px;
+    height: 2370px;
     background: url("../assets/img/bg.png") no-repeat center center / cover;
   }
   .w1200 {
     margin: 50px auto;
     width: 1200px;
-  }
-  .content {
-    /*min-height: 900px;*/
-    /*background: #fff;*/
-  }
-  .content-center {
-    /*padding: 24px;*/
-    /*background: #fff;*/
   }
 </style>

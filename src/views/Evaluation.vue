@@ -114,7 +114,7 @@ export default {
             }, millis)
           }
         }
-      }, 100)
+      }, 70)
     }
   },
   created () {

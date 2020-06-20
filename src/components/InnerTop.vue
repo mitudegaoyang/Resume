@@ -8,9 +8,9 @@
         <li>现在是北京时间：{{time}}</li>
         <li>网站已平稳运行：{{timeList.day}}天{{timeList.hour}}小时{{timeList.minutes}}分钟{{timeList.seconds}}秒</li>
         <li>
-          <span id="busuanzi_container_site_pv">
+          <span id="busuanzi_container_site_uv">
             本站总访问量
-            <span id="busuanzi_value_site_pv"></span>次
+            <span id="busuanzi_value_site_uv"></span>次
           </span>
         </li>
       </ul>

@@ -28,6 +28,9 @@ npm test
 
 # deploy packaged files
 npm run dep
+
+# 执行部署脚本
+sh deploy.sh
 ```
 
 ## 涵盖知识点
@@ -55,3 +58,4 @@ npm run dep
 * [DNA螺旋动效](https://wow.techbrood.com/fiddle/33996)
 * [nav吸顶效果](https://blog.csdn.net/zbwroom/article/details/81911909)
 * [vue-particles](https://www.jianshu.com/p/53199b842d25)
+* [访问量统计](https://cloud.tencent.com/developer/article/1498680)

@@ -20,18 +20,26 @@
                 <i-content class="content-center">
                   <i-row style="padding-bottom: 20px">
                     <i-col>
-                      <div style="border-bottom: 1px solid #e9e9e9;padding-bottom:6px;margin-bottom:6px;">
+                      <div
+                        style="border-bottom: 1px solid #e9e9e9;padding-bottom:6px;margin-bottom:6px;"
+                      >
                         <i-checkbox
                           :indeterminate="data.indeterminate"
                           :value="data.checkAll"
-                          @click.prevent.native="handleCheckAll">全选</i-checkbox>
+                          @click.prevent.native="handleCheckAll"
+                        >全选</i-checkbox>
                       </div>
-                      <i-checkbox-group v-model="data.checkAllGroup" @on-change="checkAllGroupChange">
+                      <i-checkbox-group
+                        v-model="data.checkAllGroup"
+                        @on-change="checkAllGroupChange"
+                      >
                         <i-checkbox label="html"></i-checkbox>
                         <i-checkbox label="css"></i-checkbox>
                         <i-checkbox label="js"></i-checkbox>
+                        <i-checkbox label="react"></i-checkbox>
                         <i-checkbox label="vue"></i-checkbox>
                         <i-checkbox label="angular"></i-checkbox>
+                        <i-checkbox label="antd"></i-checkbox>
                         <i-checkbox label="element"></i-checkbox>
                         <i-checkbox label="iview"></i-checkbox>
                         <i-checkbox label="vux"></i-checkbox>
@@ -43,13 +51,25 @@
                     </i-col>
                   </i-row>
                   <i-row class="project-list">
-                    <i-col class="project-item" :class="{thumb: item.img}" v-for="item in data.projectDataBak" :key="item.index">
+                    <i-col
+                      class="project-item"
+                      :class="{thumb: item.img}"
+                      v-for="item in data.projectDataBak"
+                      :key="item.index"
+                    >
                       <div class="project-box">
                         <div class="project-header">
-                          <div class="project-title">{{item.title}} <span class="project-label">{{item.label}}</span></div>
+                          <div class="project-title">
+                            {{item.title}}
+                            <span class="project-label">{{item.label}}</span>
+                          </div>
                           <div class="project-info">
                             <div class="project-tags">
-                              <span :class="'project-tags-' + tag.value" v-for="tag in item.tags" :key="tag.index">{{tag.name}}</span>
+                              <span
+                                :class="'project-tags-' + tag.value"
+                                v-for="tag in item.tags"
+                                :key="tag.index"
+                              >{{tag.name}}</span>
                             </div>
                             <div class="project-time">{{item.time}}</div>
                           </div>
@@ -60,7 +80,12 @@
                         </div>
                       </div>
                       <div class="project-thumb" v-if="item.img">
-                        <img :src="require('../../assets/img/project/' + item.img + '.png')" width="350px" :title="item.img" alt="项目展示">
+                        <img
+                          :src="require('../../assets/img/project/' + item.img + '.png')"
+                          width="350px"
+                          :title="item.img"
+                          alt="项目展示"
+                        />
                       </div>
                     </i-col>
                   </i-row>
@@ -85,16 +110,16 @@
 </template>
 
 <script>
-import _ from 'lodash'
-import NavBar from '../../components/NavBar.vue' // 引进菜单模板
-import Footer from '../../components/Footer.vue' // 引进底部模板
+import _ from "lodash";
+import NavBar from "../../components/NavBar.vue"; // 引进菜单模板
+import Footer from "../../components/Footer.vue"; // 引进底部模板
 export default {
-  name: 'Project',
+  name: "Project",
   components: {
     NavBar, // 使用菜单组件
     Footer // 使用底部组件
   },
-  data () {
+  data() {
     return {
       data: {
         indeterminate: true,
@@ -102,20 +127,85 @@ export default {
         checkAllGroup: [],
         projectData: [
           {
-            title: '鱼猫金服PC版重构',
-            label: '(开发中)',
+            title: "智能媒体服务",
+            label: "(开发中)",
             tags: [
               {
-                name: 'vue.js',
-                value: 'vue'
+                name: "React",
+                value: "react"
               },
               {
-                name: 'iView',
-                value: 'iview'
+                name: "antd",
+                value: "antd"
               }
             ],
-            time: '2019/2 至今',
-            img: 'ympcnew',
+            time: "2020/3 至今",
+            img: "",
+            content: `<p>使用antd、react实现项目的迭代开发。项目共分为概览、智能搜索、布控预警、设备、媒资管理、系统管理几个模块。</p>
+              <p>本人在项目中担任前端开发。</p>
+              <p>智能媒体服务平台是一个提供设备接入、视频流上云、媒资管理、视频 AI、智能搜索功能的云产品。</p>
+              <p>旨在帮助视频厂商快速将存量或者新增的媒体设备上云。平台还提供了丰富的视频算法，以及云边协同的视频智能服务。</p>
+              <ul>
+                <li>使用antd组件实现各页面布局及特效；</li>
+                <li>编写功能组件，实现组件的复用；</li>
+                <li>使用bizcharts实现可视化图表格；</li>
+                <li>使用graphql实现智能搜索接口；</li>
+                <li>引入高德地图实现地图功能；</li>
+                <li>引入西瓜视频实现视频播放功能；</li>
+              </ul>`,
+            link: {
+              title: "",
+              src: ""
+            }
+          },
+          {
+            title: "AIoT感知平台",
+            label: "(已交付)",
+            tags: [
+              {
+                name: "React",
+                value: "react"
+              },
+              {
+                name: "antd",
+                value: "antd"
+              }
+            ],
+            time: "2019/9 至 2020/3",
+            img: "",
+            content: `<p>使用antd、react实现项目的迭代开发。项目共分为概览、产品、设备、告警、规则、工单、应用、系统管理几个模块。</p>
+              <p>本人在项目中担任前端开发。</p>
+              <p>项目使用子应用模式开发，模块间独立开发部署。</p>
+              <p>感知平台为设备提供安全可靠的连接通信能力，向下连接海量设备，支撑设备数据采集上云。</p>
+              <p>向上提供云端 API，应用服务通过 API 调用开放平台功能，实现远程控制。帮助用户快速构筑物联网应用。</p>
+              <ul>
+                <li>使用rematch实现状态管理；</li>
+                <li>使用react-router-dom实现路由管理；</li>
+                <li>使用react-intl实现多语言；</li>
+                <li>编写功能组件，实现组件的复用；</li>
+                <li>使用bizcharts实现可视化图表格；</li>
+                <li>引入高德地图实现地图功能；</li>
+              </ul>`,
+            link: {
+              title: "",
+              src: ""
+            }
+          },
+          {
+            title: "鱼猫金服PC版重构",
+            label: "(开发中)",
+            tags: [
+              {
+                name: "vue.js",
+                value: "vue"
+              },
+              {
+                name: "iView",
+                value: "iview"
+              }
+            ],
+            time: "2019/2 至今",
+            img: "ympcnew",
             content: `<p>使用iView、vue实现官网PC版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
               <p>在开发过程中，还需要注意IE兼容性的影响。</p>
@@ -124,29 +214,28 @@ export default {
                 <li>使用vue-baidu-map引入百度地图；</li>
                 <li>在vue-router中编写公共方法进行页面置顶及加载效果；</li>
                 <li>编写公共组件，进行登录状态判断及展示；</li>
-                <li>使用iView组件实现各页面布局及特效；</li>
                 <li>使用C3 的animation新特性实现公告滚动效果；</li>
               </ul>`,
             link: {
-              title: '在线地址（需使用 PC 访问）',
-              src: 'https://www.yumao.fun/refactoring/pc/index.html#/home'
+              title: "在线地址（需使用 PC 访问）",
+              src: "https://www.yumao.fun/refactoring/pc/index.html#/home"
             }
           },
           {
-            title: '鱼猫金服微信版官网重构',
-            label: '(已上线)',
+            title: "鱼猫金服微信版官网重构",
+            label: "(已上线)",
             tags: [
               {
-                name: 'vue.js',
-                value: 'vue'
+                name: "vue.js",
+                value: "vue"
               },
               {
-                name: 'Vux',
-                value: 'vux'
+                name: "Vux",
+                value: "vux"
               }
             ],
-            time: '2018/9 至今',
-            img: 'ymwechat',
+            time: "2018/9 至今",
+            img: "ymwechat",
             content: `<p>使用Vux、Vue实现官网微信版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
               <ul>
@@ -157,29 +246,30 @@ export default {
                 <li>使用ifarme嵌入及jQ实现公告详情渲染；</li>
               </ul>`,
             link: {
-              title: '在线地址（需使用手机访问）',
-              src: 'https://www.yumaomoney.com/refactoring/wechat/index.html#/home'
+              title: "在线地址（需使用手机访问）",
+              src:
+                "https://www.yumaomoney.com/refactoring/wechat/index.html#/home"
             }
           },
           {
-            title: '鱼猫金服业务推广活动页面',
-            label: '(已下线)',
+            title: "鱼猫金服业务推广活动页面",
+            label: "(已下线)",
             tags: [
               {
-                name: 'vue.js',
-                value: 'vue'
+                name: "vue.js",
+                value: "vue"
               },
               {
-                name: 'CSS 3',
-                value: 'css'
+                name: "CSS 3",
+                value: "css"
               },
               {
-                name: 'JavaScript',
-                value: 'js'
+                name: "JavaScript",
+                value: "js"
               }
             ],
-            time: '2019/5 至 2019/5',
-            img: 'ymbenlai',
+            time: "2019/5 至 2019/5",
+            img: "ymbenlai",
             content: `<p>使用Vue、C3实现官网节日宣传活动页面的构建。</p>
               <ul>
                 <li>使用mobile-util.js适配移动端；</li>
@@ -188,29 +278,29 @@ export default {
                 <li>使用Axios与后台进行数据交互，渲染用户获奖情况；</li>
               </ul>`,
             link: {
-              title: '在线地址（需使用手机访问）',
-              src: 'https://www.yumao.fun/activity/20190520/app/index.html#/'
+              title: "在线地址（需使用手机访问）",
+              src: "https://www.yumao.fun/activity/20190520/app/index.html#/"
             }
           },
           {
-            title: '鱼猫金服大转盘活动页面',
-            label: '(已下线)',
+            title: "鱼猫金服大转盘活动页面",
+            label: "(已下线)",
             tags: [
               {
-                name: 'vue.js',
-                value: 'vue'
+                name: "vue.js",
+                value: "vue"
               },
               {
-                name: 'CSS 3',
-                value: 'css'
+                name: "CSS 3",
+                value: "css"
               },
               {
-                name: 'JavaScript',
-                value: 'js'
+                name: "JavaScript",
+                value: "js"
               }
             ],
-            time: '2019/4 至 2019/4',
-            img: 'ymturntable',
+            time: "2019/4 至 2019/4",
+            img: "ymturntable",
             content: `<p>使用Vue、C3动效实现官网节日宣传活动页面的构建。</p>
               <p>活动为大转盘。</p>
               <ul>
@@ -220,29 +310,29 @@ export default {
                 <li>使用Axios与后台进行数据交互，渲染用户获奖情况；</li>
               </ul>`,
             link: {
-              title: '在线地址（需使用手机访问）',
-              src: 'https://www.yumao.fun/activity/20190415/app/index.html#/'
+              title: "在线地址（需使用手机访问）",
+              src: "https://www.yumao.fun/activity/20190415/app/index.html#/"
             }
           },
           {
-            title: '鱼猫金服新手活动页面重构',
-            label: '(已下线)',
+            title: "鱼猫金服新手活动页面重构",
+            label: "(已下线)",
             tags: [
               {
-                name: 'vue.js',
-                value: 'vue'
+                name: "vue.js",
+                value: "vue"
               },
               {
-                name: 'CSS 3',
-                value: 'css'
+                name: "CSS 3",
+                value: "css"
               },
               {
-                name: 'JavaScript',
-                value: 'js'
+                name: "JavaScript",
+                value: "js"
               }
             ],
-            time: '2019/1 至 2019/2',
-            img: 'ymroad',
+            time: "2019/1 至 2019/2",
+            img: "ymroad",
             content: `<p>使用Vue、C3动效实现官网节日宣传活动页面的构建。</p>
               <p>活动为大转盘。</p>
               <ul>
@@ -251,37 +341,37 @@ export default {
                 <li>使用Axios与后台进行数据交互，渲染用户获奖情况；</li>
               </ul>`,
             link: {
-              title: '在线地址（需使用手机访问）',
-              src: 'https://www.yumao.fun/activity/20180824/app/index.html#/'
+              title: "在线地址（需使用手机访问）",
+              src: "https://www.yumao.fun/activity/20180824/app/index.html#/"
             }
           },
           {
-            title: '鱼猫金服企业端',
-            label: '(已上线)',
+            title: "鱼猫金服企业端",
+            label: "(已上线)",
             tags: [
               {
-                name: 'vue.js',
-                value: 'vue'
+                name: "vue.js",
+                value: "vue"
               },
               {
-                name: 'Element',
-                value: 'element'
+                name: "Element",
+                value: "element"
               },
               {
-                name: 'CSS 3',
-                value: 'css'
+                name: "CSS 3",
+                value: "css"
               },
               {
-                name: 'JavaScript',
-                value: 'js'
+                name: "JavaScript",
+                value: "js"
               },
               {
-                name: 'JSP',
-                value: 'jsp'
+                name: "JSP",
+                value: "jsp"
               }
             ],
-            time: '2018/7 至 2018/10',
-            img: 'ymbusiness',
+            time: "2018/7 至 2018/10",
+            img: "ymbusiness",
             content: `<p>使用Element UI、Vue、Jsp实现企业端项目。</p>
               <ul>
                 <li>使用Element UI组件实现各页面布局及特效；</li>
@@ -290,88 +380,88 @@ export default {
                 <li>修改既有功能模块，实现与企业端的融合；</li>
               </ul>`,
             link: {
-              title: '在线地址（需使用 PC 访问）',
-              src: 'https://www.yumaomoney.com/businessindex.do'
+              title: "在线地址（需使用 PC 访问）",
+              src: "https://www.yumaomoney.com/businessindex.do"
             }
           },
           {
-            title: '鱼猫金服PC版日常维护',
-            label: '(已上线)',
+            title: "鱼猫金服PC版日常维护",
+            label: "(已上线)",
             tags: [
               {
-                name: 'HTML 5',
-                value: 'html'
+                name: "HTML 5",
+                value: "html"
               },
               {
-                name: 'CSS 3',
-                value: 'css'
+                name: "CSS 3",
+                value: "css"
               },
               {
-                name: 'JavaScript',
-                value: 'js'
+                name: "JavaScript",
+                value: "js"
               },
               {
-                name: 'JSP',
-                value: 'jsp'
+                name: "JSP",
+                value: "jsp"
               }
             ],
-            time: '2018/7 至今',
-            img: 'ympc',
+            time: "2018/7 至今",
+            img: "ympc",
             content: `<p>使用html5、css3、原生js、Jsp实现既有官网项目的日常维护。</p>
               <p>在原有的项目基础之上，进行功能模块上的迭代升级，以及bug修复。</p>
               <p>对项目按功能点进行小规模重构，使得代码可维护性得以提升。</p>`,
             link: {
-              title: '在线地址（需使用 PC 访问）',
-              src: 'https://www.yumaomoney.com/'
+              title: "在线地址（需使用 PC 访问）",
+              src: "https://www.yumaomoney.com/"
             }
           },
           {
-            title: '银信长远测评系统',
-            label: '',
+            title: "银信长远测评系统",
+            label: "",
             tags: [
               {
-                name: 'vue.js',
-                value: 'vue'
+                name: "vue.js",
+                value: "vue"
               },
               {
-                name: 'Element',
-                value: 'element'
+                name: "Element",
+                value: "element"
               },
               {
-                name: 'Vux',
-                value: 'vux'
+                name: "Vux",
+                value: "vux"
               }
             ],
-            time: '2018/6 至 2018/7',
-            img: '',
+            time: "2018/6 至 2018/7",
+            img: "",
             content: `<p>此项目为后台管理人员月度评测系统，主要分为考勤评测、工作完成度评测、工作服务质量评测3大类。</p>
               <p>主要分为微信企业号及web端管理系统两个组成部分。</p>
               <p>参与项目时，项目处在需求调研阶段，本人担任项目经理与产品经理共同和客户确认需求，梳理并编写工作说明文档、需求文档。</p>
               <p>在需求确认完毕后，会对系统架构进行设计、技术选型以及出原型图。</p>`,
             link: {
-              title: '',
-              src: ''
+              title: "",
+              src: ""
             }
           },
           {
-            title: '张家口检察院OA管理',
-            label: '(内网已上线)',
+            title: "张家口检察院OA管理",
+            label: "(内网已上线)",
             tags: [
               {
-                name: 'vue.js',
-                value: 'vue'
+                name: "vue.js",
+                value: "vue"
               },
               {
-                name: 'vue-element-admin',
-                value: 'element-admin'
+                name: "vue-element-admin",
+                value: "element-admin"
               },
               {
-                name: 'Weex',
-                value: 'weex'
+                name: "Weex",
+                value: "weex"
               }
             ],
-            time: '2018/2 至 2018/6',
-            img: 'procuratorate',
+            time: "2018/2 至 2018/6",
+            img: "procuratorate",
             content: `<p>使用Element UI Admin、Vue实现张家口检察院OA管理平台。项目共分为即时通讯、办公应用、辅助工具、辅助学习、系统管理几个模块。</p>
               <p>本人在项目中担任项目经理角色，主要负责对项目进行整体把控，项目初始化及进度推进，项目难点解决方案梳理，公共方法的编写，以及即时通讯的部分子模块、办公应用的部分子模块。</p>
               <ul>
@@ -381,25 +471,25 @@ export default {
                 <li>抽离页面内容，编写template实现组件式开发；</li>
               </ul>`,
             link: {
-              title: '',
-              src: ''
+              title: "",
+              src: ""
             }
           },
           {
-            title: '文献数字化后台管理',
-            label: '',
+            title: "文献数字化后台管理",
+            label: "",
             tags: [
               {
-                name: 'Angular.js',
-                value: 'angular'
+                name: "Angular.js",
+                value: "angular"
               },
               {
-                name: 'Fuse-angular',
-                value: 'fuse'
+                name: "Fuse-angular",
+                value: "fuse"
               }
             ],
-            time: '2017/12 至 2018/3',
-            img: 'document',
+            time: "2017/12 至 2018/3",
+            img: "document",
             content: `<p>使用Fuse 、AngularJS实现文献数字化OA管理平台。</p>
               <p>项目共分为项目管理、资源管理、工作管理、系统管理、个人中心几个模块。</p>
               <p>本人在项目中担任项目经理角色，主要负责对项目进行整体把控，项目初始化及进度推进，项目难点解决方案梳理，公共方法的编写，以及个人中心、登录模块开发。</p>
@@ -412,25 +502,25 @@ export default {
                 <li>进行代码审查，对代码进行优化、重构；</li>
               </ul>`,
             link: {
-              title: '',
-              src: ''
+              title: "",
+              src: ""
             }
           },
           {
-            title: '星路起航微信小游戏后台管理',
-            label: '',
+            title: "星路起航微信小游戏后台管理",
+            label: "",
             tags: [
               {
-                name: 'Angular.js',
-                value: 'angular'
+                name: "Angular.js",
+                value: "angular"
               },
               {
-                name: 'Fuse-angular',
-                value: 'fuse'
+                name: "Fuse-angular",
+                value: "fuse"
               }
             ],
-            time: '2017/11 至 2017/12',
-            img: '',
+            time: "2017/11 至 2017/12",
+            img: "",
             content: `<p>使用Fuse 、AngularJS实现微信小游戏后台管理。</p>
               <p>项目共分为用户管理、星卡管理(游戏卡片)、礼品管理、推荐选手管理、任务管理、题库管理几个模块。</p>
               <p>本人在项目中担任项目经理角色，主要负责对项目进行整体把控，以及星卡管理、礼品管理的模块开发。</p>
@@ -444,25 +534,25 @@ export default {
                 <li>与客户沟通明确需求点，与测试沟通确认问题并提出解决方案；</li>
               </ul>`,
             link: {
-              title: '',
-              src: ''
+              title: "",
+              src: ""
             }
           },
           {
-            title: '诚轩OA管理系统',
-            label: '',
+            title: "诚轩OA管理系统",
+            label: "",
             tags: [
               {
-                name: 'Angular.js',
-                value: 'angular'
+                name: "Angular.js",
+                value: "angular"
               },
               {
-                name: 'Fuse-angular',
-                value: 'fuse'
+                name: "Fuse-angular",
+                value: "fuse"
               }
             ],
-            time: '2017/7 至 2018/2',
-            img: '',
+            time: "2017/7 至 2018/2",
+            img: "",
             content: `<p>使用Fuse 、AngularJS实现微信小游戏后台管理。</p>
               <p>项目共分为合同管理、客户管理、个人中心、拍品管理、关联信息管理、拍卖会管理、财务结算、统计分析几个模块。</p>
               <p>本人主要负责客户管理、拍品管理等。</p>
@@ -475,288 +565,309 @@ export default {
                 <li>进行代码审查，对代码进行优化、重构；</li>
               </ul>`,
             link: {
-              title: '',
-              src: ''
+              title: "",
+              src: ""
             }
           },
           {
-            title: 'Activity趋势健康',
-            label: '',
+            title: "Activity趋势健康",
+            label: "",
             tags: [
               {
-                name: 'Angular.js',
-                value: 'angular'
+                name: "Angular.js",
+                value: "angular"
               },
               {
-                name: 'HTML 5',
-                value: 'html'
+                name: "HTML 5",
+                value: "html"
               },
               {
-                name: 'CSS 3',
-                value: 'css'
+                name: "CSS 3",
+                value: "css"
               },
               {
-                name: 'JavaScript',
-                value: 'js'
+                name: "JavaScript",
+                value: "js"
               }
             ],
-            time: '2017/5 至 2017/7',
-            img: '',
+            time: "2017/5 至 2017/7",
+            img: "",
             content: `<p>对activity进行定制开发实现满足客户要求的默认操作、录入。</p>
               <p>使用activity开放Api对部分功能进行定制化增减。</p>`,
             link: {
-              title: '',
-              src: ''
+              title: "",
+              src: ""
             }
           },
           {
-            title: 'Skillee在线考试',
-            label: '',
+            title: "Skillee在线考试",
+            label: "",
             tags: [
               {
-                name: 'vue.js',
-                value: 'vue'
+                name: "vue.js",
+                value: "vue"
               },
               {
-                name: 'HTML 5',
-                value: 'html'
+                name: "HTML 5",
+                value: "html"
               },
               {
-                name: 'CSS 3',
-                value: 'css'
+                name: "CSS 3",
+                value: "css"
               },
               {
-                name: 'JavaScript',
-                value: 'js'
+                name: "JavaScript",
+                value: "js"
               }
             ],
-            time: '2017/4 至 2017/6',
-            img: '',
+            time: "2017/4 至 2017/6",
+            img: "",
             content: `<p>使用h5、flexbox实现页面弹性布局。</p>
               <p>利用全局变量和事件监听API完成考试倒计时功能。</p>
               <p>利用Axios与后台进行数据交互，渲染题目、选项。</p>`,
             link: {
-              title: '',
-              src: ''
+              title: "",
+              src: ""
             }
           }
         ],
         projectDataBak: []
       }
-    }
+    };
   },
   methods: {
-    handleCheckAll () {
-      var self = this
+    handleCheckAll() {
+      var self = this;
       if (self.data.indeterminate) {
-        self.data.checkAll = false
+        self.data.checkAll = false;
       } else {
-        self.data.checkAll = !self.data.checkAll
+        self.data.checkAll = !self.data.checkAll;
       }
-      self.data.indeterminate = false
+      self.data.indeterminate = false;
       if (self.data.checkAll) {
-        self.data.checkAllGroup = ['html', 'css', 'js', 'vue', 'angular', 'element', 'iview', 'vux', 'element-admin', 'weex', 'fuse', 'jsp']
+        self.data.checkAllGroup = [
+          "html",
+          "css",
+          "js",
+          "vue",
+          "angular",
+          "element",
+          "iview",
+          "vux",
+          "element-admin",
+          "weex",
+          "fuse",
+          "jsp"
+        ];
       } else {
-        self.data.checkAllGroup = []
+        self.data.checkAllGroup = [];
       }
-      self.filter()
+      self.filter();
     },
-    checkAllGroupChange (data) {
-      var self = this
+    checkAllGroupChange(data) {
+      var self = this;
       if (data.length === 12) {
-        self.data.indeterminate = false
-        self.data.checkAll = true
+        self.data.indeterminate = false;
+        self.data.checkAll = true;
       } else if (data.length > 0) {
-        self.data.indeterminate = true
-        self.data.checkAll = false
+        self.data.indeterminate = true;
+        self.data.checkAll = false;
       } else {
-        self.data.indeterminate = false
-        self.data.checkAll = false
+        self.data.indeterminate = false;
+        self.data.checkAll = false;
       }
-      self.filter()
+      self.filter();
     },
     /**
      * 筛选项目
      */
-    filterData (types) {
-      var self = this
-      self.data.projectDataBak = _.filter(self.data.projectDataBak, function (data) {
-        var type = false
-        _.each(data.tags, function (v) {
+    filterData(types) {
+      var self = this;
+      self.data.projectDataBak = _.filter(self.data.projectDataBak, function(
+        data
+      ) {
+        var type = false;
+        _.each(data.tags, function(v) {
           if (v.value === types) {
-            type = true
+            type = true;
           }
-        })
-        return type
-      })
+        });
+        return type;
+      });
     },
-    filter () {
-      var self = this
-      self.data.projectDataBak = self.data.projectData
-      _.each(self.data.checkAllGroup, function (v) {
-        self.filterData(v)
-      })
+    filter() {
+      var self = this;
+      self.data.projectDataBak = self.data.projectData;
+      _.each(self.data.checkAllGroup, function(v) {
+        self.filterData(v);
+      });
     }
   },
-  created () {
-    var self = this
-    self.filter()
-    self.$loadingBar.finish()
+  created() {
+    var self = this;
+    self.filter();
+    self.$loadingBar.finish();
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-  .layout {
-    min-width: 800px;
-    position: relative;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .w1200 {
-    margin: 0 auto 50px;
-    width: 1200px;
-  }
-  .content {
-    min-height: 530px;
-    background: #fff;
-  }
-  .content-center {
-    padding: 24px;
-    background: #fff;
-    .project-list {
-      .project-item {
-        margin-top: 30px;
-        padding-top: 40px;
-        border-top: 2px dashed #ccc;
-        .project-box {
-          float: left;
-          width: 100%;
-          .project-header {
-            padding-bottom: 5px;
-            .project-title {
-              font-size: 18px;
-              font-weight: 600;
-              .project-label {
-                font-size: .8em;
-                font-weight: 400;
-                color: #888;
-              }
-            }
-            .project-info {
-              margin: 5px 0;
-              .project-tags {
-                float: left;
-                span {
-                  height: 20px;
-                  line-height: 20px;
-                  padding: 0 6px;
-                  margin-right: 5px;
-                  border-radius: 3px;
-                  display: inline-block;
-                  vertical-align: middle;
-                  font-size: .75em;
-                  font-family: Lucida Grande,arial;
-                  color: #fff;
-                }
-                .project-tags-html {
-                  background: #f60;
-                }
-                .project-tags-css {
-                  background: #f90;
-                }
-                .project-tags-js {
-                  background: #ffda3f;
-                  color: #333;
-                }
-                .project-tags-vue {
-                  background: #4fc08d;
-                }
-                .project-tags-angular {
-                  background: #eb5a5c;
-                }
-                .project-tags-element {
-                  background: #409efe;
-                }
-                .project-tags-iview {
-                  background: #2d8cf0;
-                }
-                .project-tags-vux {
-                  background: #35495e;
-                }
-                .project-tags-element-admin {
-                  background: #4caf50;
-                }
-                .project-tags-weex {
-                  background: #3aabf4;
-                }
-                .project-tags-fuse {
-                  background: #2877c1;
-                }
-                .project-tags-jsp {
-                  background: #2952a4;
-                }
-                .project-tags-node {
-                  background: #80bd01;
-                }
-              }
-              .project-time {
-                float: right;
-              }
-            }
-            .project-info:after {
-              display: block;
-              clear: both;
-              content: "";
-              visibility: hidden;
-              height: 0;
+.layout {
+  min-width: 800px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.w1200 {
+  margin: 0 auto 50px;
+  width: 1200px;
+}
+.content {
+  min-height: 530px;
+  background: #fff;
+}
+.content-center {
+  padding: 24px;
+  background: #fff;
+  .project-list {
+    .project-item {
+      margin-top: 30px;
+      padding-top: 40px;
+      border-top: 2px dashed #ccc;
+      .project-box {
+        float: left;
+        width: 100%;
+        .project-header {
+          padding-bottom: 5px;
+          .project-title {
+            font-size: 18px;
+            font-weight: 600;
+            .project-label {
+              font-size: 0.8em;
+              font-weight: 400;
+              color: #888;
             }
           }
-          .project-content {
-            font-size: 14px;
-            color: #333;
+          .project-info {
+            margin: 5px 0;
+            .project-tags {
+              float: left;
+              span {
+                height: 20px;
+                line-height: 20px;
+                padding: 0 6px;
+                margin-right: 5px;
+                border-radius: 3px;
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 0.75em;
+                font-family: Lucida Grande, arial;
+                color: #fff;
+              }
+              .project-tags-html {
+                background: #f60;
+              }
+              .project-tags-css {
+                background: #f90;
+              }
+              .project-tags-js {
+                background: #ffda3f;
+                color: #333;
+              }
+              .project-tags-react {
+                background: #61dafb;
+              }
+              .project-tags-vue {
+                background: #4fc08d;
+              }
+              .project-tags-angular {
+                background: #eb5a5c;
+              }
+              .project-tags-antd {
+                background: #0170fe;
+              }
+              .project-tags-element {
+                background: #409efe;
+              }
+              .project-tags-iview {
+                background: #2d8cf0;
+              }
+              .project-tags-vux {
+                background: #35495e;
+              }
+              .project-tags-element-admin {
+                background: #4caf50;
+              }
+              .project-tags-weex {
+                background: #3aabf4;
+              }
+              .project-tags-fuse {
+                background: #2877c1;
+              }
+              .project-tags-jsp {
+                background: #2952a4;
+              }
+              .project-tags-node {
+                background: #80bd01;
+              }
+            }
+            .project-time {
+              float: right;
+            }
           }
-          .project-link {
-            font-size: 14px;
-            text-align: right;
+          .project-info:after {
+            display: block;
+            clear: both;
+            content: "";
+            visibility: hidden;
+            height: 0;
           }
         }
-        .project-thumb {
-          float: right;
-          width: 350px;
-          margin-right: -400px;
-          margin-left: 50px;
+        .project-content {
+          font-size: 14px;
+          color: #333;
+        }
+        .project-link {
+          font-size: 14px;
+          text-align: right;
         }
       }
-      .project-item:first-child {
-        margin-top: 0;
-        padding-top: 0;
-        border-top: none;
-      }
-      .project-item.thumb {
-        padding-right: 400px;
-      }
-      .project-item:after {
-        display: block;
-        clear: both;
-        content: "";
-        visibility: hidden;
-        height: 0;
+      .project-thumb {
+        float: right;
+        width: 350px;
+        margin-right: -400px;
+        margin-left: 50px;
       }
     }
-    .project-not-found {
-      line-height: 100px;
-      height: 100px;
-      text-align: center;
+    .project-item:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+    .project-item.thumb {
+      padding-right: 400px;
+    }
+    .project-item:after {
+      display: block;
+      clear: both;
+      content: "";
+      visibility: hidden;
+      height: 0;
     }
   }
+  .project-not-found {
+    line-height: 100px;
+    height: 100px;
+    text-align: center;
+  }
+}
 </style>
 <style lang="less">
-  .project-content {
-    li {
-      list-style: disc;
-      margin-left: 1.3em;
-    }
+.project-content {
+  li {
+    list-style: disc;
+    margin-left: 1.3em;
   }
+}
 </style>

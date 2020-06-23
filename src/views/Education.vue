@@ -174,7 +174,8 @@
                     </i-col>
                     <i-col span="12">
                       <div class="animate-box">
-                        <div class="animate-title">闹钟展示区</div>
+                        <div class="animate-title">地球展示区</div>
+                        <div class="earth"></div>
                       </div>
                     </i-col>
                     <i-col span="12">
@@ -257,6 +258,7 @@
 import NavBar from "../components/NavBar.vue"; // 引进菜单模板
 import Footer from "../components/Footer.vue"; // 引进底部模板
 import Loading from "../components/Loading.vue"; // 引进底部模板
+import terra from "../assets/img/terra.png";
 export default {
   name: "Education",
   components: {
@@ -272,6 +274,18 @@ export default {
   created() {
     var self = this;
     self.$loadingBar.finish();
+    // 添加动效
+    // let styleTag = document.createElement("style");
+    // styleTag.type = "text/css";
+    // let keyFrames =
+    //   "\
+    //     @keyframes loop {\
+    //         0% {background-position: 0 0;}\
+    //         100% {background-position: -1600px 0;}\
+    //     }\
+    //   ";
+    // styleTag.innerHTML = keyFrames;
+    // document.getElementsByTagName("head")[0].appendChild(styleTag);
   }
 };
 </script>
@@ -1016,6 +1030,41 @@ export default {
         border-right: 10px solid rgba(237, 210, 194, 0.2);
         animation-delay: 1s;
       }
+    }
+    .earth {
+      // 添加静态图
+      // background: `url(${terra}) repeat-x 0 0`;
+      // height: "802px";
+      // left: "35%";
+      // margin: "-225px 0 0 -225px";
+      // position: "absolute";
+      // top: "300px";
+      // width: "802px";
+      // // 使地球形成圆形效果
+      // border-radius: "401px";
+      // // 形成圆边效果，视觉效果更好，不用也行
+      // border: "1px solid rgba(26,18,101,0.3)";
+      // // 光晕
+      // box-shadow: "-8px 0 25px rgba(256,256,256,0.3), -1px -2px 14px rgba(256,256,256,0.5) inset";
+      // // 白天黑夜
+      // "&:before": {
+      //   display: "block";
+      //   content: "' '";
+      //   border-radius: "401px";
+      //   box-shadow: "-150px -6px 25px rgba(0,0,0,0.7) inset";
+      //   left: "0";
+      //   position: "absolute";
+      //   top: "0";
+      //   height: "802px";
+      //   width: "802px";
+      // },
+      // /* 世界地图的大小为900*450，所以background-position-x: -900px */
+      // // "@-webkit-keyframes loop": {
+      // //   "0%": { "background-position": "0 0" },
+      // //   "100%": { "background-position": "-900px 0" }
+      // // },
+      // /*在earth中添加如下样式*//* 这的时间是可以设置的，如果你想地球转快一点的话，时间改小点就行了，比如10s */
+      // "-webkit-animation": "loop 5s linear infinite";
     }
   }
 }

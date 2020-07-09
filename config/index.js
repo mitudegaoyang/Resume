@@ -7,10 +7,24 @@ const path = require('path')
 module.exports = {
   dev: {
 
+    open: true,
+    autoOpenBrowser: true,
+
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    // proxyTable: {},
+    proxyTable: { // 配置跨域
+      '/test': {
+        target: 'https://m.weibo.cn',
+        secure: false,
+        // ws: true,
+        changeOrigin: true,    //是否开启代理
+        pathRewrite: {//重写路径
+          "^/test": ''
+        }
+      },
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

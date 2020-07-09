@@ -15,6 +15,7 @@
     "dep": "sh deploy.sh"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "echarts": "^4.2.1",
     "iview": "^3.4.2",
     "lodash": "^4.17.10",

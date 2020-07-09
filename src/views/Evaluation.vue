@@ -45,6 +45,7 @@
 <script>
 import NavBar from '../components/NavBar.vue' // 引进菜单模板
 import Footer from '../components/Footer.vue' // 引进底部模板
+import axios from 'axios'
 export default {
   name: 'Evaluation',
   components: {
@@ -120,7 +121,41 @@ export default {
   created () {
     var self = this
     self.$loadingBar.finish()
-    self.writing(1, 500)
+    // self.writing(1, 500)
+    axios.get("/test/api/container/getIndex", {
+      params: {
+        jumpfrom: 'weibocom',
+        containerid: '106003type=25&t=3&disable_hot=1&filter_type=realtimehot'
+      }
+    })
+    .then(function (response) {
+      console.log(response)
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
+    // axios.get("https://api.momentumdash.com/settings", 
+    // null)
+    // .then(function (response) {
+    //   console.log(response)
+    // })
+    // .catch(function (error) {
+    //   console.log(error)
+    // })
+//   axios({
+//   method: 'get',
+//   url: 'https://s.weibo.com/top/summary',
+//   params: {
+//     cate: 'realtimehot',
+//   },
+//   responseType: 'document' // 默认的
+//   // address: '123.125.29.199:443'
+// }).then(function (response) {
+//     console.log(response)
+//   })
+//   .catch(function (error) {
+//     console.log(error)
+//   })
   }
 }
 </script>

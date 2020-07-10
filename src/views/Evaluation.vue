@@ -19,6 +19,10 @@
               <i-layout>
                 <i-content class="content-center">
                   <i-row>
+                    <Button @click="getSoup" type="primary">来杯鸡汤</Button>
+                    <div>{{soup}}</div>
+                  </i-row>
+                  <i-row>
                     <i-col class="content-text">{{data.passage1.content}}</i-col>
                     <i-col class="content-text">{{data.passage2.content}}</i-col>
                     <i-col class="content-text">{{data.passage3.content}}</i-col>
@@ -60,6 +64,7 @@ export default {
   },
   data() {
     return {
+      soup: "",
       data: {
         passage1: {
           msg: "我是个为人诚恳，乐观开朗的人，在工作之中，和同事相处融洽。",
@@ -108,6 +113,17 @@ export default {
     };
   },
   methods: {
+    getSoup() {
+      var self = this;
+      axios
+        .get("/soup", {})
+        .then(function(response) {
+          self.soup = response.data.title;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
     /**
      * 模仿书写
      * @param type 段落
@@ -134,7 +150,8 @@ export default {
   created() {
     var self = this;
     self.$loadingBar.finish();
-    self.writing(1, 500);
+    // self.writing(1, 500)
+    self.getSoup();
   }
 };
 </script>

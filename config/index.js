@@ -8,7 +8,6 @@ module.exports = {
   dev: {
 
     open: true,
-    autoOpenBrowser: true,
 
     // Paths
     assetsSubDirectory: 'static',

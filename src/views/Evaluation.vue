@@ -19,6 +19,16 @@
               <i-layout>
                 <i-content class="content-center">
                   <i-row>
+                    <Button @click="toogleWeibo" type="primary">微博热点</Button>
+                    <Drawer title="微博热点TOP50" :closable="false" width="300" v-model="weiboTag">
+                      <p v-for="item in weiboData" v-show="item && item.desc_extr && item.desc_extr.toString().length">
+                        <img v-show="item.icon" :src="item.icon" width="20px" class="hot-icon">
+                        <a :href="item.scheme">{{item.desc}}</a>
+                        <span>{{item.desc_extr}}</span>
+                      </p>
+                    </Drawer>
+                  </i-row>
+                  <i-row>
                     <i-col class="content-text ">{{data.passage1.content}}</i-col>
                     <i-col class="content-text">{{data.passage2.content}}</i-col>
                     <i-col class="content-text">{{data.passage3.content}}</i-col>
@@ -54,6 +64,8 @@ export default {
   },
   data () {
     return {
+      weiboTag: false,
+      weiboData: {},
       data: {
         passage1: {
           msg: '我是个为人诚恳，乐观开朗的人，在工作之中，和同事相处融洽。',
@@ -95,6 +107,31 @@ export default {
     }
   },
   methods: {
+    isEmpty (item) {
+      if (item && item.desc_extr && item.desc_extr.toString().length) {
+        return true
+      } else {
+        return false
+      }
+    },
+    toogleWeibo () {
+      var self = this
+      self.weiboTag = !self.weiboTag
+      if (self.weiboTag) {
+        axios.get("/test/api/container/getIndex", {
+          params: {
+            jumpfrom: 'weibocom',
+            containerid: '106003type=25&t=3&disable_hot=1&filter_type=realtimehot'
+          }
+        })
+        .then(function (response) {
+          self.weiboData = response.data.data.cards[0].card_group
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+      }
+    },
     /**
      * 模仿书写
      * @param type 段落
@@ -122,40 +159,6 @@ export default {
     var self = this
     self.$loadingBar.finish()
     // self.writing(1, 500)
-    axios.get("/test/api/container/getIndex", {
-      params: {
-        jumpfrom: 'weibocom',
-        containerid: '106003type=25&t=3&disable_hot=1&filter_type=realtimehot'
-      }
-    })
-    .then(function (response) {
-      console.log(response)
-    })
-    .catch(function (error) {
-      console.log(error)
-    })
-    // axios.get("https://api.momentumdash.com/settings", 
-    // null)
-    // .then(function (response) {
-    //   console.log(response)
-    // })
-    // .catch(function (error) {
-    //   console.log(error)
-    // })
-//   axios({
-//   method: 'get',
-//   url: 'https://s.weibo.com/top/summary',
-//   params: {
-//     cate: 'realtimehot',
-//   },
-//   responseType: 'document' // 默认的
-//   // address: '123.125.29.199:443'
-// }).then(function (response) {
-//     console.log(response)
-//   })
-//   .catch(function (error) {
-//     console.log(error)
-//   })
   }
 }
 </script>
@@ -182,7 +185,11 @@ export default {
     .content-text {
       font-size: 18px;
       line-height: 3em;
-      text-indent: 2em
+      text-indent: 2em;
     }
+  }
+  .hot-icon {
+    position: relative;
+    top: 5px;
   }
 </style>

@@ -14,13 +14,22 @@ module.exports = {
     assetsPublicPath: '/',
     // proxyTable: {},
     proxyTable: { // 配置跨域
-      '/test': {
+      '/weibo': {
         target: 'https://m.weibo.cn',
         secure: false,
         // ws: true,
-        changeOrigin: true,    //是否开启代理
-        pathRewrite: {//重写路径
-          "^/test": ''
+        changeOrigin: true, //是否开启代理
+        pathRewrite: { //重写路径
+          "^/weibo": ''
+        }
+      },
+      '/soup': {
+        target: 'https://soul-soup.fe.workers.dev',
+        secure: false,
+        // ws: true,
+        changeOrigin: true, //是否开启代理
+        pathRewrite: { //重写路径
+          "^/soup": ''
         }
       },
     },

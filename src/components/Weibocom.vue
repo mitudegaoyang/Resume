@@ -65,7 +65,7 @@ export default {
     getWeibo() {
       var self = this;
       axios
-        .get("/test/api/container/getIndex", {
+        .get("/weibo/api/container/getIndex", {
           params: {
             jumpfrom: "weibocom",
             containerid:

@@ -55,6 +55,7 @@
 import NavBar from "../components/NavBar.vue"; // 引进菜单模板
 import Footer from "../components/Footer.vue"; // 引进底部模板
 import Weibo from "../components/Weibocom.vue"; // 引进热点组件
+import axios from "axios";
 export default {
   name: "Evaluation",
   components: {

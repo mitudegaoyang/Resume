@@ -59,3 +59,5 @@ sh deploy.sh
 * [nav吸顶效果](https://blog.csdn.net/zbwroom/article/details/81911909)
 * [vue-particles](https://www.jianshu.com/p/53199b842d25)
 * [访问量统计](https://cloud.tencent.com/developer/article/1498680)
+* [微博热搜](https://m.weibo.cn/p/106003type=25&t=3&disable_hot=1&filter_type=realtimehot?jumpfrom=weibocom)
+* [毒鸡汤来源](https://github.com/roojay520/cf-worker-soul-soup)

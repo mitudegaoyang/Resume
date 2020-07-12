@@ -19,17 +19,7 @@
               <i-layout>
                 <i-content class="content-center">
                   <i-row>
-                    <Button @click="toogleWeibo" type="primary">微博热点</Button>
-                    <Drawer title="微博热点TOP50" :closable="false" width="300" v-model="weiboTag">
-                      <p v-for="item in weiboData" v-show="item && item.desc_extr && item.desc_extr.toString().length">
-                        <img v-show="item.icon" :src="item.icon" width="20px" class="hot-icon">
-                        <a :href="item.scheme">{{item.desc}}</a>
-                        <span>{{item.desc_extr}}</span>
-                      </p>
-                    </Drawer>
-                  </i-row>
-                  <i-row>
-                    <i-col class="content-text ">{{data.passage1.content}}</i-col>
+                    <i-col class="content-text">{{data.passage1.content}}</i-col>
                     <i-col class="content-text">{{data.passage2.content}}</i-col>
                     <i-col class="content-text">{{data.passage3.content}}</i-col>
                     <i-col class="content-text">{{data.passage4.content}}{{data.passage5.content}}</i-col>
@@ -46,6 +36,11 @@
     </i-row>
     <i-row>
       <i-col>
+        <Weibo></Weibo>
+      </i-col>
+    </i-row>
+    <i-row>
+      <i-col>
         <Footer></Footer>
       </i-col>
     </i-row>
@@ -53,143 +48,120 @@
 </template>
 
 <script>
-import NavBar from '../components/NavBar.vue' // 引进菜单模板
-import Footer from '../components/Footer.vue' // 引进底部模板
-import axios from 'axios'
+import NavBar from "../components/NavBar.vue"; // 引进菜单模板
+import Footer from "../components/Footer.vue"; // 引进底部模板
+import Weibo from "../components/Weibocom.vue"; // 引进热点组件
 export default {
-  name: 'Evaluation',
+  name: "Evaluation",
   components: {
     NavBar, // 使用菜单组件
-    Footer // 使用底部组件
+    Footer, // 使用底部组件
+    Weibo // 使用热点组件
   },
-  data () {
+  data() {
     return {
-      weiboTag: false,
-      weiboData: {},
       data: {
         passage1: {
-          msg: '我是个为人诚恳，乐观开朗的人，在工作之中，和同事相处融洽。',
-          content: ''
+          msg: "我是个为人诚恳，乐观开朗的人，在工作之中，和同事相处融洽。",
+          content: ""
         },
         passage2: {
-          msg: '沟通是我的一个强项，我相信在工作中，沟通是十分重要的，俗话说方向对了努力才有意义，沟通不畅往往会导致工作朝着错误的方向展开。',
-          content: ''
+          msg:
+            "沟通是我的一个强项，我相信在工作中，沟通是十分重要的，俗话说方向对了努力才有意义，沟通不畅往往会导致工作朝着错误的方向展开。",
+          content: ""
         },
         passage3: {
-          msg: '我的个性相对来说算是比较有进取心和责任心的，有着较强的适应力，以及团队精神，在工作之中能做到自信但不自负，不会以自我为中心，懂得换位思考。',
-          content: ''
+          msg:
+            "我的个性相对来说算是比较有进取心和责任心的，有着较强的适应力，以及团队精神，在工作之中能做到自信但不自负，不会以自我为中心，懂得换位思考。",
+          content: ""
         },
         passage4: {
-          msg: '对于新事物、新技术有着较为强烈的好奇心和求知欲。',
-          content: ''
+          msg: "对于新事物、新技术有着较为强烈的好奇心和求知欲。",
+          content: ""
         },
         passage5: {
-          msg: '在工作之余，会尽可能的通过技术博客，官方文档，学习类网站等渠道进行自我的技术积累，并在Gitbook上，加以记录整理。',
-          content: ''
+          msg:
+            "在工作之余，会尽可能的通过技术博客，官方文档，学习类网站等渠道进行自我的技术积累，并在Gitbook上，加以记录整理。",
+          content: ""
         },
         passage6: {
-          msg: '可以熟练使用npm、以及shell的常用命令，这些会帮助我提升日常开发的效率。',
-          content: ''
+          msg:
+            "可以熟练使用npm、以及shell的常用命令，这些会帮助我提升日常开发的效率。",
+          content: ""
         },
         passage7: {
-          msg: '截止今日，我已经有三年前端开发，以及一年左右的前端团队管理经验了。',
-          content: ''
+          msg:
+            "截止今日，我已经有三年前端开发，以及一年左右的前端团队管理经验了。",
+          content: ""
         },
         passage8: {
-          msg: '具备良好的分析解决问题能力，能独立承担任务并有一定程度的系统进度把控能力。',
-          content: ''
+          msg:
+            "具备良好的分析解决问题能力，能独立承担任务并有一定程度的系统进度把控能力。",
+          content: ""
         },
         passage9: {
-          msg: '我相信技术是管理的基石，在技术达到一定程度时，管理才能做到相得益彰。',
-          content: ''
+          msg:
+            "我相信技术是管理的基石，在技术达到一定程度时，管理才能做到相得益彰。",
+          content: ""
         }
       }
-    }
+    };
   },
   methods: {
-    isEmpty (item) {
-      if (item && item.desc_extr && item.desc_extr.toString().length) {
-        return true
-      } else {
-        return false
-      }
-    },
-    toogleWeibo () {
-      var self = this
-      self.weiboTag = !self.weiboTag
-      if (self.weiboTag) {
-        axios.get("/test/api/container/getIndex", {
-          params: {
-            jumpfrom: 'weibocom',
-            containerid: '106003type=25&t=3&disable_hot=1&filter_type=realtimehot'
-          }
-        })
-        .then(function (response) {
-          self.weiboData = response.data.data.cards[0].card_group
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
-      }
-    },
     /**
      * 模仿书写
      * @param type 段落
      * @param millis 段落间延时毫秒数
      */
-    writing (type, millis) {
-      var self = this
-      var index = 0
-      var data = self.data['passage' + type]
-      var ID = setInterval(function () {
-        data.content += data.msg[index]
-        index++
+    writing(type, millis) {
+      var self = this;
+      var index = 0;
+      var data = self.data["passage" + type];
+      var ID = setInterval(function() {
+        data.content += data.msg[index];
+        index++;
         if (index === data.msg.length) {
-          clearInterval(ID)
+          clearInterval(ID);
           if (type < Object.keys(self.data).length) {
-            setTimeout(function () {
-              self.writing(type + 1, millis)
-            }, millis)
+            setTimeout(function() {
+              self.writing(type + 1, millis);
+            }, millis);
           }
         }
-      }, 70)
+      }, 70);
     }
   },
-  created () {
-    var self = this
-    self.$loadingBar.finish()
-    // self.writing(1, 500)
+  created() {
+    var self = this;
+    self.$loadingBar.finish();
+    self.writing(1, 500);
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-  .layout{
-    min-width: 800px;
-    position: relative;
-    border-radius: 4px;
-    overflow: hidden;
+.layout {
+  min-width: 800px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.w1200 {
+  margin: 0 auto 50px;
+  width: 1200px;
+}
+.content {
+  min-height: 600px;
+  background: #fff;
+}
+.content-center {
+  padding: 24px;
+  background: #fff;
+  .content-text {
+    font-size: 18px;
+    line-height: 3em;
+    text-indent: 2em;
   }
-  .w1200 {
-    margin: 0 auto 50px;
-    width: 1200px;
-  }
-  .content {
-    min-height: 600px;
-    background: #fff;
-  }
-  .content-center {
-    padding: 24px;
-    background: #fff;
-    .content-text {
-      font-size: 18px;
-      line-height: 3em;
-      text-indent: 2em;
-    }
-  }
-  .hot-icon {
-    position: relative;
-    top: 5px;
-  }
+}
 </style>

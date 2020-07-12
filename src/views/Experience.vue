@@ -52,6 +52,11 @@
     </i-row>
     <i-row>
       <i-col>
+        <Weibo></Weibo>
+      </i-col>
+    </i-row>
+    <i-row>
+      <i-col>
         <Footer></Footer>
       </i-col>
     </i-row>
@@ -63,11 +68,13 @@ import moment from "moment";
 import _ from "lodash";
 import NavBar from "../components/NavBar.vue"; // 引进菜单模板
 import Footer from "../components/Footer.vue"; // 引进底部模板
+import Weibo from "../components/Weibocom.vue"; // 引进热点组件
 export default {
   name: "Experience",
   components: {
     NavBar, // 使用菜单组件
-    Footer // 使用底部组件
+    Footer, // 使用底部组件
+    Weibo // 使用热点组件
   },
   data() {
     return {

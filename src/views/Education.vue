@@ -248,6 +248,11 @@
     </i-row>
     <i-row>
       <i-col>
+        <Weibo></Weibo>
+      </i-col>
+    </i-row>
+    <i-row>
+      <i-col>
         <Footer></Footer>
       </i-col>
     </i-row>
@@ -258,13 +263,15 @@
 import NavBar from "../components/NavBar.vue"; // 引进菜单模板
 import Footer from "../components/Footer.vue"; // 引进底部模板
 import Loading from "../components/Loading.vue"; // 引进底部模板
+import Weibo from "../components/Weibocom.vue"; // 引进热点组件
 import terra from "../assets/img/terra.png";
 export default {
   name: "Education",
   components: {
     NavBar, // 使用菜单组件
     Footer, // 使用底部组件
-    Loading // 使用Loading组件
+    Loading, // 使用Loading组件
+    Weibo // 使用热点组件
   },
   data() {
     return {

@@ -30,6 +30,7 @@
 
 <script>
 import axios from "axios";
+import weiboData from "../assets/json/weibo.json"
 export default {
   name: "InnerTop", // 模板名称
   data() {
@@ -93,10 +94,34 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
-    }
+    },
+    /**
+     * 微博热搜假数据
+     */
+    initWeibo() {
+      var self = this;
+      _.each(weiboData.data.cards[0].card_group, function(v) {
+        if (v && v.desc_extr && v.desc_extr.toString().length) {
+          v.desc_extr = v.desc_extr.toString();
+          if (v.desc_extr.length > 8) {
+            v.num = v.desc_extr.substring(0, v.desc_extr.length - 8) + "亿";
+          } else if (v.desc_extr.length > 4) {
+            v.num = v.desc_extr.substring(0, v.desc_extr.length - 4) + "万";
+          } else {
+            v.num = v.desc_extr;
+          }
+        }
+      });
+      self.weiboData = _.filter(
+        weiboData.data.cards[0].card_group,
+        "num"
+      );
+    },
+
   },
   created() {
     var self = this;
+    self.initWeibo()
   }
 };
 </script>

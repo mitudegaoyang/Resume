@@ -142,6 +142,23 @@ export default {
         indeterminate: false,
         checkAll: false,
         checkAllGroup: [],
+        checkData: [
+          "html",
+          "css",
+          "js",
+          "react",
+          "vue",
+          "angular",
+          "ice",
+          "antd",
+          "element",
+          "iview",
+          "vux",
+          "element-admin",
+          "weex",
+          "fuse",
+          "jsp",
+        ],
         projectData: [
           {
             title: "AICS 智慧工地",
@@ -772,23 +789,7 @@ export default {
       }
       self.data.indeterminate = false;
       if (self.data.checkAll) {
-        self.data.checkAllGroup = [
-          "html",
-          "css",
-          "js",
-          "vue",
-          "react",
-          "angular",
-          "ice",
-          "antd",
-          "element",
-          "iview",
-          "vux",
-          "element-admin",
-          "weex",
-          "fuse",
-          "jsp",
-        ];
+        self.data.checkAllGroup = _.clone(self.data.checkData);
       } else {
         self.data.checkAllGroup = [];
       }
@@ -796,7 +797,7 @@ export default {
     },
     checkAllGroupChange(data) {
       var self = this;
-      if (data.length === 15) {
+      if (data.length === self.data.checkData.length) {
         self.data.indeterminate = false;
         self.data.checkAll = true;
       } else if (data.length > 0) {

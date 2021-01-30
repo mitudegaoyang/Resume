@@ -9,7 +9,7 @@
       <i-col class="w1200">
         <i-layout>
           <i-row>
-            <i-breadcrumb :style="{margin: '16px 0'}">
+            <i-breadcrumb :style="{ margin: '16px 0' }">
               <i-breadcrumb-item to="/">首页</i-breadcrumb-item>
               <i-breadcrumb-item>项目集</i-breadcrumb-item>
             </i-breadcrumb>
@@ -21,47 +21,52 @@
                   <i-row style="padding-bottom: 20px">
                     <i-col>
                       <div
-                        style="border-bottom: 1px solid #e9e9e9;padding-bottom:6px;margin-bottom:6px;"
+                        style="
+                          border-bottom: 1px solid #e9e9e9;
+                          padding-bottom: 6px;
+                          margin-bottom: 6px;
+                        "
                       >
-                        <i-checkbox
+                        <checkbox
                           :indeterminate="data.indeterminate"
                           :value="data.checkAll"
                           @click.prevent.native="handleCheckAll"
-                        >全选</i-checkbox>
+                          >全选</checkbox
+                        >
                       </div>
-                      <i-checkbox-group
+                      <checkbox-group
                         v-model="data.checkAllGroup"
                         @on-change="checkAllGroupChange"
                       >
-                        <i-checkbox label="html"></i-checkbox>
-                        <i-checkbox label="css"></i-checkbox>
-                        <i-checkbox label="js"></i-checkbox>
-                        <i-checkbox label="react"></i-checkbox>
-                        <i-checkbox label="vue"></i-checkbox>
-                        <i-checkbox label="angular"></i-checkbox>
-                        <i-checkbox label="antd"></i-checkbox>
-                        <i-checkbox label="element"></i-checkbox>
-                        <i-checkbox label="iview"></i-checkbox>
-                        <i-checkbox label="vux"></i-checkbox>
-                        <i-checkbox label="element-admin"></i-checkbox>
-                        <i-checkbox label="weex"></i-checkbox>
-                        <i-checkbox label="fuse"></i-checkbox>
-                        <i-checkbox label="jsp"></i-checkbox>
-                      </i-checkbox-group>
+                        <checkbox label="html"></checkbox>
+                        <checkbox label="css"></checkbox>
+                        <checkbox label="js"></checkbox>
+                        <checkbox label="react"></checkbox>
+                        <checkbox label="vue"></checkbox>
+                        <checkbox label="angular"></checkbox>
+                        <checkbox label="antd"></checkbox>
+                        <checkbox label="element"></checkbox>
+                        <checkbox label="iview"></checkbox>
+                        <checkbox label="vux"></checkbox>
+                        <checkbox label="element-admin"></checkbox>
+                        <checkbox label="weex"></checkbox>
+                        <checkbox label="fuse"></checkbox>
+                        <checkbox label="jsp"></checkbox>
+                      </checkbox-group>
                     </i-col>
                   </i-row>
                   <i-row class="project-list">
                     <i-col
                       class="project-item"
-                      :class="{thumb: item.img}"
+                      :class="{ thumb: item.img }"
                       v-for="item in data.projectDataBak"
                       :key="item.index"
                     >
                       <div class="project-box">
                         <div class="project-header">
                           <div class="project-title">
-                            {{item.title}}
-                            <span class="project-label">{{item.label}}</span>
+                            {{ item.title }}
+                            <span class="project-label">{{ item.label }}</span>
                           </div>
                           <div class="project-info">
                             <div class="project-tags">
@@ -69,19 +74,27 @@
                                 :class="'project-tags-' + tag.value"
                                 v-for="tag in item.tags"
                                 :key="tag.index"
-                              >{{tag.name}}</span>
+                                >{{ tag.name }}</span
+                              >
                             </div>
-                            <div class="project-time">{{item.time}}</div>
+                            <div class="project-time">{{ item.time }}</div>
                           </div>
                         </div>
-                        <div class="project-content" v-html="item.content"></div>
+                        <div
+                          class="project-content"
+                          v-html="item.content"
+                        ></div>
                         <div class="project-link">
-                          <a :href="item.link.src">{{item.link.title}}</a>
+                          <a :href="item.link.src">{{ item.link.title }}</a>
                         </div>
                       </div>
                       <div class="project-thumb" v-if="item.img">
                         <img
-                          :src="require('../../assets/img/project/' + item.img + '.png')"
+                          :src="
+                            require('../../assets/img/project/' +
+                              item.img +
+                              '.png')
+                          "
                           width="350px"
                           :title="item.img"
                           alt="项目展示"
@@ -124,7 +137,7 @@ export default {
   components: {
     NavBar, // 使用菜单组件
     Footer, // 使用底部组件
-    Weibo // 使用热点组件
+    Weibo, // 使用热点组件
   },
   data() {
     return {
@@ -139,12 +152,12 @@ export default {
             tags: [
               {
                 name: "React",
-                value: "react"
+                value: "react",
               },
               {
                 name: "antd",
-                value: "antd"
-              }
+                value: "antd",
+              },
             ],
             time: "2020/3 至今",
             img: "",
@@ -162,8 +175,8 @@ export default {
               </ul>`,
             link: {
               title: "",
-              src: ""
-            }
+              src: "",
+            },
           },
           {
             title: "AIoT感知平台",
@@ -171,12 +184,12 @@ export default {
             tags: [
               {
                 name: "React",
-                value: "react"
+                value: "react",
               },
               {
                 name: "antd",
-                value: "antd"
-              }
+                value: "antd",
+              },
             ],
             time: "2019/9 至 2020/3",
             img: "",
@@ -195,8 +208,8 @@ export default {
               </ul>`,
             link: {
               title: "",
-              src: ""
-            }
+              src: "",
+            },
           },
           {
             title: "鱼猫金服PC版重构",
@@ -204,12 +217,12 @@ export default {
             tags: [
               {
                 name: "vue.js",
-                value: "vue"
+                value: "vue",
               },
               {
                 name: "iView",
-                value: "iview"
-              }
+                value: "iview",
+              },
             ],
             time: "2019/2 至今",
             img: "ympcnew",
@@ -225,8 +238,8 @@ export default {
               </ul>`,
             link: {
               title: "在线地址（需使用 PC 访问）",
-              src: "https://www.yumao.fun/refactoring/pc/index.html#/home"
-            }
+              src: "https://www.yumao.fun/refactoring/pc/index.html#/home",
+            },
           },
           {
             title: "鱼猫金服微信版官网重构",
@@ -234,12 +247,12 @@ export default {
             tags: [
               {
                 name: "vue.js",
-                value: "vue"
+                value: "vue",
               },
               {
                 name: "Vux",
-                value: "vux"
-              }
+                value: "vux",
+              },
             ],
             time: "2018/9 至今",
             img: "ymwechat",
@@ -255,8 +268,8 @@ export default {
             link: {
               title: "在线地址（需使用手机访问）",
               src:
-                "https://www.yumaomoney.com/refactoring/wechat/index.html#/home"
-            }
+                "https://www.yumaomoney.com/refactoring/wechat/index.html#/home",
+            },
           },
           {
             title: "鱼猫金服业务推广活动页面",
@@ -264,16 +277,16 @@ export default {
             tags: [
               {
                 name: "vue.js",
-                value: "vue"
+                value: "vue",
               },
               {
                 name: "CSS 3",
-                value: "css"
+                value: "css",
               },
               {
                 name: "JavaScript",
-                value: "js"
-              }
+                value: "js",
+              },
             ],
             time: "2019/5 至 2019/5",
             img: "ymbenlai",
@@ -286,8 +299,8 @@ export default {
               </ul>`,
             link: {
               title: "在线地址（需使用手机访问）",
-              src: "https://www.yumao.fun/activity/20190520/app/index.html#/"
-            }
+              src: "https://www.yumao.fun/activity/20190520/app/index.html#/",
+            },
           },
           {
             title: "鱼猫金服大转盘活动页面",
@@ -295,16 +308,16 @@ export default {
             tags: [
               {
                 name: "vue.js",
-                value: "vue"
+                value: "vue",
               },
               {
                 name: "CSS 3",
-                value: "css"
+                value: "css",
               },
               {
                 name: "JavaScript",
-                value: "js"
-              }
+                value: "js",
+              },
             ],
             time: "2019/4 至 2019/4",
             img: "ymturntable",
@@ -318,8 +331,8 @@ export default {
               </ul>`,
             link: {
               title: "在线地址（需使用手机访问）",
-              src: "https://www.yumao.fun/activity/20190415/app/index.html#/"
-            }
+              src: "https://www.yumao.fun/activity/20190415/app/index.html#/",
+            },
           },
           {
             title: "鱼猫金服新手活动页面重构",
@@ -327,16 +340,16 @@ export default {
             tags: [
               {
                 name: "vue.js",
-                value: "vue"
+                value: "vue",
               },
               {
                 name: "CSS 3",
-                value: "css"
+                value: "css",
               },
               {
                 name: "JavaScript",
-                value: "js"
-              }
+                value: "js",
+              },
             ],
             time: "2019/1 至 2019/2",
             img: "ymroad",
@@ -349,8 +362,8 @@ export default {
               </ul>`,
             link: {
               title: "在线地址（需使用手机访问）",
-              src: "https://www.yumao.fun/activity/20180824/app/index.html#/"
-            }
+              src: "https://www.yumao.fun/activity/20180824/app/index.html#/",
+            },
           },
           {
             title: "鱼猫金服企业端",
@@ -358,24 +371,24 @@ export default {
             tags: [
               {
                 name: "vue.js",
-                value: "vue"
+                value: "vue",
               },
               {
                 name: "Element",
-                value: "element"
+                value: "element",
               },
               {
                 name: "CSS 3",
-                value: "css"
+                value: "css",
               },
               {
                 name: "JavaScript",
-                value: "js"
+                value: "js",
               },
               {
                 name: "JSP",
-                value: "jsp"
-              }
+                value: "jsp",
+              },
             ],
             time: "2018/7 至 2018/10",
             img: "ymbusiness",
@@ -388,8 +401,8 @@ export default {
               </ul>`,
             link: {
               title: "在线地址（需使用 PC 访问）",
-              src: "https://www.yumaomoney.com/businessindex.do"
-            }
+              src: "https://www.yumaomoney.com/businessindex.do",
+            },
           },
           {
             title: "鱼猫金服PC版日常维护",
@@ -397,20 +410,20 @@ export default {
             tags: [
               {
                 name: "HTML 5",
-                value: "html"
+                value: "html",
               },
               {
                 name: "CSS 3",
-                value: "css"
+                value: "css",
               },
               {
                 name: "JavaScript",
-                value: "js"
+                value: "js",
               },
               {
                 name: "JSP",
-                value: "jsp"
-              }
+                value: "jsp",
+              },
             ],
             time: "2018/7 至今",
             img: "ympc",
@@ -419,8 +432,8 @@ export default {
               <p>对项目按功能点进行小规模重构，使得代码可维护性得以提升。</p>`,
             link: {
               title: "在线地址（需使用 PC 访问）",
-              src: "https://www.yumaomoney.com/"
-            }
+              src: "https://www.yumaomoney.com/",
+            },
           },
           {
             title: "银信长远测评系统",
@@ -428,16 +441,16 @@ export default {
             tags: [
               {
                 name: "vue.js",
-                value: "vue"
+                value: "vue",
               },
               {
                 name: "Element",
-                value: "element"
+                value: "element",
               },
               {
                 name: "Vux",
-                value: "vux"
-              }
+                value: "vux",
+              },
             ],
             time: "2018/6 至 2018/7",
             img: "",
@@ -447,8 +460,8 @@ export default {
               <p>在需求确认完毕后，会对系统架构进行设计、技术选型以及出原型图。</p>`,
             link: {
               title: "",
-              src: ""
-            }
+              src: "",
+            },
           },
           {
             title: "张家口检察院OA管理",
@@ -456,16 +469,16 @@ export default {
             tags: [
               {
                 name: "vue.js",
-                value: "vue"
+                value: "vue",
               },
               {
                 name: "vue-element-admin",
-                value: "element-admin"
+                value: "element-admin",
               },
               {
                 name: "Weex",
-                value: "weex"
-              }
+                value: "weex",
+              },
             ],
             time: "2018/2 至 2018/6",
             img: "procuratorate",
@@ -479,8 +492,8 @@ export default {
               </ul>`,
             link: {
               title: "",
-              src: ""
-            }
+              src: "",
+            },
           },
           {
             title: "文献数字化后台管理",
@@ -488,12 +501,12 @@ export default {
             tags: [
               {
                 name: "Angular.js",
-                value: "angular"
+                value: "angular",
               },
               {
                 name: "Fuse-angular",
-                value: "fuse"
-              }
+                value: "fuse",
+              },
             ],
             time: "2017/12 至 2018/3",
             img: "document",
@@ -510,8 +523,8 @@ export default {
               </ul>`,
             link: {
               title: "",
-              src: ""
-            }
+              src: "",
+            },
           },
           {
             title: "星路起航微信小游戏后台管理",
@@ -519,12 +532,12 @@ export default {
             tags: [
               {
                 name: "Angular.js",
-                value: "angular"
+                value: "angular",
               },
               {
                 name: "Fuse-angular",
-                value: "fuse"
-              }
+                value: "fuse",
+              },
             ],
             time: "2017/11 至 2017/12",
             img: "",
@@ -542,8 +555,8 @@ export default {
               </ul>`,
             link: {
               title: "",
-              src: ""
-            }
+              src: "",
+            },
           },
           {
             title: "诚轩OA管理系统",
@@ -551,12 +564,12 @@ export default {
             tags: [
               {
                 name: "Angular.js",
-                value: "angular"
+                value: "angular",
               },
               {
                 name: "Fuse-angular",
-                value: "fuse"
-              }
+                value: "fuse",
+              },
             ],
             time: "2017/7 至 2018/2",
             img: "",
@@ -573,8 +586,8 @@ export default {
               </ul>`,
             link: {
               title: "",
-              src: ""
-            }
+              src: "",
+            },
           },
           {
             title: "Activity趋势健康",
@@ -582,20 +595,20 @@ export default {
             tags: [
               {
                 name: "Angular.js",
-                value: "angular"
+                value: "angular",
               },
               {
                 name: "HTML 5",
-                value: "html"
+                value: "html",
               },
               {
                 name: "CSS 3",
-                value: "css"
+                value: "css",
               },
               {
                 name: "JavaScript",
-                value: "js"
-              }
+                value: "js",
+              },
             ],
             time: "2017/5 至 2017/7",
             img: "",
@@ -603,8 +616,8 @@ export default {
               <p>使用activity开放Api对部分功能进行定制化增减。</p>`,
             link: {
               title: "",
-              src: ""
-            }
+              src: "",
+            },
           },
           {
             title: "Skillee在线考试",
@@ -612,20 +625,20 @@ export default {
             tags: [
               {
                 name: "vue.js",
-                value: "vue"
+                value: "vue",
               },
               {
                 name: "HTML 5",
-                value: "html"
+                value: "html",
               },
               {
                 name: "CSS 3",
-                value: "css"
+                value: "css",
               },
               {
                 name: "JavaScript",
-                value: "js"
-              }
+                value: "js",
+              },
             ],
             time: "2017/4 至 2017/6",
             img: "",
@@ -634,12 +647,12 @@ export default {
               <p>利用Axios与后台进行数据交互，渲染题目、选项。</p>`,
             link: {
               title: "",
-              src: ""
-            }
-          }
+              src: "",
+            },
+          },
         ],
-        projectDataBak: []
-      }
+        projectDataBak: [],
+      },
     };
   },
   methods: {
@@ -664,7 +677,7 @@ export default {
           "element-admin",
           "weex",
           "fuse",
-          "jsp"
+          "jsp",
         ];
       } else {
         self.data.checkAllGroup = [];
@@ -690,31 +703,32 @@ export default {
      */
     filterData(types) {
       var self = this;
-      self.data.projectDataBak = _.filter(self.data.projectDataBak, function(
-        data
-      ) {
-        var type = false;
-        _.each(data.tags, function(v) {
-          if (v.value === types) {
-            type = true;
-          }
-        });
-        return type;
-      });
+      self.data.projectDataBak = _.filter(
+        self.data.projectDataBak,
+        function (data) {
+          var type = false;
+          _.each(data.tags, function (v) {
+            if (v.value === types) {
+              type = true;
+            }
+          });
+          return type;
+        }
+      );
     },
     filter() {
       var self = this;
       self.data.projectDataBak = self.data.projectData;
-      _.each(self.data.checkAllGroup, function(v) {
+      _.each(self.data.checkAllGroup, function (v) {
         self.filterData(v);
       });
-    }
+    },
   },
   created() {
     var self = this;
     self.filter();
     self.$loadingBar.finish();
-  }
+  },
 };
 </script>
 

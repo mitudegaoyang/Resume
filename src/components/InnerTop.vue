@@ -1,12 +1,17 @@
 <template>
-  <div class="inner_top" :class="{unfixed: unfixed}">
+  <div class="inner_top" :class="{ unfixed: unfixed }">
     <div class="box">
       <div class="fl">
-        <span>{{helloMsg}}</span>
+        <span>{{ helloMsg }}</span>
       </div>
       <ul class="fr btnGroup">
-        <li>现在是北京时间：{{time}}</li>
-        <li>网站已平稳运行：{{timeList.day}}天{{timeList.hour}}小时{{timeList.minutes}}分钟{{timeList.seconds}}秒</li>
+        <li>现在是北京时间：{{ time }}</li>
+        <li>
+          网站已平稳运行：{{ timeList.day }}天
+          <!-- {{ timeList.hour }}小时 {{ timeList.minutes }}分钟{{
+            timeList.seconds
+          }}秒 -->
+        </li>
         <li>
           <span id="busuanzi_container_site_uv">
             本站总访问量
@@ -26,21 +31,22 @@ export default {
     return {
       timeList: {
         relative: "",
+        year: "00",
         day: "00",
         hour: "00",
         minutes: "00",
-        seconds: "00"
+        seconds: "00",
       },
       timer: "",
       time: "0000-00-00 00:00:00",
       hour: "",
-      helloMsg: "您好，欢迎您的光临~"
+      helloMsg: "您好，欢迎您的光临~",
     };
   },
   props: {
     unfixed: {
-      type: Boolean
-    }
+      type: Boolean,
+    },
   },
   methods: {
     /**
@@ -87,7 +93,7 @@ export default {
           ? "下午好，愿您享受宁静的下午时光~"
           : "晚上好，今天又是美好一天~";
       self.timeInit();
-    }
+    },
   },
   created() {
     var self = this;
@@ -102,7 +108,7 @@ export default {
   beforeDestroy() {
     var self = this;
     clearInterval(self.timer);
-  }
+  },
 };
 </script>
 

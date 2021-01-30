@@ -139,7 +139,7 @@ export default {
   data() {
     return {
       data: {
-        indeterminate: true,
+        indeterminate: false,
         checkAll: false,
         checkAllGroup: [],
         projectData: [
@@ -321,7 +321,7 @@ export default {
           },
           {
             title: "鱼猫金服PC版重构",
-            label: "(开发中)",
+            label: "(已下线)",
             tags: [
               {
                 name: "vue.js",
@@ -332,7 +332,7 @@ export default {
                 value: "iview",
               },
             ],
-            time: "2019/2 至今",
+            time: "2019/2 至 2019/8",
             img: "https://s3.ax1x.com/2021/01/30/ykcrJf.png",
             content: `<p>使用iView、vue实现官网PC版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
@@ -345,8 +345,8 @@ export default {
                 <li>使用C3 的animation新特性实现公告滚动效果；</li>
               </ul>`,
             link: {
-              title: "在线地址（需使用 PC 访问）",
-              src: "https://www.yumao.fun/refactoring/pc/index.html#/home",
+              title: "",
+              src: "",
             },
           },
           {
@@ -362,7 +362,7 @@ export default {
                 value: "vux",
               },
             ],
-            time: "2018/9 至今",
+            time: "2018/9 至 2019/8",
             img: "https://s3.ax1x.com/2021/01/30/ykc2Lj.png",
             content: `<p>使用Vux、Vue实现官网微信版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
@@ -374,9 +374,8 @@ export default {
                 <li>使用ifarme嵌入及jQ实现公告详情渲染；</li>
               </ul>`,
             link: {
-              title: "在线地址（需使用手机访问）",
-              src:
-                "https://www.yumaomoney.com/refactoring/wechat/index.html#/home",
+              title: "",
+              src: "",
             },
           },
           {
@@ -406,8 +405,8 @@ export default {
                 <li>使用Axios与后台进行数据交互，渲染用户获奖情况；</li>
               </ul>`,
             link: {
-              title: "在线地址（需使用手机访问）",
-              src: "https://www.yumao.fun/activity/20190520/app/index.html#/",
+              title: "",
+              src: "",
             },
           },
           {
@@ -438,8 +437,8 @@ export default {
                 <li>使用Axios与后台进行数据交互，渲染用户获奖情况；</li>
               </ul>`,
             link: {
-              title: "在线地址（需使用手机访问）",
-              src: "https://www.yumao.fun/activity/20190415/app/index.html#/",
+              title: "",
+              src: "",
             },
           },
           {
@@ -469,8 +468,8 @@ export default {
                 <li>使用Axios与后台进行数据交互，渲染用户获奖情况；</li>
               </ul>`,
             link: {
-              title: "在线地址（需使用手机访问）",
-              src: "https://www.yumao.fun/activity/20180824/app/index.html#/",
+              title: "",
+              src: "",
             },
           },
           {
@@ -508,8 +507,8 @@ export default {
                 <li>修改既有功能模块，实现与企业端的融合；</li>
               </ul>`,
             link: {
-              title: "在线地址（需使用 PC 访问）",
-              src: "https://www.yumaomoney.com/businessindex.do",
+              title: "",
+              src: "",
             },
           },
           {
@@ -539,8 +538,8 @@ export default {
               <p>在原有的项目基础之上，进行功能模块上的迭代升级，以及bug修复。</p>
               <p>对项目按功能点进行小规模重构，使得代码可维护性得以提升。</p>`,
             link: {
-              title: "在线地址（需使用 PC 访问）",
-              src: "https://www.yumaomoney.com/",
+              title: "",
+              src: "",
             },
           },
           {
@@ -778,7 +777,10 @@ export default {
           "css",
           "js",
           "vue",
+          "react",
           "angular",
+          "ice",
+          "antd",
           "element",
           "iview",
           "vux",
@@ -794,7 +796,7 @@ export default {
     },
     checkAllGroupChange(data) {
       var self = this;
-      if (data.length === 12) {
+      if (data.length === 15) {
         self.data.indeterminate = false;
         self.data.checkAll = true;
       } else if (data.length > 0) {

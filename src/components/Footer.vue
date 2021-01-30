@@ -5,11 +5,15 @@
         <i-col :span="8">
           <i-row>
             <i-col :span="8">
-              <i-row><b class="font18">我的信息</b></i-row>
+              <i-row><b class="font18">个人信息</b></i-row>
               <i-row class="h15"></i-row>
-              <i-row><a href="">自我简介</a></i-row>
-              <i-row><a href="">专业技能</a></i-row>
-              <i-row><a href="">工作经历</a></i-row>
+              <i-row><a href="https://www.gaotianyang.top">我的博客</a></i-row>
+              <i-row>
+                <a href="http://me.gaotianyang.top/#/experience">工作经历 </a>
+              </i-row>
+              <i-row>
+                <a href="http://me.gaotianyang.top/#/project">项目集</a>
+              </i-row>
             </i-col>
             <i-col :span="8">
               <i-row><b class="font18">项目信息</b></i-row>
@@ -21,9 +25,17 @@
             <i-col :span="8">
               <i-row><b class="font18">我的外链</b></i-row>
               <i-row class="h15"></i-row>
-              <i-row><a href="https://github.com/mitudegaoyang">GitHub</a></i-row>
-              <i-row><a href="https://gitee.com/MiTuDGaoYang">Gitee</a></i-row>
-              <i-row><a href="https://mitudegaoyang.gitbooks.io/mybook/content/">GitBook</a></i-row>
+              <i-row>
+                <a href="https://github.com/mitudegaoyang">GitHub</a>
+              </i-row>
+              <i-row>
+                <a href="https://gitee.com/MiTuDGaoYang">Gitee</a>
+              </i-row>
+              <i-row>
+                <a href="https://mitudegaoyang.gitbooks.io/mybook/content/"
+                  >GitBook</a
+                >
+              </i-row>
             </i-col>
           </i-row>
         </i-col>
@@ -54,62 +66,62 @@
 </template>
 
 <script>
-import moment from 'moment'
+import moment from "moment";
 export default {
-  name: 'NavBar', // 模板名称
-  data () {
+  name: "NavBar", // 模板名称
+  data() {
     return {
       time: true,
-      month: ''
-    }
+      month: "",
+    };
   },
-  beforeMount () {
-  },
+  beforeMount() {},
   props: {},
-  created () {
-    var self = this
-    self.month = parseInt(moment().format('M'))
-    self.time = (self.month > 9 || self.month < 5)
-  }
-}
+  created() {
+    var self = this;
+    self.month = parseInt(moment().format("M"));
+    self.time = self.month > 9 || self.month < 5;
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .left {
-    text-align: left;
-  }
-  .font18 {
-    font-size: 18px;
-  }
-  .h15 {
-    height: 15px;
-    line-height: 15px;
-  }
-  .pb10 {
-    padding-bottom: 10px;
-  }
-  .w1200 {
-    width: 1200px;
-    margin: 0 auto;
-  }
-  .center {
-    text-align: center;
-  }
-  .dark {
-    color: #999;
-    background: #424242;
-    font-weight: 400;
-    line-height: 24px;
-    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
-  }
-  .pl100 {
-    padding-left: 100px;
-  }
-  .dark a {
-    color: #999;
-  }
-  .dark a:hover {
-    color: #bbb;
-  }
+.left {
+  text-align: left;
+}
+.font18 {
+  font-size: 18px;
+}
+.h15 {
+  height: 15px;
+  line-height: 15px;
+}
+.pb10 {
+  padding-bottom: 10px;
+}
+.w1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
+.center {
+  text-align: center;
+}
+.dark {
+  color: #999;
+  background: #424242;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+}
+.pl100 {
+  padding-left: 100px;
+}
+.dark a {
+  color: #999;
+}
+.dark a:hover {
+  color: #bbb;
+}
 </style>

@@ -44,6 +44,7 @@
                         <checkbox label="react"></checkbox>
                         <checkbox label="vue"></checkbox>
                         <checkbox label="angular"></checkbox>
+                        <checkbox label="ice"></checkbox>
                         <checkbox label="antd"></checkbox>
                         <checkbox label="element"></checkbox>
                         <checkbox label="iview"></checkbox>
@@ -90,11 +91,7 @@
                       </div>
                       <div class="project-thumb" v-if="item.img">
                         <img
-                          :src="
-                            require('../../assets/img/project/' +
-                              item.img +
-                              '.png')
-                          "
+                          :src="item.img"
                           width="350px"
                           :title="item.img"
                           alt="项目展示"
@@ -147,8 +144,42 @@ export default {
         checkAllGroup: [],
         projectData: [
           {
-            title: "智能媒体服务",
-            label: "(开发中)",
+            title: "AICS 智慧工地",
+            label: "(已交付)",
+            tags: [
+              {
+                name: "React",
+                value: "react",
+              },
+              {
+                name: "antd",
+                value: "antd",
+              },
+              {
+                name: "ice",
+                value: "ice",
+              },
+            ],
+            time: "2020/9 至 2020/10",
+            img: "",
+            content: `<p>智慧工地是利用物联网技术，集成各类智能终端设备对建设项目现场劳务工人实现高效管理的综合信息化系统。</p>
+              <p>包括环境监测、智能分析、视频监控、塔基监测、实名制劳务管理等。项目共分为前台商城、订单管理、个人订单三大部分。</p>
+              <p>智慧工地依托物联网、大数据、云计算、人工智能、移动计算，建立云端大数据管理平台，</p>
+              <p>形成“端+云+大数据”的业务体系和新的管理模式，建立智慧工地综合管理平台，打通一线操作与远程监管的数据链条。</p>
+              <ul>
+                <li>使用飞冰ice-stark实现了微前端解决方案；</li>
+                <li>基于 Antd组件进行二次封装，实现各页面布局及特效；</li>
+                <li>使用 Dayjs实现日期处理及展示；</li>
+                <li>编写步骤条组件，进行步骤条定制开发；</li>
+              </ul>`,
+            link: {
+              title: "在线地址（需使用 PC 访问）",
+              src: "http://103.93.180.122:8084/manage/#/login",
+            },
+          },
+          {
+            title: "DataMaxPro数据可视化应用",
+            label: "(已交付)",
             tags: [
               {
                 name: "React",
@@ -159,12 +190,12 @@ export default {
                 value: "antd",
               },
             ],
-            time: "2020/3 至今",
+            time: "2020/8 至 2020/12",
             img: "",
-            content: `<p>使用antd、react实现项目的迭代开发。项目共分为概览、智能搜索、布控预警、设备、媒资管理、系统管理几个模块。</p>
-              <p>本人在项目中担任前端开发。</p>
-              <p>智能媒体服务平台是一个提供设备接入、视频流上云、媒资管理、视频 AI、智能搜索功能的云产品。</p>
-              <p>旨在帮助视频厂商快速将存量或者新增的媒体设备上云。平台还提供了丰富的视频算法，以及云边协同的视频智能服务。</p>
+            content: `<p>DataMaxPro数据可视化是使用可视化应用的方式来分析并展示庞杂数据的产品。</p>
+              <p>DataMaxPro旨让更多的人看到数据可视化的魅力，帮助非专业的工程师通过图形化的界面轻松搭建专业水准的可视化应用。</p>
+              <p>精心预设多种行业模板，极致展示数据魅力。采用拖拽式自由布局，无需编码，全图形化编辑，快速可视化制作。</p>
+              <p>满足您会议展示、业务监控、风险预警、地理信息分析等多种业务场景的展示需求。</p>
               <ul>
                 <li>使用antd组件实现各页面布局及特效；</li>
                 <li>编写功能组件，实现组件的复用；</li>
@@ -174,8 +205,79 @@ export default {
                 <li>引入西瓜视频实现视频播放功能；</li>
               </ul>`,
             link: {
-              title: "",
-              src: "",
+              title: "在线地址（需使用 PC 访问）",
+              src: "http://103.93.180.122:3001/login",
+            },
+          },
+          {
+            title: "AICube智盒管理系统",
+            label: "(已交付)",
+            tags: [
+              {
+                name: "React",
+                value: "react",
+              },
+              {
+                name: "antd",
+                value: "antd",
+              },
+              {
+                name: "ice",
+                value: "ice",
+              },
+            ],
+            time: "2020/3 至 2020/12",
+            img: "",
+            content: `<p>AICube智盒管理系统是部署于智盒上的设备管理界面，配合AIMS智能媒体服务系统，实现云加端控制。</p>
+              <p>项目共分为概览、摄像头管理、系统管理几个模块。</p>
+              <p>AICube智盒管理系统是一个提供智盒状态管理、设备接入、智盒设置的云产品。</p>
+              <p>通过该系统可以更加便捷高效的对智盒及其子设备进行各种操作。</p>
+              <ul>
+                <li>使用飞冰 ice-stark 实现了微前端解决方案；</li>
+                <li>基于 Antd组件进行二次封装，实现各页面布局及特效；</li>
+                <li>使用 rematch 实现状态管理；</li>
+                <li>使用 react-spring 实现微应用首次加载过渡动画；</li>
+                <li>使用 Dayjs实现日期处理及展示；</li>
+              </ul>`,
+            link: {
+              title: "内网地址（需使用 VPN 访问）",
+              src: "http://192.168.10.4:8080/web/#/camera",
+            },
+          },
+          {
+            title: "AIMS智能媒体服务",
+            label: "(迭代中)",
+            tags: [
+              {
+                name: "React",
+                value: "react",
+              },
+              {
+                name: "antd",
+                value: "antd",
+              },
+              {
+                name: "ice",
+                value: "ice",
+              },
+            ],
+            time: "2020/3 至今",
+            img: "",
+            content: `<p>使用antd、react实现项目的迭代开发。项目共分为概览、全息档案、智能搜索、布控预警、设备、媒资管理、系统管理几个模块。</p>
+              <p>本人在项目中担任前端开发。</p>
+              <p>智能媒体服务平台是一个提供设备接入、视频流上云、媒资管理、视频 AI、智能搜索功能的云产品。</p>
+              <p>旨在帮助视频厂商快速将存量或者新增的媒体设备上云。平台还提供了丰富的视频算法，以及云边协同的视频智能服务。</p>
+              <ul>
+                <li>使用飞冰 ice-stark 实现了微前端解决方案；</li>
+                <li>基于 Antd组件进行二次封装，实现各页面布局及特效；</li>
+                <li>使用 graphql 进行海量数据的筛选查询；</li>
+                <li>使用高德地图开放API引入高德地图；</li>
+                <li>使用 watermark 给敏感信息添加水印；</li>
+                <li>使用 websocket 实现告警推送监听。</li>
+              </ul>`,
+            link: {
+              title: "在线地址（需使用 PC 访问）",
+              src: "http://103.93.180.122:8087/login",
             },
           },
           {
@@ -190,6 +292,10 @@ export default {
                 name: "antd",
                 value: "antd",
               },
+              {
+                name: "ice",
+                value: "ice",
+              },
             ],
             time: "2019/9 至 2020/3",
             img: "",
@@ -199,16 +305,18 @@ export default {
               <p>感知平台为设备提供安全可靠的连接通信能力，向下连接海量设备，支撑设备数据采集上云。</p>
               <p>向上提供云端 API，应用服务通过 API 调用开放平台功能，实现远程控制。帮助用户快速构筑物联网应用。</p>
               <ul>
-                <li>使用rematch实现状态管理；</li>
-                <li>使用react-router-dom实现路由管理；</li>
-                <li>使用react-intl实现多语言；</li>
+                <li>使用飞冰 ice-stark 实现了微前端解决方案；</li>
+                <li>基于 Antd 组件进行二次封装，实现各页面布局及特效；</li>
+                <li>使用 rematch 实现状态管理；</li>
+                <li>使用 react-router-dom 进行路由配置；</li>
+                <li>使用 react-intl 实现多语言；</li>
                 <li>编写功能组件，实现组件的复用；</li>
-                <li>使用bizcharts实现可视化图表格；</li>
-                <li>引入高德地图实现地图功能；</li>
+                <li>使用西瓜视频播放器开放API进行视频播放；</li>
+                <li>使用 BizCharts 实现平台数据图表展示。</li>
               </ul>`,
             link: {
-              title: "",
-              src: "",
+              title: "在线地址（需使用 PC 访问）",
+              src: "http://103.93.180.122:8083/login",
             },
           },
           {
@@ -225,7 +333,7 @@ export default {
               },
             ],
             time: "2019/2 至今",
-            img: "ympcnew",
+            img: "https://s3.ax1x.com/2021/01/30/ykcrJf.png",
             content: `<p>使用iView、vue实现官网PC版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
               <p>在开发过程中，还需要注意IE兼容性的影响。</p>
@@ -255,7 +363,7 @@ export default {
               },
             ],
             time: "2018/9 至今",
-            img: "ymwechat",
+            img: "https://s3.ax1x.com/2021/01/30/ykc2Lj.png",
             content: `<p>使用Vux、Vue实现官网微信版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
               <ul>
@@ -289,7 +397,7 @@ export default {
               },
             ],
             time: "2019/5 至 2019/5",
-            img: "ymbenlai",
+            img: "https://s3.ax1x.com/2021/01/30/ykc0ot.png",
             content: `<p>使用Vue、C3实现官网节日宣传活动页面的构建。</p>
               <ul>
                 <li>使用mobile-util.js适配移动端；</li>
@@ -320,7 +428,7 @@ export default {
               },
             ],
             time: "2019/4 至 2019/4",
-            img: "ymturntable",
+            img: "https://s3.ax1x.com/2021/01/30/ykcgyQ.png",
             content: `<p>使用Vue、C3动效实现官网节日宣传活动页面的构建。</p>
               <p>活动为大转盘。</p>
               <ul>
@@ -352,7 +460,7 @@ export default {
               },
             ],
             time: "2019/1 至 2019/2",
-            img: "ymroad",
+            img: "https://s3.ax1x.com/2021/01/30/ykccQg.png",
             content: `<p>使用Vue、C3动效实现官网节日宣传活动页面的构建。</p>
               <p>活动为大转盘。</p>
               <ul>
@@ -391,7 +499,7 @@ export default {
               },
             ],
             time: "2018/7 至 2018/10",
-            img: "ymbusiness",
+            img: "https://s3.ax1x.com/2021/01/30/ykcDFP.png",
             content: `<p>使用Element UI、Vue、Jsp实现企业端项目。</p>
               <ul>
                 <li>使用Element UI组件实现各页面布局及特效；</li>
@@ -426,7 +534,7 @@ export default {
               },
             ],
             time: "2018/7 至今",
-            img: "ympc",
+            img: "https://s3.ax1x.com/2021/01/30/ykc6SS.png",
             content: `<p>使用html5、css3、原生js、Jsp实现既有官网项目的日常维护。</p>
               <p>在原有的项目基础之上，进行功能模块上的迭代升级，以及bug修复。</p>
               <p>对项目按功能点进行小规模重构，使得代码可维护性得以提升。</p>`,
@@ -481,7 +589,7 @@ export default {
               },
             ],
             time: "2018/2 至 2018/6",
-            img: "procuratorate",
+            img: "https://s3.ax1x.com/2021/01/30/ykcsW8.png",
             content: `<p>使用Element UI Admin、Vue实现张家口检察院OA管理平台。项目共分为即时通讯、办公应用、辅助工具、辅助学习、系统管理几个模块。</p>
               <p>本人在项目中担任项目经理角色，主要负责对项目进行整体把控，项目初始化及进度推进，项目难点解决方案梳理，公共方法的编写，以及即时通讯的部分子模块、办公应用的部分子模块。</p>
               <ul>
@@ -509,7 +617,7 @@ export default {
               },
             ],
             time: "2017/12 至 2018/3",
-            img: "document",
+            img: "https://s3.ax1x.com/2021/01/30/ykcwdI.png",
             content: `<p>使用Fuse 、AngularJS实现文献数字化OA管理平台。</p>
               <p>项目共分为项目管理、资源管理、工作管理、系统管理、个人中心几个模块。</p>
               <p>本人在项目中担任项目经理角色，主要负责对项目进行整体把控，项目初始化及进度推进，项目难点解决方案梳理，公共方法的编写，以及个人中心、登录模块开发。</p>
@@ -831,6 +939,9 @@ export default {
               }
               .project-tags-node {
                 background: #80bd01;
+              }
+              .project-tags-ice {
+                background: #6047de;
               }
             }
             .project-time {

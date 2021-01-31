@@ -45,7 +45,9 @@
                 年来，做过前端开发，做过项目经理，在不同的岗位有着不同的收获。
               </div>
             </div>
-            <div class="bgBox"></div>
+            <div class="bgBox">
+              <div class="roundIcon"></div>
+            </div>
             <div class="imgList">
               <div class="img"></div>
               <div class="img"></div>
@@ -58,14 +60,10 @@
       <i-col class="item3">
         <div class="content">
           <div>
-            写过<span style="color: #f8945d">响应式</span>，<span
-              style="color: #42c4fb"
-              >移动端</span
-            >，<span style="color: #f5ef4b">pc端</span>。
+            系统开发过<span class="textLinear">响应式，移动端，PC端</span>。
           </div>
-          <div>
-            功能上来说，管理后台，考试评测系统，企业官网，活动宣传，可视化，地图等都有所涉猎。
-          </div>
+          <div>功能上来说，管理后台，考试评测系统，企业官网，</div>
+          <div>活动宣传，可视化，地图等都有所涉猎。</div>
         </div>
       </i-col>
     </i-row>
@@ -269,14 +267,44 @@ export default {
         font-size: 28px;
         color: #000;
         background: #ffffff;
+        box-sizing: border-box;
+        box-shadow: 0 2px 0 0 rgba(47, 118, 142, 0.6), 0 6px 0 0 #fff,
+          0 12px 0 0 #2f768e;
       }
       .bgBox {
         position: relative;
-        top: -250px;
+        top: -300px;
         left: 60%;
         width: 750px;
         height: 750px;
         background: #2f778e;
+        .roundIcon {
+          width: 300px;
+          height: 300px;
+          border-radius: 300px;
+          background: #c6f1ff;
+          margin: 0 auto;
+          transform: translate(0, 225px);
+          transform-style: preserve-3d;
+        }
+        .roundIcon::after {
+          content: "";
+          width: 300px;
+          height: 300px;
+          border-radius: 300px;
+          background: #6d9fb0;
+          position: absolute;
+          transform: translate(100px, 0) translateZ(-1px);
+        }
+        .roundIcon::before {
+          content: "";
+          width: 300px;
+          height: 300px;
+          border-radius: 300px;
+          background: #2b697f;
+          position: absolute;
+          transform: translate(-100px, 0) translateZ(-1px);
+        }
       }
       .imgList {
         position: absolute;
@@ -316,16 +344,22 @@ export default {
   }
   .item3 {
     width: 100vw;
-    height: 200px;
-    background: linear-gradient(to right, #890bbf, #0e0395);
+    height: 230px;
+    background: url("https://s3.ax1x.com/2021/01/31/yEkHSA.png") #fff no-repeat
+      bottom right / 463px 136px;
     .content {
       margin: 0 auto;
       padding: 50px 0;
       top: 0;
       width: 1200px;
-      height: 200px;
+      height: 230px;
       font-size: 28px;
-      color: #fff;
+      color: #000;
+      .textLinear {
+        background: linear-gradient(to right, #f8945d, #42c4fb, #f5ef4b);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
     }
   }
 }

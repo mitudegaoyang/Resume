@@ -278,6 +278,7 @@ export default {
         width: 750px;
         height: 750px;
         background: #2f778e;
+        border-radius: 26px;
         .roundIcon {
           width: 300px;
           height: 300px;

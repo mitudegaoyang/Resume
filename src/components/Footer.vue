@@ -58,7 +58,7 @@
       </i-row>
       <i-row>
         <i-col>由高天阳设计开发</i-col>
-        <i-col>版权所有 © 2018-2019 高天阳</i-col>
+        <i-col>版权所有 © 2018-{{ year }} 高天阳</i-col>
       </i-row>
     </div>
     <i-back-top></i-back-top>
@@ -73,6 +73,7 @@ export default {
     return {
       time: true,
       month: "",
+      year: "",
     };
   },
   beforeMount() {},
@@ -81,6 +82,7 @@ export default {
     var self = this;
     self.month = parseInt(moment().format("M"));
     self.time = self.month > 9 || self.month < 5;
+    self.year = moment().format("YYYY");
   },
 };
 </script>

@@ -15,10 +15,13 @@
       <i-col class="w1200">
         <i-row>
           <i-col class="item1">
-            <div class="content" :style="{ top: contentTop }">
-              <div class="title">我叫高天阳，坐标北京</div>
-              <div>
-                我并不是计算机专业，但对前端很感兴趣，所以自学前端，今后的职业规划是朝着项目经理发展，目前在学TypeScript/ES6。
+            <div class="contentBox" :style="{ top: contentTop }">
+              <div class="roundIcon"></div>
+              <div class="content">
+                <div class="title">我叫高天阳，坐标北京</div>
+                <div>
+                  我并不是计算机专业，但对前端很感兴趣，所以自学前端，今后的职业规划是朝着项目经理发展，目前在学TypeScript/ES6。
+                </div>
               </div>
             </div>
             <div class="imgList">
@@ -169,9 +172,9 @@ export default {
     .item1 {
       position: relative;
       height: 1000px;
-      .content {
+      .contentBox {
         position: relative;
-        padding: 140px 100px;
+        padding: 120px 80px;
         top: 0;
         width: 50%;
         height: 550px;
@@ -179,10 +182,34 @@ export default {
         font-size: 28px;
         color: #fff;
         border-radius: 26px;
-        .title {
-          margin-bottom: 30px;
-          font-size: 40px;
-          font-weight: 600;
+        .content {
+          position: relative;
+          z-index: 10;
+          box-shadow: 0 0 0 2px #b3e8f5, 0 0 0 10px #fff;
+          height: 100%;
+          padding: 20px;
+          border-radius: 12px;
+          background: #fff;
+          color: #000;
+          .title {
+            margin-bottom: 30px;
+            font-size: 40px;
+            font-weight: 600;
+          }
+        }
+        .roundIcon {
+          z-index: 5;
+          position: absolute;
+          top: 300px;
+          left: 0;
+          background: linear-gradient(
+            51deg,
+            rgba(255, 255, 255, 0.7) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          width: 220px;
+          height: 220px;
+          border-radius: 100px;
         }
       }
       .imgList {

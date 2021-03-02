@@ -20,19 +20,13 @@
                 <i-content class="content-center">
                   <i-row>
                     <i-col class="content-text">
-                      {{ data.passage1.content }}
+                      {{ data.passage1.content }}{{ data.passage2.content }}
                     </i-col>
                     <i-col class="content-text">
-                      {{ data.passage2.content }}
+                      {{ data.passage3.content }}{{ data.passage4.content }}
                     </i-col>
                     <i-col class="content-text">
-                      {{ data.passage3.content }}
-                    </i-col>
-                    <i-col class="content-text">
-                      {{ data.passage4.content }}{{ data.passage5.content }}
-                    </i-col>
-                    <i-col class="content-text">
-                      {{ data.passage6.content }}
+                      {{ data.passage5.content }}{{ data.passage6.content }}
                     </i-col>
                     <i-col class="content-text">
                       {{ data.passage7.content }}{{ data.passage8.content }}
@@ -77,35 +71,34 @@ export default {
     return {
       data: {
         passage1: {
-          msg: "我是个为人诚恳，乐观开朗的人，在工作之中，和同事相处融洽。",
+          msg:
+            "我为人诚恳、乐观开朗。工作中，我依旧保持着我的进取心、责任心，能做到自信而不自负，不以自我为中心，懂得换位思考。",
           content: "",
         },
         passage2: {
-          msg:
-            "沟通是我的一个强项，我相信在工作中，沟通是十分重要的，俗话说方向对了努力才有意义，沟通不畅往往会导致工作朝着错误的方向展开。",
+          msg: "较强的适应能力和团队精神使我很好得融入到每个项目中。",
           content: "",
         },
         passage3: {
-          msg:
-            "我的个性相对来说算是比较有进取心和责任心的，有着较强的适应力，以及团队精神，在工作之中能做到自信但不自负，不会以自我为中心，懂得换位思考。",
+          msg: "沟通是我的一个强项，有效沟通会极大提高我们的工作效率。",
           content: "",
         },
         passage4: {
-          msg: "对于新事物、新技术有着较为强烈的好奇心和求知欲。",
+          msg:
+            "日常开发中，我会通过熟练地使用npm、shell 等常用命令来提高工作效率。",
           content: "",
         },
         passage5: {
-          msg:
-            "在工作之余，会尽可能的通过技术博客，官方文档，学习类网站等渠道进行自我的技术积累，并持续在自己的技术博客上，加以记录整理。",
+          msg: "对于新事物、新技术有着较为强烈的好奇心和求知欲。",
           content: "",
         },
         passage6: {
           msg:
-            "可以熟练使用npm、以及shell的常用命令，这些会帮助我提升日常开发的效率。",
+            "因此，我会利用空闲时间去不断扩充个人知识库，并将其沉淀到我的技术博客中。",
           content: "",
         },
         passage7: {
-          msg: `截止今日，我已经有${moment().diff(
+          msg: `至今，我已经有${moment().diff(
             "2016-1-1",
             "year"
           )}年前端开发，以及1年左右的前端团队管理经验了。`,
@@ -173,11 +166,11 @@ export default {
   background: #fff;
 }
 .content-center {
-  padding: 24px;
+  padding: 48px 24px;
   background: #fff;
   .content-text {
     font-size: 18px;
-    line-height: 3em;
+    line-height: 4em;
     text-indent: 2em;
   }
 }

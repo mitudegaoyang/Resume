@@ -42,6 +42,7 @@
                         <checkbox label="vue"></checkbox>
                         <checkbox label="angular"></checkbox>
                         <checkbox label="ice"></checkbox>
+                        <checkbox label="echarts"></checkbox>
                         <checkbox label="antd"></checkbox>
                         <checkbox label="element"></checkbox>
                         <checkbox label="iview"></checkbox>
@@ -146,9 +147,44 @@ export default {
           'element-admin',
           'weex',
           'fuse',
-          'jsp'
+          'jsp',
+          'echarts'
         ],
         projectData: [
+          {
+            title: '亿欧数据',
+            label: '(迭代中)',
+            tags: [
+              {
+                name: 'vue.js',
+                value: 'vue'
+              },
+              {
+                name: 'antd',
+                value: 'antd'
+              },
+              {
+                name: 'echarts',
+                value: 'echarts'
+              }
+            ],
+            time: '2021/4 至今',
+            img: 'https://z3.ax1x.com/2021/09/10/hX6ldI.png',
+            content: `<p>亿欧数据的产品定位是为能引领科技与产业发展的组织，提供好用的行业洞察工具，有效的商业决策工具。</p>
+              <p>包括情报监测、行业分析、企业分析、数据分析、工作台等模块。</p>
+              <p>本产品帮助亿欧公司进行能力升级，把日常业务开展的过程中形成的标准化流程、结构化数据和高质量方法论。</p>
+              <p>通过大数据仓库，将这些数据有效的存储和管理起来，以这些数据为支撑，建立数据产品化，推动公司数字化浪潮。</p>
+              <ul>
+                <li>基于 Ant Design of Vue组件，实现各页面布局及特效；</li>
+                <li>使用 wangeditor实现富文本编辑器；</li>
+                <li>使用 Echarts实现图表的展示；</li>
+                <li>编写高级筛选组件，进行筛选条件复用开发；</li>
+              </ul>`,
+            link: {
+              title: '在线地址（需使用 PC 访问）',
+              src: 'https://data.iyiou.com/'
+            }
+          },
           {
             title: 'AICS 智慧工地',
             label: '(已交付)',
@@ -167,10 +203,9 @@ export default {
               }
             ],
             time: '2020/9 至 2020/10',
-            img: '',
-            // img: "https://s3.ax1x.com/2021/01/30/ykcprj.png",
+            img: 'https://z3.ax1x.com/2021/01/30/ykcprj.png',
             content: `<p>智慧工地是利用物联网技术，集成各类智能终端设备对建设项目现场劳务工人实现高效管理的综合信息化系统。</p>
-              <p>包括环境监测、智能分析、视频监控、塔基监测、实名制劳务管理等。项目共分为前台商城、订单管理、个人订单三大部分。</p>
+              <p>包括环境监测、智能分析、视频监控、塔基监测、实名制劳务管理。项目分为前台商城、订单管理、个人订单三大部分。</p>
               <p>智慧工地依托物联网、大数据、云计算、人工智能、移动计算，建立云端大数据管理平台，</p>
               <p>形成“端+云+大数据”的业务体系和新的管理模式，建立智慧工地综合管理平台，打通一线操作与远程监管的数据链条。</p>
               <ul>
@@ -198,10 +233,9 @@ export default {
               }
             ],
             time: '2020/8 至 2020/12',
-            img: '',
-            // img: "https://s3.ax1x.com/2021/01/30/ykcEGT.png",
+            img: 'https://z3.ax1x.com/2021/01/30/ykcEGT.png',
             content: `<p>DataMaxPro数据可视化是使用可视化应用的方式来分析并展示庞杂数据的产品。</p>
-              <p>DataMaxPro旨让更多的人看到数据可视化的魅力，帮助非专业的工程师通过图形化的界面轻松搭建专业水准的可视化应用。</p>
+              <p>DataMaxPro旨让更多人看到数据可视化的魅力，帮助非专业的工程师通过图形化的界面轻松搭建专业水准的可视化应用。</p>
               <p>精心预设多种行业模板，极致展示数据魅力。采用拖拽式自由布局，无需编码，全图形化编辑，快速可视化制作。</p>
               <p>满足您会议展示、业务监控、风险预警、地理信息分析等多种业务场景的展示需求。</p>
               <ul>
@@ -235,8 +269,7 @@ export default {
               }
             ],
             time: '2020/3 至 2020/12',
-            img: '',
-            // img: "https://s3.ax1x.com/2021/01/30/ykcSMQ.png",
+            img: 'https://z3.ax1x.com/2021/01/30/ykcSMQ.png',
             content: `<p>AICube智盒管理系统是部署于智盒上的设备管理界面，配合AIMS智能媒体服务系统，实现云加端控制。</p>
               <p>项目共分为概览、摄像头管理、系统管理几个模块。</p>
               <p>AICube智盒管理系统是一个提供智盒状态管理、设备接入、智盒设置的云产品。</p>
@@ -270,10 +303,9 @@ export default {
                 value: 'ice'
               }
             ],
-            time: '2020/3 至今',
-            img: '',
-            // img: "https://s3.ax1x.com/2021/01/30/ykcPZn.png",
-            content: `<p>使用antd、react实现项目的迭代开发。项目共分为概览、全息档案、智能搜索、布控预警、设备、媒资管理、系统管理几个模块。</p>
+            time: '2020/3 至 2021/4',
+            img: 'https://z3.ax1x.com/2021/01/30/ykcPZn.png',
+            content: `<p>使用antd、react进行迭代开发。项目分为概览、全息档案、智能搜索、布控预警、设备、媒资管理、系统管理几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
               <p>智能媒体服务平台是一个提供设备接入、视频流上云、媒资管理、视频 AI、智能搜索功能的云产品。</p>
               <p>旨在帮助视频厂商快速将存量或者新增的媒体设备上云。平台还提供了丰富的视频算法，以及云边协同的视频智能服务。</p>
@@ -309,8 +341,7 @@ export default {
               }
             ],
             time: '2019/9 至 2020/3',
-            img: '',
-            // img: "https://s3.ax1x.com/2021/01/30/ykcZzF.png",
+            img: 'https://z3.ax1x.com/2021/01/30/ykcZzF.png',
             content: `<p>使用antd、react实现项目的迭代开发。项目共分为概览、产品、设备、告警、规则、工单、应用、系统管理几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
               <p>项目使用子应用模式开发，模块间独立开发部署。</p>
@@ -333,7 +364,7 @@ export default {
           },
           {
             title: '鱼猫金服PC版重构',
-            label: '(已下线)',
+            label: '',
             tags: [
               {
                 name: 'vue.js',
@@ -345,7 +376,7 @@ export default {
               }
             ],
             time: '2019/2 至 2019/8',
-            img: 'https://s3.ax1x.com/2021/01/30/ykcrJf.png',
+            img: 'https://z3.ax1x.com/2021/01/30/ykcrJf.png',
             content: `<p>使用iView、vue实现官网PC版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
               <p>在开发过程中，还需要注意IE兼容性的影响。</p>
@@ -363,7 +394,7 @@ export default {
           },
           {
             title: '鱼猫金服微信版官网重构',
-            label: '(已上线)',
+            label: '',
             tags: [
               {
                 name: 'vue.js',
@@ -375,7 +406,7 @@ export default {
               }
             ],
             time: '2018/9 至 2019/8',
-            img: 'https://s3.ax1x.com/2021/01/30/ykc2Lj.png',
+            img: 'https://z3.ax1x.com/2021/01/30/ykc2Lj.png',
             content: `<p>使用Vux、Vue实现官网微信版的重新构建。项目共分为首页、项目、活动、个人中心几个模块。</p>
               <p>本人在项目中担任前端开发。</p>
               <ul>
@@ -392,7 +423,7 @@ export default {
           },
           {
             title: '鱼猫金服业务推广活动页面',
-            label: '(已下线)',
+            label: '',
             tags: [
               {
                 name: 'vue.js',
@@ -408,7 +439,7 @@ export default {
               }
             ],
             time: '2019/5 至 2019/5',
-            img: 'https://s3.ax1x.com/2021/01/30/ykc0ot.png',
+            img: 'https://z3.ax1x.com/2021/01/30/ykc0ot.png',
             content: `<p>使用Vue、C3实现官网节日宣传活动页面的构建。</p>
               <ul>
                 <li>使用mobile-util.js适配移动端；</li>
@@ -423,7 +454,7 @@ export default {
           },
           {
             title: '鱼猫金服大转盘活动页面',
-            label: '(已下线)',
+            label: '',
             tags: [
               {
                 name: 'vue.js',
@@ -439,7 +470,7 @@ export default {
               }
             ],
             time: '2019/4 至 2019/4',
-            img: 'https://s3.ax1x.com/2021/01/30/ykcgyQ.png',
+            img: 'https://z3.ax1x.com/2021/01/30/ykcgyQ.png',
             content: `<p>使用Vue、C3动效实现官网节日宣传活动页面的构建。</p>
               <p>活动为大转盘。</p>
               <ul>
@@ -455,7 +486,7 @@ export default {
           },
           {
             title: '鱼猫金服新手活动页面重构',
-            label: '(已下线)',
+            label: '',
             tags: [
               {
                 name: 'vue.js',
@@ -471,7 +502,7 @@ export default {
               }
             ],
             time: '2019/1 至 2019/2',
-            img: 'https://s3.ax1x.com/2021/01/30/ykccQg.png',
+            img: 'https://z3.ax1x.com/2021/01/30/ykccQg.png',
             content: `<p>使用Vue、C3动效实现官网节日宣传活动页面的构建。</p>
               <p>活动为大转盘。</p>
               <ul>
@@ -486,7 +517,7 @@ export default {
           },
           {
             title: '鱼猫金服企业端',
-            label: '(已上线)',
+            label: '',
             tags: [
               {
                 name: 'vue.js',
@@ -510,7 +541,7 @@ export default {
               }
             ],
             time: '2018/7 至 2018/10',
-            img: 'https://s3.ax1x.com/2021/01/30/ykcDFP.png',
+            img: 'https://z3.ax1x.com/2021/01/30/ykcDFP.png',
             content: `<p>使用Element UI、Vue、Jsp实现企业端项目。</p>
               <ul>
                 <li>使用Element UI组件实现各页面布局及特效；</li>
@@ -525,7 +556,7 @@ export default {
           },
           {
             title: '鱼猫金服PC版日常维护',
-            label: '(已上线)',
+            label: '',
             tags: [
               {
                 name: 'HTML 5',
@@ -544,8 +575,8 @@ export default {
                 value: 'jsp'
               }
             ],
-            time: '2018/7 至今',
-            img: 'https://s3.ax1x.com/2021/01/30/ykc6SS.png',
+            time: '2018/7 至 2019/9',
+            img: 'https://z3.ax1x.com/2021/01/30/ykc6SS.png',
             content: `<p>使用html5、css3、原生js、Jsp实现既有官网项目的日常维护。</p>
               <p>在原有的项目基础之上，进行功能模块上的迭代升级，以及bug修复。</p>
               <p>对项目按功能点进行小规模重构，使得代码可维护性得以提升。</p>`,
@@ -600,7 +631,7 @@ export default {
               }
             ],
             time: '2018/2 至 2018/6',
-            img: 'https://s3.ax1x.com/2021/01/30/ykcsW8.png',
+            img: 'https://z3.ax1x.com/2021/01/30/ykcsW8.png',
             content: `<p>使用Element UI Admin、Vue实现张家口检察院OA管理平台。项目共分为即时通讯、办公应用、辅助工具、辅助学习、系统管理几个模块。</p>
               <p>本人在项目中担任项目经理角色，主要负责对项目进行整体把控，项目初始化及进度推进，项目难点解决方案梳理，公共方法的编写，以及即时通讯的部分子模块、办公应用的部分子模块。</p>
               <ul>
@@ -628,7 +659,7 @@ export default {
               }
             ],
             time: '2017/12 至 2018/3',
-            img: 'https://s3.ax1x.com/2021/01/30/ykcwdI.png',
+            img: 'https://z3.ax1x.com/2021/01/30/ykcwdI.png',
             content: `<p>使用Fuse 、AngularJS实现文献数字化OA管理平台。</p>
               <p>项目共分为项目管理、资源管理、工作管理、系统管理、个人中心几个模块。</p>
               <p>本人在项目中担任项目经理角色，主要负责对项目进行整体把控，项目初始化及进度推进，项目难点解决方案梳理，公共方法的编写，以及个人中心、登录模块开发。</p>
@@ -937,6 +968,9 @@ export default {
               }
               .project-tags-ice {
                 background: #6047de;
+              }
+              .project-tags-echarts {
+                background: #e43961;
               }
             }
             .project-time {

@@ -77,7 +77,7 @@ export default {
     refreshClock() {
       var self = this;
       self.time = moment().format('YYYY-MM-DD HH:mm:ss');
-      self.hour = moment().format('HH') * 1;
+      self.hour = moment().format('H') * 1;
       let msg = new Map([
         [/^[0-5]$/, '午夜好，您不要太辛苦，夜深了也要注意休息呀~'],
         [/^[6-9]|1[0-1]$/, '早上好，今天又是元气满满的一天~'],

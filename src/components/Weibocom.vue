@@ -19,9 +19,9 @@
         class="hot-container"
       >
         <a :href="item.scheme">
-          <span class="hot-icon">{{index+1}}</span>
-          <span class="hot-text">{{item.desc}}</span>
-          <span class="hot-num">{{item.num}}</span>
+          <span class="hot-icon">{{ index + 1 }}</span>
+          <span class="hot-text">{{ item.desc }}</span>
+          <span class="hot-num">{{ item.num }}</span>
         </a>
       </p>
     </Drawer>
@@ -29,10 +29,11 @@
 </template>
 
 <script>
-import axios from "axios";
-import weiboData from "../assets/json/weibo.json"
+import axios from 'axios';
+import _ from 'lodash';
+import weiboData from '../assets/json/weibo.json';
 export default {
-  name: "InnerTop", // 模板名称
+  name: 'InnerTop', // 模板名称
   data() {
     return {
       weiboTag: false,
@@ -66,11 +67,10 @@ export default {
     getWeibo() {
       var self = this;
       axios
-        .get("/weibo/api/container/getIndex", {
+        .get('/weibo/api/container/getIndex', {
           params: {
-            jumpfrom: "weibocom",
-            containerid:
-              "106003type=25&t=3&disable_hot=1&filter_type=realtimehot"
+            jumpfrom: 'weibocom',
+            containerid: '106003type=25&t=3&disable_hot=1&filter_type=realtimehot'
           }
         })
         .then(function(response) {
@@ -78,18 +78,15 @@ export default {
             if (v && v.desc_extr && v.desc_extr.toString().length) {
               v.desc_extr = v.desc_extr.toString();
               if (v.desc_extr.length > 8) {
-                v.num = v.desc_extr.substring(0, v.desc_extr.length - 8) + "亿";
+                v.num = v.desc_extr.substring(0, v.desc_extr.length - 8) + '亿';
               } else if (v.desc_extr.length > 4) {
-                v.num = v.desc_extr.substring(0, v.desc_extr.length - 4) + "万";
+                v.num = v.desc_extr.substring(0, v.desc_extr.length - 4) + '万';
               } else {
                 v.num = v.desc_extr;
               }
             }
           });
-          self.weiboData = _.filter(
-            response.data.data.cards[0].card_group,
-            "num"
-          );
+          self.weiboData = _.filter(response.data.data.cards[0].card_group, 'num');
         })
         .catch(function(error) {
           console.log(error);
@@ -104,24 +101,20 @@ export default {
         if (v && v.desc_extr && v.desc_extr.toString().length) {
           v.desc_extr = v.desc_extr.toString();
           if (v.desc_extr.length > 8) {
-            v.num = v.desc_extr.substring(0, v.desc_extr.length - 8) + "亿";
+            v.num = v.desc_extr.substring(0, v.desc_extr.length - 8) + '亿';
           } else if (v.desc_extr.length > 4) {
-            v.num = v.desc_extr.substring(0, v.desc_extr.length - 4) + "万";
+            v.num = v.desc_extr.substring(0, v.desc_extr.length - 4) + '万';
           } else {
             v.num = v.desc_extr;
           }
         }
       });
-      self.weiboData = _.filter(
-        weiboData.data.cards[0].card_group,
-        "num"
-      );
-    },
-
+      self.weiboData = _.filter(weiboData.data.cards[0].card_group, 'num');
+    }
   },
   created() {
     var self = this;
-    self.initWeibo()
+    self.initWeibo();
   }
 };
 </script>
@@ -145,7 +138,7 @@ export default {
 .hot-button-icon {
   width: 48px;
   height: 40px;
-  background: url("../assets/img/hot.svg") no-repeat center center;
+  background: url('../assets/img/hot.svg') no-repeat center center;
   background-size: 40%;
 }
 .hot-button:hover {
@@ -168,7 +161,7 @@ export default {
     display: inline-block;
     width: 14px;
     height: 16px;
-    background: url("../assets/img/hot.svg") no-repeat center center;
+    background: url('../assets/img/hot.svg') no-repeat center center;
     background-size: cover;
   }
   .drawer-header-left {
@@ -186,7 +179,7 @@ export default {
       width: 13px;
       height: 14px;
       margin-right: 5px;
-      background: url("../assets/img/reset.svg") no-repeat center center;
+      background: url('../assets/img/reset.svg') no-repeat center center;
       background-size: cover;
     }
   }

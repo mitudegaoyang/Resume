@@ -9,7 +9,7 @@
       <i-col class="w1200">
         <i-layout>
           <i-row>
-            <i-breadcrumb :style="{margin: '16px 0'}">
+            <i-breadcrumb :style="{ margin: '16px 0' }">
               <i-breadcrumb-item to="/">首页</i-breadcrumb-item>
               <i-breadcrumb-item>动效课堂</i-breadcrumb-item>
             </i-breadcrumb>
@@ -260,13 +260,13 @@
 </template>
 
 <script>
-import NavBar from "../components/NavBar.vue"; // 引进菜单模板
-import Footer from "../components/Footer.vue"; // 引进底部模板
-import Loading from "../components/Loading.vue"; // 引进底部模板
-import Weibo from "../components/Weibocom.vue"; // 引进热点组件
-import terra from "../assets/img/terra.png";
+import NavBar from '../components/NavBar.vue'; // 引进菜单模板
+import Footer from '../components/Footer.vue'; // 引进底部模板
+import Loading from '../components/Loading.vue'; // 引进底部模板
+import Weibo from '../components/Weibocom.vue'; // 引进热点组件
+// import terra from '../assets/img/terra.png';
 export default {
-  name: "Education",
+  name: 'Education',
   components: {
     NavBar, // 使用菜单组件
     Footer, // 使用底部组件
@@ -275,7 +275,7 @@ export default {
   },
   data() {
     return {
-      msg: "Education"
+      msg: 'Education'
     };
   },
   created() {
@@ -360,7 +360,7 @@ export default {
       }
       .dot:before,
       .dot:after {
-        content: "";
+        content: '';
         display: inline-block;
         vertical-align: middle;
         width: 20px;
@@ -609,7 +609,7 @@ export default {
         }
         .log:before {
           margin: 0 auto;
-          content: "";
+          content: '';
           display: block;
           background: #b35050;
           position: relative;
@@ -617,9 +617,8 @@ export default {
           width: 6px;
           height: 3px;
           border-radius: 50%;
-          box-shadow: 0 0 0 1.5px #781e20, 0 0 0 4.5px #b35050,
-            0 0 0 6px #781e20, 0 0 0 8.5px #b35050, 0 0 0 10px #781e20,
-            0 0 0 12px #b35050;
+          box-shadow: 0 0 0 1.5px #781e20, 0 0 0 4.5px #b35050, 0 0 0 6px #781e20,
+            0 0 0 8.5px #b35050, 0 0 0 10px #781e20, 0 0 0 12px #b35050;
         }
         .log:nth-child(1) {
           top: 150px;
@@ -669,7 +668,7 @@ export default {
           border-radius: 5px;
         }
         .stick:before {
-          content: "";
+          content: '';
           display: block;
           background: #b35050;
           position: relative;
@@ -678,7 +677,7 @@ export default {
           border-radius: 50%;
         }
         .stick:after {
-          content: "";
+          content: '';
           display: block;
           background: #781e20;
           position: relative;
@@ -879,7 +878,7 @@ export default {
         border-radius: 0 0 40% 40%;
       }
       .mug-body::before {
-        content: "";
+        content: '';
         position: absolute;
         top: -30px;
         left: 0;
@@ -890,7 +889,7 @@ export default {
         background: #f9b780;
       }
       .mug-body::after {
-        content: "";
+        content: '';
         position: absolute;
         height: 50px;
         width: 15px;
@@ -911,7 +910,7 @@ export default {
         border-radius: 0 50% 50% 0;
       }
       .handle::before {
-        content: "";
+        content: '';
         position: absolute;
         z-index: 1;
         left: -43px;
@@ -923,7 +922,7 @@ export default {
         border: 2px solid #60557c;
       }
       .handle::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 70px;
         left: -116px;
@@ -946,7 +945,7 @@ export default {
         top: 176px;
       }
       .flower-petal-top::before {
-        content: "";
+        content: '';
         background: #fff;
         position: absolute;
         top: 5px;
@@ -957,7 +956,7 @@ export default {
         border-radius: 50%;
       }
       .flower-petal-top::after {
-        content: "";
+        content: '';
         position: absolute;
         background: #fff;
         top: -7px;
@@ -972,7 +971,7 @@ export default {
         top: 181px;
       }
       .flower-petal-bottom::before {
-        content: "";
+        content: '';
         background: #fff;
         position: absolute;
         top: -9px;
@@ -983,7 +982,7 @@ export default {
         border-radius: 50%;
       }
       .flower-petal-bottom::after {
-        content: "";
+        content: '';
         position: absolute;
         top: -7px;
         left: -7px;
@@ -1000,7 +999,7 @@ export default {
         border-radius: 50%;
       }
       .vapour::after {
-        content: "";
+        content: '';
         position: absolute;
         height: 50px;
         width: 25px;
@@ -1027,7 +1026,7 @@ export default {
         border-left: 10px solid rgba(237, 210, 194, 0.2);
       }
       .right-vapour::before {
-        content: "";
+        content: '';
         position: absolute;
         height: 50px;
         width: 25px;

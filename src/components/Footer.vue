@@ -32,9 +32,7 @@
                 <a href="https://gitee.com/MiTuDGaoYang">Gitee</a>
               </i-row>
               <i-row>
-                <a href="https://mitudegaoyang.gitbooks.io/mybook/content/"
-                  >GitBook</a
-                >
+                <a href="https://mitudegaoyang.gitbooks.io/mybook/content/">GitBook</a>
               </i-row>
             </i-col>
           </i-row>
@@ -66,24 +64,24 @@
 </template>
 
 <script>
-import moment from "moment";
+import moment from 'moment';
 export default {
-  name: "NavBar", // 模板名称
+  name: 'NavBar', // 模板名称
   data() {
     return {
       time: true,
-      month: "",
-      year: "",
+      month: '',
+      year: ''
     };
   },
   beforeMount() {},
   props: {},
   created() {
     var self = this;
-    self.month = parseInt(moment().format("M"));
+    self.month = parseInt(moment().format('M'));
     self.time = self.month > 9 || self.month < 5;
-    self.year = moment().format("YYYY");
-  },
+    self.year = moment().format('YYYY');
+  }
 };
 </script>
 
@@ -114,8 +112,8 @@ export default {
   background: #424242;
   font-weight: 400;
   line-height: 24px;
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    微软雅黑, Arial, sans-serif;
 }
 .pl100 {
   padding-left: 100px;

@@ -19,24 +19,24 @@
       class="lizi"
     >
     </vue-particles>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
   name: 'App'
-}
+};
 </script>
 
 <style>
-  .lizi {
-    position: fixed;
-    z-index: -1;
-    top: 0px;
-    left: 0px;
-    background: #f5f7f9;
-    width: 100vw;
-    height: 100vh;
-  }
+.lizi {
+  position: fixed;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  background: #f5f7f9;
+  width: 100vw;
+  height: 100vh;
+}
 </style>

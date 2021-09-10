@@ -24,29 +24,29 @@
 </template>
 
 <script>
-import moment from "moment";
+import moment from 'moment';
 export default {
-  name: "InnerTop", // 模板名称
+  name: 'InnerTop', // 模板名称
   data() {
     return {
       timeList: {
-        relative: "",
-        year: "00",
-        day: "00",
-        hour: "00",
-        minutes: "00",
-        seconds: "00",
+        relative: '',
+        year: '00',
+        day: '00',
+        hour: '00',
+        minutes: '00',
+        seconds: '00'
       },
-      timer: "",
-      time: "0000-00-00 00:00:00",
-      hour: "",
-      helloMsg: "您好，欢迎您的光临~",
+      timer: '',
+      time: '0000-00-00 00:00:00',
+      hour: '',
+      helloMsg: '您好，欢迎您的光临~'
     };
   },
   props: {
     unfixed: {
-      type: Boolean,
-    },
+      type: Boolean
+    }
   },
   methods: {
     /**
@@ -54,7 +54,7 @@ export default {
      */
     prefixInteger(num) {
       if (num < 10) {
-        num = "0" + num;
+        num = '0' + num;
       } else {
         num = num.toString();
       }
@@ -65,50 +65,44 @@ export default {
      */
     timeInit() {
       var self = this;
-      self.timeList.day = self.prefixInteger(
-        moment().diff("2019-07-01 15:58:00", "days")
-      );
-      self.timeList.hour = self.prefixInteger(
-        moment().diff("2019-07-01 15:58:00", "hours") % 24
-      );
+      self.timeList.day = self.prefixInteger(moment().diff('2019-07-01 15:58:00', 'days'));
+      self.timeList.hour = self.prefixInteger(moment().diff('2019-07-01 15:58:00', 'hours') % 24);
       self.timeList.minutes = self.prefixInteger(
-        moment().diff("2019-07-01 15:58:00", "minutes") % 60
+        moment().diff('2019-07-01 15:58:00', 'minutes') % 60
       );
       self.timeList.seconds = self.prefixInteger(
-        moment().diff("2019-07-01 15:58:00", "seconds") % 60
+        moment().diff('2019-07-01 15:58:00', 'seconds') % 60
       );
     },
     refreshClock() {
       var self = this;
-      self.time = moment().format("YYYY-MM-DD HH:mm:ss");
-      self.hour = moment().format("H") * 1;
-      self.helloMsg =
-        self.hour >= 0 && self.hour < 6
-          ? "午夜好，您不要太辛苦，夜深了也要注意休息呀~"
-          : self.hour >= 6 && self.hour < 12
-          ? "早上好，今天又是元气满满的一天~"
-          : self.hour >= 12 && self.hour < 14
-          ? "中午好，午休后，为更好的自己加油~"
-          : self.hour >= 14 && self.hour < 19
-          ? "下午好，愿您享受宁静的下午时光~"
-          : "晚上好，今天又是美好一天~";
+      self.time = moment().format('YYYY-MM-DD HH:mm:ss');
+      self.hour = moment().format('HH') * 1;
+      let msg = new Map([
+        [/^[0-5]$/, '午夜好，您不要太辛苦，夜深了也要注意休息呀~'],
+        [/^[6-9]|1[0-1]$/, '早上好，今天又是元气满满的一天~'],
+        [/^1[2-3]$/, '中午好，午休后，为更好的自己加油~'],
+        [/^1[4-8]$/, '下午好，愿您享受宁静的下午时光~'],
+        [/^19|2[0-3]$/, '晚上好，今天又是美好一天~']
+      ]);
+      self.helloMsg = [...msg].find(([key]) => key.test(`${self.hour}`))[1];
       self.timeInit();
-    },
+    }
   },
   created() {
     var self = this;
     self.refreshClock();
     self.timer = window.setInterval(self.refreshClock, 1000);
 
-    let scriptTag = document.createElement("script");
-    scriptTag.src = "//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
+    let scriptTag = document.createElement('script');
+    scriptTag.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
     scriptTag.async = true;
-    document.getElementsByTagName("head")[0].appendChild(scriptTag);
+    document.getElementsByTagName('head')[0].appendChild(scriptTag);
   },
   beforeDestroy() {
     var self = this;
     clearInterval(self.timer);
-  },
+  }
 };
 </script>
 

@@ -1,14 +1,14 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 // import Container from '@/components/Container'
-import Home from '@/views/Home'
-import Ability from '@/views/Ability'
-import Project from '@/views/Project/Project'
-import Experience from '@/views/Experience'
-import Education from '@/views/Education'
-import Evaluation from '@/views/Evaluation'
+import Home from '@/views/Home';
+import Ability from '@/views/Ability';
+import Project from '@/views/Project/Project';
+import Experience from '@/views/Experience';
+import Education from '@/views/Education';
+import Evaluation from '@/views/Evaluation';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -47,4 +47,4 @@ export default new Router({
       component: Evaluation
     }
   ]
-})
+});

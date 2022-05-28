@@ -146,7 +146,7 @@ export default {
   border-radius: 4px;
   overflow: hidden;
   .banner {
-    background: url('https://s3.ax1x.com/2021/01/30/yFqIIS.jpg') no-repeat center center / cover;
+    background: url('https://s1.ax1x.com/2022/05/28/XKE5Yd.jpg') no-repeat center center / cover;
     height: 100vh;
     line-height: 80px;
     text-align: center;

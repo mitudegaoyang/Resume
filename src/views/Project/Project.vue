@@ -35,22 +35,11 @@
                         >
                       </div>
                       <checkbox-group v-model="data.checkAllGroup" @on-change="checkAllGroupChange">
-                        <checkbox label="html"></checkbox>
-                        <checkbox label="css"></checkbox>
-                        <checkbox label="js"></checkbox>
-                        <checkbox label="react"></checkbox>
-                        <checkbox label="vue"></checkbox>
-                        <checkbox label="angular"></checkbox>
-                        <checkbox label="ice"></checkbox>
-                        <checkbox label="echarts"></checkbox>
-                        <checkbox label="antd"></checkbox>
-                        <checkbox label="element"></checkbox>
-                        <checkbox label="iview"></checkbox>
-                        <checkbox label="vux"></checkbox>
-                        <checkbox label="element-admin"></checkbox>
-                        <checkbox label="weex"></checkbox>
-                        <checkbox label="fuse"></checkbox>
-                        <checkbox label="jsp"></checkbox>
+                        <checkbox
+                          v-for="item in data.checkData"
+                          :label="item"
+                          :key="item"
+                        ></checkbox>
                       </checkbox-group>
                     </i-col>
                   </i-row>
@@ -116,8 +105,8 @@
 
 <script>
 import _ from 'lodash';
-import NavBar from '../../components/NavBar.vue'; // 引进菜单模板
 import Footer from '../../components/Footer.vue'; // 引进底部模板
+import NavBar from '../../components/NavBar.vue'; // 引进菜单模板
 import Weibo from '../../components/Weibocom.vue'; // 引进热点组件
 import PROCONFIG from '../config/proConfig.ts'; // 引如工作经历数据
 export default {
@@ -149,7 +138,12 @@ export default {
           'weex',
           'fuse',
           'jsp',
-          'echarts'
+          'echarts',
+          'cloudcharts',
+          'single-spa',
+          'formilyjs',
+          'emotion',
+          'tgg-large-screen'
         ],
         projectData: PROCONFIG,
         projectDataBak: []
@@ -322,6 +316,21 @@ export default {
               }
               .project-tags-echarts {
                 background: #e43961;
+              }
+              .project-tags-cloudcharts {
+                background: #ff8200;
+              }
+              .project-tags-single-spa {
+                background: #ee689f;
+              }
+              .project-tags-formilyjs {
+                background: #4d1db5;
+              }
+              .project-tags-emotion {
+                background: #c43bad;
+              }
+              .project-tags-tgg-large-screen {
+                background: #612aaa;
               }
             }
             .project-time {

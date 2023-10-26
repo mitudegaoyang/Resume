@@ -7,7 +7,7 @@ cp -a favicon.ico README.md dist
 cd ./dist
 
 # 如果是发布到自定义域名
-echo 'me.gaotianyang.top' > CNAME
+echo 'me2019.gaotianyang.top' > CNAME
 
 git init
 git add -A
